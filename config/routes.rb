@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'restaurants/index'
-  get 'restaurants/show'
   devise_for :users
   root to: 'pages#home'
   get 'about', to: 'pages#about'
