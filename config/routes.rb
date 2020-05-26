@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get 'restaurants/index'
+  get 'restaurants/show'
   devise_for :users
   root to: 'pages#home'
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  resources :restaurants, only: [:index, :show]
+  resources :activities, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
