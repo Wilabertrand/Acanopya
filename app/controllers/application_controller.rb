@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
@@ -12,9 +11,9 @@ class ApplicationController < ActionController::Base
   # Uncomment when you *really understand* Pundit!
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
     def user_not_authorized
-      flash[:alert] = "Vous n'êtes pas autorisé pour cette action."
+      flash[:alert] = "Vous n'êtes pas autorisé(e) pour cette action."
       redirect_to(root_path)
-   end
+    end
 
   private
 
