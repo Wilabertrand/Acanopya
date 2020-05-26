@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :trips, only: [:new, :create, :show, :update]
   resources :restaurants, only: [:index, :show]
   resources :activities, only: [:index, :show]
+  resources :flats, only: [:index, :show]
+  
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -1,11 +1,14 @@
 <h1>home</h1>
 <%= link_to 'About', about_path %>
 <%= link_to 'Contact', contact_path %>
-<h1>TRIPS</h1>
-    <%= simple_form_for(@trip) do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.input :address %>
-        <%= f.input :number_of_travellers %>
-        <%= f.submit %>
-    <% end %>
+    <div class='container'>
+    <h1>VOTRE 1er VOYAGE</h1>
+        <%= simple_form_for(@trip) do |f| %>
+            <%= f.input :name %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.input :address %>
+            <%= f.input :number_of_travellers %>
+            <%= f.submit %>
+        <% end %>
+    </div>
