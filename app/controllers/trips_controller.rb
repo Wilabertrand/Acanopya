@@ -3,32 +3,38 @@ class TripsController < ApplicationController
 
 
     def new
+        @trip = Trip.new
+        authorize(@trip)
     end
 
     def index
-        @trips = Trip.all
+        # @trips = Trip.all
         @trips = policy_scope(Trip).order(created_at: :desc)
       end
 
     def create
-    #    authorize @trip
     #    @restaurant.user = current_user
         @trip = Trip.new(trip_params)
+        @trip.user = current_user
+        authorize(@trip)
         @trip.save
-    #       if policy(Restaurant).create?
-    #           flash[:notice] = "Votre voyage a bien été créé"
+           if policy(Trip).create?
+                flash[:notice] = "Votre voyage a bien été créé"
                 redirect_to flats_path
-    #       else
-    #           flash[:alert] = "Votre voyage ne s'est pas bien créé"
+            else
+                flash[:alert] = "Votre voyage ne s'est pas bien créé"
     #           render :new
-    #       end
+            end
         end
     
     def show
     end
 
+    def edit
+    end
+
     def update
-        authorize @trip
+        authorize(@trip)
         @trip.update(params[:trip])
     end
 
