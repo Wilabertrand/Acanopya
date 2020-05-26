@@ -1,0 +1,9 @@
+<div class="container">
+	<h1>Toutes les activités</h1>
+	<p>Découvrez nos merveilleures activités</p>
+	<ul>
+		<% @activities.each do |activity| %>
+			<li><%= link_to activity.name, activity_path(activity) %></li>
+		<% end %>
+	</ul>
+</div>
