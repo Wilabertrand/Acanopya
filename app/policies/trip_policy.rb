@@ -37,7 +37,7 @@ class TripPolicy < ApplicationPolicy
   private
 
   def user_is_owner?
-    record.user == user
+    user == record.user || user.admin?
   end
 
 end
