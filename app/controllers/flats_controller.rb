@@ -2,7 +2,7 @@ class FlatsController < ApplicationController
 	before_action :set_flat, only: [:show]
 
 	def index
-		@flats = Flat.new
+		@flats = Flat.all
 	end
 
 	def show
