@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'
   
-  resources :trips, only: [:new, :create, :show, :update, :index]
+  resources :trips, only: [:new, :create, :show, :update, :index, :edit]
   resources :restaurants, only: [:index, :show]
   resources :activities, only: [:index, :show]
   resources :flats, only: [:index, :show]

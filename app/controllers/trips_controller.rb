@@ -1,10 +1,9 @@
 class TripsController < ApplicationController
-    before_action :set_trip, only: [:show, :update]
-
+    before_action :set_trip, only: [:show, :update, :edit]
 
     def new
         @trip = Trip.new
-        authorize(@trip)
+        authorize_trip
     end
 
     def index
@@ -13,19 +12,18 @@ class TripsController < ApplicationController
       end
 
     def create
-    #    @restaurant.user = current_user
         @trip = Trip.new(trip_params)
         @trip.user = current_user
-        authorize(@trip)
-        @trip.save
-           if policy(Trip).create?
-                flash[:notice] = "Votre voyage a bien été créé"
-                redirect_to flats_path
-            else
-                flash[:alert] = "Votre voyage ne s'est pas bien créé"
-    #           render :new
-            end
+        authorize_trip
+        if policy(Trip).create?
+            @trip.save
+            flash[:notice] = "Votre voyage a bien été créé"
+            redirect_to flats_path
+        else
+            flash[:alert] = "Votre voyage ne s'est pas bien créé"
+            render :new
         end
+    end
     
     def show
     end
@@ -34,11 +32,15 @@ class TripsController < ApplicationController
     end
 
     def update
-        authorize(@trip)
-        @trip.update(params[:trip])
+        authorize_trip
+        @trip.update(trip_params)
     end
 
     private
+
+    def authorize_trip
+        authorize(@trip)
+    end
 
     def trip_params
         params.require(:trip).permit(:name, :address, :start_date, :end_date, :number_of_travellers)
