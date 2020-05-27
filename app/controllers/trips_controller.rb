@@ -4,11 +4,18 @@ class TripsController < ApplicationController
 
     def create
         @trip = Trip.new(trip_params)
-        @trip.save
-        redirect_to restaurants_path
+        @trip.user = current_user
+        if @trip.save
+            redirect_to flats_path
+        else
+            render 'pages/home'
+        end
     end
     
     def show
+        @trip = Trip.find(params[:id])
+        @flats_bookings = BookingFlat.where(trip_id: @trip)
+       
     end
 
     def update
