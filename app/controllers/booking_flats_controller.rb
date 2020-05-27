@@ -9,6 +9,7 @@ class BookingFlatsController < ApplicationController
     end
 
     def create
+        authorize_booking_flats
 		@flat = Flat.find(params[:flat_id])
 		@booking = BookingFlat.new(booking_params)
 		@booking.flat = @flat
@@ -45,5 +46,10 @@ class BookingFlatsController < ApplicationController
     def booking_params
         params.require(:booking).permit(:flat, :user, :start_date, :end_date)
     end
+
+    def authorize_booking_flats
+        authorize(@booking_flat)
+    end
+
   end
   
