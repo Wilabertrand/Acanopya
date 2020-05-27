@@ -1,4 +1,4 @@
-class Booking_FlatsController < ApplicationController
+class BookingFlatsController < ApplicationController
   
     /def index
         @flats_bookings = curent_user.

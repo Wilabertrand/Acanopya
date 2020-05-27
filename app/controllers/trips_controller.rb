@@ -15,7 +15,6 @@ class TripsController < ApplicationController
     def show
         @trip = Trip.find(params[:id])
         @flats_bookings = BookingFlat.where(trip_id: @trip)
-       
     end
 
     def update
