@@ -10,7 +10,11 @@
 			<p><%= link_to "Updater", edit_trip_path(trip) %></p>
 		<% end %>
 		<% if policy(trip).destroy? %>
-			<p><%= link_to "Supprimer", trip_path(trip), method: :delete, data: {confirm: "Êtes-vous sûr?"} %></p>
+			<p><%#= link_to "Supprimer", trips_path, method: :delete, data: {confirm: "Êtes-vous sûr?"} %></p>
+			<%= link_to "Supprimer",
+                  trip_path(trip),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
 		<% end %>
 	<% end %>
 	</ul>

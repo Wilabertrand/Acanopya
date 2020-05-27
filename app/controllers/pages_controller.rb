@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @trip = current_user.trips.new
-    authorize_trip
+    authorize(@trip)
   end
 
   def about

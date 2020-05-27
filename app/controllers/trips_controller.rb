@@ -31,10 +31,12 @@ class TripsController < ApplicationController
 
     def update
         @trip.update(trip_params)
+        redirect_to trip_path(@trip)
     end
 
     def destroy
         @trip.destroy
+        redirect_to trips_path
     end
 
     private

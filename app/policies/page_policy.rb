@@ -4,16 +4,11 @@ class PagePolicy < ApplicationPolicy
       scope.all
     end
   end
-end
+
   
-  def new?
-     create?
+  def home?
+    true
   end
-
-  def create?
-   true
-  end
-
 
   private
 
