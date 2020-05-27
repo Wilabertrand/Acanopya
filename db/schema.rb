@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(version: 2020_05_27_094903) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "location"
     t.string "name"
+    t.string "location"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
