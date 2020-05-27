@@ -11,20 +11,28 @@ puts 'trip destroyed'
 User.destroy_all
 puts 'user destroyed'
 User.create!(
-    email: "astrid@mail.com",
-    password: "123456"
+  first_name: "Astrid",
+  last_name: "nom",
+  email: "astrid@mail.com",
+  password: "123456"
 )
 User.create!(
-    email: "harold@mail.com",
-    password: "123456"
+  first_name: "Harold",
+  last_name: "nom",
+  email: "harold@mail.com",
+  password: "123456"
 )
 User.create!(
-    email: "emmanuelle@mail.com",
-    password: "123456"
+  first_name: "Emmanuelle",
+  last_name: "nom",
+  email: "emmanuelle@mail.com",
+  password: "123456"
 )
 User.create!(
-    email: "wila@mail.com",
-    password: "123456"
+  first_name: "Wila",
+  last_name: "nom",
+  email: "wila@mail.com",
+  password: "123456"
 )
 Restaurant.create!(
   name: "Maman sardine",
@@ -74,7 +82,7 @@ Trip.create!(
   name: "Mon voyage idyllique",
   location: 'Marseille',
   number_of_travellers: 4,
-  user: User.last
+  user: User.last,
   )
   Trip.last.restaurants << Restaurant.last
 

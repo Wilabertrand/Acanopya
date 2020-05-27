@@ -13,13 +13,3 @@
             <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
         <% end %>
     </div>
-
-
-    <div class="pb-2">
-        <%= simple_form_for :search, url: potagers_path, method: :get do %>
-        <div class="search-form-control form-group">
-          <%= text_field_tag :query, params[:query], class: "form-control string required", placeholder: "Où plantez-vous ?" %>
-            <%# <i class="fas fa-search"></i> %>
-            <%= submit_tag "Rechercher", class: "btn btn-grad"%>
-        </div>
-    </div>
