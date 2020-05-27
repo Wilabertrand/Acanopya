@@ -47,7 +47,7 @@ class ApplicationPolicy
     end
 
     def resolve
-      scope.all # scope
+      scope # vs initi scope.all
     end
   end
 end

@@ -2,19 +2,19 @@ class TripsController < ApplicationController
     before_action :set_trip, only: [:show, :update, :edit, :destroy]
 
     def new
-        # @trip = current_user.trips.new
-        @trip = Trip.new
-        authorize_trip
+        @trip = current_user.trips.new
+        # @trip = Trip.new
+        # authorize_trip
     end
 
     def index
         @trips = policy_scope(Trip).order(created_at: :desc)
-      end
+    end
 
     def create
-        # @trip = current_user.trips.new(trip_params)
-        @trip = Trip.new(trip_params)
-        @trip.user = current_user
+        @trip = current_user.trips.new(trip_params)
+        # @trip = Trip.new(trip_params)
+        # @trip.user = current_user
         authorize_trip
 #       if policy(Trip).create?
         if @trip.save
