@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 2020_05_27_094812) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.integer "capicity"
     t.text "description"
     t.float "latitude"
     t.boolean "availability"
@@ -69,6 +68,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_094812) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
+    t.integer "capacity"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -87,10 +87,10 @@ ActiveRecord::Schema.define(version: 2020_05_27_094812) do
     t.date "start_date"
     t.date "end_date"
     t.integer "number_of_travellers"
-    t.string "address"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "location"
     t.string "name"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 2020_05_27_094812) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
