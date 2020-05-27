@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home, :about, :contact ]
 
   def home
-    @trip = Trip.new
+    @trip = current_user.trips.new
     authorize_trip
   end
 
