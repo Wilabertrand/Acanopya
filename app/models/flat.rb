@@ -1,5 +1,6 @@
 class Flat < ApplicationRecord
   has_many :trips, through: :booking_flats
+  has_many :booking_flats
 
   validates :name, presence: true
   validates :address, presence: true
