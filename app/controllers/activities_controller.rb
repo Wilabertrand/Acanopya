@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
 	before_action :set_activity, only: [:show]
   
   def index
-    @activities = Activity.all
+    @activities = policy_scope(Activity).order(created_at: :desc)
   end
 
   def show
@@ -12,5 +12,6 @@ class ActivitiesController < ApplicationController
 
   def set_restaurant
     @activity = Activity.find(params[:id])
+    authorize_activity
   end
 end
