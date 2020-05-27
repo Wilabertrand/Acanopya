@@ -3,8 +3,7 @@ class TripsController < ApplicationController
 
     def new
         @trip = current_user.trips.new
-        # @trip = Trip.new
-        # authorize_trip
+        authorize_trip
     end
 
     def index
@@ -13,8 +12,6 @@ class TripsController < ApplicationController
 
     def create
         @trip = current_user.trips.new(trip_params)
-        # @trip = Trip.new(trip_params)
-        # @trip.user = current_user
         authorize_trip
 #       if policy(Trip).create?
         if @trip.save
@@ -27,20 +24,16 @@ class TripsController < ApplicationController
     end
     
     def show
-        authorize_trip
     end
 
     def edit
-        authorize_trip
     end
 
     def update
-        authorize_trip
         @trip.update(trip_params)
     end
 
     def destroy
-        authorize_trip
         @trip.destroy
     end
 
@@ -56,5 +49,6 @@ class TripsController < ApplicationController
 
     def set_trip
         @trip = Trip.find(params[:id])
+        authorize_trip
     end
 end

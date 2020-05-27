@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @trip = Trip.new
+    authorize_trip
   end
 
   def about

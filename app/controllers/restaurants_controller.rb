@@ -2,7 +2,8 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show]
   
   def index
-    @restaurants = Restaurant.all
+    @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+    authorize_restaurant
   end
 
   def show
@@ -12,5 +13,6 @@ class RestaurantsController < ApplicationController
 
   def set_restaurant
     @restaurant = Restaurant.find(params[:id])
+    authorize_restaurant
   end
 end

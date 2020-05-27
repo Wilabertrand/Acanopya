@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   # Uncomment when you *really understand* Pundit!
-  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
-  #   def user_not_authorized
-  #     flash[:alert] = "Vous n'êtes pas autorisé(e) pour cette action."
-  #     redirect_to(root_path)
-  #   end
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+    def user_not_authorized
+      flash[:alert] = "Vous n'êtes pas autorisé(e) pour cette action."
+      redirect_to(root_path)
+    end
 
   private
 
