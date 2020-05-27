@@ -14,4 +14,9 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     authorize_restaurant
   end
+
+  def authorize_restaurant
+    authorize(@restaurant)
+  end
+
 end

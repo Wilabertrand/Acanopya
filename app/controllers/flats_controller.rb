@@ -10,9 +10,12 @@ class FlatsController < ApplicationController
 
 	private 
 
-	def before_action
+	def set_flat
 		@flat = Flat.find(params[:id])
 		authorize_flat
 	end 
 
+	def authorize_flat
+        authorize(@flat)
+    end
 end

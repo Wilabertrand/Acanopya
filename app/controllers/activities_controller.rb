@@ -14,4 +14,9 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     authorize_activity
   end
+
+  def authorize_activity
+    authorize(@activity)
+  end
+
 end
