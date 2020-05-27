@@ -35,24 +35,24 @@ Restaurant.create!(
 )
 Restaurant.create!(
   name: "Le Saint-Jacques",
-  address: 'Saint-Raphael',
-  description: "La délice des Saint-Jacques à Marseille",
+  address: 'Saint-Raphaël',
+  description: "Les délices des Saint-Jacques à Marseille",
   category: 'Poissons',
   price: 15
 )
 Flat.create!(
   name: "Sea Appartement",
-  address: 'vieux-port, Marseille',
+  address: 'Marseille',
   description: "Magnifique appartement avec une superbe vue la mer",
-  capicity: 4,
+  capacity: 4,
   price: 90,
   label: 'ATR'
 )
 Flat.create!(
   name: "Chez Lili",
-  address: 'centre ville, Saint-Raphael',
+  address: 'Saint-Raphaël',
   description: "Idéal pour votre voyage en famille",
-  capicity: 6,
+  capacity: 6,
   price: 120,
   label: 'ATES'
 )
@@ -61,18 +61,18 @@ Activity.create!(
   address: 'Marseille',
   description: "Balade dans la mer pour vivre la lévé du soleil",
   category: 'Sortie guidé',
-  price: 100
+  price: 80
 )
 Activity.create!(
-  name: "Découvre Saint-Raphael",
-  address: 'Saint-Raphael',
+  name: "Découvre Saint-Raphaël",
+  address: 'Saint-Raphaël',
   description: "Balade dans la village",
   category: 'Sortie guidée',
-  price: 100
+  price: 20
 )
 Trip.create!(
   name: "Mon voyage idyllique",
-  address: 'Marseille',
+  location: 'Marseille',
   number_of_travellers: 4,
   user: User.last
   )
