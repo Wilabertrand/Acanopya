@@ -7,6 +7,6 @@ class Activity < ApplicationRecord
   validates :price, presence: true
   validates :category, presence: true
   validates :description, presence: true, length: { minimum: 10 }
-  validates :latitude, presence: true
-  validates :longitude, presence: true
+  # validates :latitude, presence: true
+  # validates :longitude, presence: true
 end
