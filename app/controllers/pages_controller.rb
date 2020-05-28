@@ -5,7 +5,8 @@ class PagesController < ApplicationController
     @trip = Trip.new
   end
 
-  def index
+  def dashboard
+    
     if params[:query].present?
       @flats = Flat.where("address ILIKE ?", "%#{params[:query]}%") # && Flat.where(capacity: params[:query])
     else

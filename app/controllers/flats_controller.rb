@@ -2,11 +2,10 @@ class FlatsController < ApplicationController
 	before_action :set_flat, only: [:show]
 
 	def index
-	# if params[:query].present?
-    #   @flats = Flat.where("address ILIKE ?", "%#{params[:query]}%") && || Flat.where(capacity: >= params[:query]) && || Flat.where(price: <= params[:query])
-	# else
-		@flats = policy_scope(Flat).order(created_at: :desc)
-    # end
+		@trip = Trip.find(params[:trip_id])
+		flats = Flat.where("address ILIKE ?", "%#{@trip.location}%").where("capacity >= ?", "#{@trip.number_of_travellers}")
+		@flats = policy_scope(flats).order(created_at: :desc)
+		@flats = policy_scope(Flat).order(created_at: :desc) if @flats.empty? 
 	end
 
 	def show
