@@ -20,7 +20,8 @@ class ActivitiesController < ApplicationController
 
   def show
     @booking_activity = BookingActivity.new
-		@trip = Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:trip_id])
+    @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
   end
 
   
