@@ -50,18 +50,14 @@ Restaurant.create!(
   address: 'Marseille',
   description: "La délice des Sardines à Marseille",
   category: 'Poissons',
-  price: 15,
-  latitude: 43.2961743,
-  longitude: 5.3699525
+  price: 15
 )
 Restaurant.create!(
   name: "Le Saint-Jacques",
   address: 'Saint-Raphaël',
   description: "Les délices des Saint-Jacques à Marseille",
   category: 'Poissons',
-  price: 15,
-  latitude: 43.4255303,
-  longitude: 6.7694244
+  price: 15
 )
 Flat.create!(
   name: "Sea Appartement",
@@ -70,8 +66,6 @@ Flat.create!(
   capacity: 4,
   price: 90,
   label: 'ATR',
-  latitude: 43.2961743,
-  longitude: 5.3699525,
   availability: true
 )
 Flat.create!(
@@ -81,8 +75,6 @@ Flat.create!(
   capacity: 6,
   price: 120,
   label: 'ATES',
-  latitude: 43.4255303,
-  longitude: 6.7694244,
   availability: true
 )
 Activity.create!(
@@ -90,24 +82,20 @@ Activity.create!(
   address: 'Marseille',
   description: "Balade dans la mer pour vivre la lévé du soleil",
   category: 'Sortie guidé',
-  price: 80,
-  latitude: 43.2961743,
-  longitude: 5.3699525
+  price: 80
 )
 Activity.create!(
   name: "Découvre Saint-Raphaël",
   address: 'Saint-Raphaël',
   description: "Balade dans la village",
   category: 'Sortie guidée',
-  price: 20,
-  latitude: 43.4255303,
-  longitude: 6.7694244
+  price: 20
 )
 Trip.create!(
   name: "Mon voyage idyllique",
   location: 'Marseille',
   number_of_travellers: 4,
-  user: User.last,
+  user: User.last
   )
   Trip.create!(
   name: "Mon voyage à Saint-R",

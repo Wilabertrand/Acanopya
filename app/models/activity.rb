@@ -7,8 +7,6 @@ class Activity < ApplicationRecord
   validates :price, presence: true
   validates :category, presence: true
   validates :description, presence: true, length: { minimum: 10 }
-  # validates :latitude, presence: true
-  # validates :longitude, presence: true
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
