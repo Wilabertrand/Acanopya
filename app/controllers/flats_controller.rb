@@ -4,11 +4,15 @@ class FlatsController < ApplicationController
 	def index
 		@trip = Trip.find(params[:trip_id])
 		flats = Flat.where("address ILIKE ?", "%#{@trip.location}%").where("capacity >= ?", "#{@trip.number_of_travellers}")
-		@flats = policy_scope(flats).order(created_at: :desc)
-		@flats = policy_scope(Flat).order(created_at: :desc) if @flats.empty? 
+		@flats = policy_scope(flats).order(created_at: :desc) # à bien garder!!!
+		@flats = policy_scope(Flat).order(created_at: :desc) if @flats.empty? # à bien garder!!!
+		@trip = Trip.find(params[:trip_id])
+
 	end
 
 	def show
+		@booking_flat = BookingFlat.new
+		@trip = Trip.find(params[:trip_id])
 	end
 
 	private 
@@ -21,5 +25,6 @@ class FlatsController < ApplicationController
 	def authorize_flat
 		authorize(@flat)
 	end
+
 
 end

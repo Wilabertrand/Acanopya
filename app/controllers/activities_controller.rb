@@ -19,5 +19,4 @@ class ActivitiesController < ApplicationController
     authorize(@activity)
   end
 
-
 end

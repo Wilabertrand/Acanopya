@@ -18,4 +18,5 @@ class RestaurantsController < ApplicationController
   def authorize_restaurant
 		authorize(@restaurant)
 	end
+
 end
