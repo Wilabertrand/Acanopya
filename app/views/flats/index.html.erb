@@ -1,8 +1,23 @@
-<div class="container">
-<h1>Tous les hébergements</h1>
-<ul>
-    <% @flats.each do |flat| %>
-      <li><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></li>
-    <% end %>
-  </ul>
-</div>
+<div class="container py-4">
+  <div class="row">
+    <h1>Tous les hébergements</h1>
+      <div class="content" 'Flats-Saint-Raphaël'>
+        <%= cl_image_tag 'photo-1503152889424-9c280f38cb1c_ambtfb' %>
+        <%= cl_image_tag 'photo-1467987506553-8f3916508521_y2bgky' %>
+        <%= cl_image_tag 'photo-1499916078039-922301b0eb9b_m75ibp' %>
+        <%= cl_image_tag 'photo-1566328978798-5deee905cf07_mn5zme' %>
+        <%= cl_image_tag 'photo-1509481799743-a6a536be8100_yvx8dc' %>
+      </div>
+      <div class="content" 'Flats-Marseille'>
+        <%= cl_image_tag 'photo-1503696967350-ad1874122058_gg6mhm' %>
+        <%= cl_image_tag 'photo-1503174971373-b1f69850bded_yqulje' %>
+        <%= cl_image_tag 'photo-1531835551805-16d864c8d311_gryqvy' %>
+        <%= cl_image_tag 'photo-1540518614846-7eded433c457_o62hpf' %>
+      </div>
+      <ul>
+          <% @flats.each do |flat| %>
+            <li><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>

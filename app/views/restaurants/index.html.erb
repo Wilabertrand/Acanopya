@@ -1,6 +1,18 @@
 <div class="container">
 	<h1>Tous les restaurants</h1>
 	<p>Découvrez nos merveilleux restaurants</p>
+		<div class="content" 'marseille'>
+			<%= cl_image_tag 'photo-1550966871-3ed3cdb5ed0c_nlj8vg' %>
+			<%= cl_image_tag 'photo-1583144387451-8e17f0411183_wxo3kc' %>
+			<%= cl_image_tag 'photo-1556814901-18c866c057da_q9ittn' %>
+			<%= cl_image_tag 'photo-1572205821737-01dfdaf0b012_xl3fnp' %>
+		</div>
+		<div class="content" 'saint-r'>
+			<%= cl_image_tag 'photo-1537047902294-62a40c20a6ae_uwpjyg' %>
+			<%= cl_image_tag 'photo-1547647611-395d6ed8a63d_zldmcl' %>
+			<%= cl_image_tag 'photo-1559339352-11d035aa65de_t4dgsd' %>
+			<%= cl_image_tag 'photo-1577219492769-b63a779fac28_idofsv' %>
+		</div>
 	<ul>
 		<% @restaurants.each do |restaurant| %>
 			<li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
