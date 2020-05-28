@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_095753) do
+ActiveRecord::Schema.define(version: 2020_05_28_101051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_05_26_095753) do
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.date "end_date"
     t.index ["activity_id"], name: "index_booking_activities_on_activity_id"
     t.index ["trip_id"], name: "index_booking_activities_on_trip_id"
   end
@@ -43,6 +45,8 @@ ActiveRecord::Schema.define(version: 2020_05_26_095753) do
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.date "end_date"
     t.index ["flat_id"], name: "index_booking_flats_on_flat_id"
     t.index ["trip_id"], name: "index_booking_flats_on_trip_id"
   end
@@ -53,6 +57,8 @@ ActiveRecord::Schema.define(version: 2020_05_26_095753) do
     t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.date "end_date"
     t.index ["restaurant_id"], name: "index_booking_restaurants_on_restaurant_id"
     t.index ["trip_id"], name: "index_booking_restaurants_on_trip_id"
   end
@@ -60,7 +66,6 @@ ActiveRecord::Schema.define(version: 2020_05_26_095753) do
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.integer "capicity"
     t.text "description"
     t.float "latitude"
     t.boolean "availability"
@@ -68,6 +73,8 @@ ActiveRecord::Schema.define(version: 2020_05_26_095753) do
     t.string "label"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "address"
+    t.integer "capacity"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -86,10 +93,11 @@ ActiveRecord::Schema.define(version: 2020_05_26_095753) do
     t.date "start_date"
     t.date "end_date"
     t.integer "number_of_travellers"
-    t.string "address"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "location"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
@@ -103,6 +111,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_095753) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
