@@ -3,7 +3,12 @@ class RestaurantsController < ApplicationController
   
   def index
     @trip = Trip.find(params[:trip_id])
-    @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+		restaurants = Restaurant.where("address ILIKE ?", "%#{@trip.location}%")
+		@restaurants = policy_scope(restaurants).order(created_at: :desc) # à bien garder!!!
+		if @restaurants.empty?
+			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
+			@restaurants = policy_scope(Restaurant).order(created_at: :desc) if @restaurants.empty? # à bien garder!!!
+		end
   end
 
   def show
@@ -19,7 +24,7 @@ class RestaurantsController < ApplicationController
   end
 
   def authorize_restaurant
-    authorize(@restaurant)
-  end
+		authorize(@restaurant)
+	end
 
 end

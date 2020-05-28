@@ -3,7 +3,12 @@ class ActivitiesController < ApplicationController
   
   def index
     @trip = Trip.find(params[:trip_id])
-    @activities = policy_scope(Activity).order(created_at: :desc)
+		activities = Activity.where("address ILIKE ?", "%#{@trip.location}%")
+		@activities = policy_scope(activities).order(created_at: :desc) # à bien garder!!!
+		if @activities.empty?
+			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
+			@activities = policy_scope(Activity).order(created_at: :desc) if @activities.empty? # à bien garder!!!
+		end
   end
 
   def show
