@@ -11,28 +11,39 @@ puts 'trip destroyed'
 User.destroy_all
 puts 'user destroyed'
 User.create!(
-  first_name: "Astrid",
-  last_name: "nom",
   email: "astrid@mail.com",
-  password: "123456"
+  password: "123456",
+  first_name: "astrid",
+  last_name: "dc",
+  admin: false
 )
 User.create!(
-  first_name: "Harold",
-  last_name: "nom",
   email: "harold@mail.com",
-  password: "123456"
+  password: "123456",
+  first_name: "harold",
+  last_name: "ngano",
+  admin: false
 )
 User.create!(
-  first_name: "Emmanuelle",
-  last_name: "nom",
   email: "emmanuelle@mail.com",
-  password: "123456"
+  password: "123456",
+  first_name: "emmanuelle",
+  last_name: "cavarle",
+  admin: false
 )
 User.create!(
-  first_name: "Wila",
-  last_name: "nom",
   email: "wila@mail.com",
-  password: "123456"
+  password: "123456",
+  first_name: "astrid",
+  last_name: "dc",
+  admin: false
+)
+User.create!(
+  email: "admin@mail.com",
+  password: "123456",
+  first_name: "admin",
+  last_name: "admin",
+  admin: true
 )
 Restaurant.create!(
   name: "Maman sardine",
@@ -54,7 +65,8 @@ Flat.create!(
   description: "Magnifique appartement avec une superbe vue la mer",
   capacity: 4,
   price: 90,
-  label: 'ATR'
+  label: 'ATR',
+  availability: true
 )
 Flat.create!(
   name: "Chez Lili",
@@ -62,7 +74,8 @@ Flat.create!(
   description: "Idéal pour votre voyage en famille",
   capacity: 6,
   price: 120,
-  label: 'ATES'
+  label: 'ATES',
+  availability: true
 )
 Activity.create!(
   name: "Balade en bateau",
@@ -83,6 +96,18 @@ Trip.create!(
   location: 'Marseille',
   number_of_travellers: 4,
   user: User.last,
+  )
+  Trip.create!(
+  name: "Mon voyage à Saint-R",
+  location: 'Saint-Raphaël',
+  number_of_travellers: 5,
+  user: User.last
+  )
+  Trip.create!(
+  name: "Mon été en Marseille",
+  location: 'Marseille',
+  number_of_travellers: 4,
+  user: User.last
   )
   Trip.last.restaurants << Restaurant.last
 
