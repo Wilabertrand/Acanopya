@@ -1,8 +1,8 @@
 <div class="container">
 <h1>Tous les hébergements</h1>
 <ul>
-  <% @flats.each do |flat| %>
-    <li><%= flat.name %></li>
-  <% end %>
-</ul>
+    <% @flats.each do |flat| %>
+      <li><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></li>
+    <% end %>
+  </ul>
 </div>

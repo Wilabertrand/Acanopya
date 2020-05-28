@@ -10,6 +10,7 @@ class TripsController < ApplicationController
       @trips = policy_scope(Trip).order(created_at: :desc)
   end
 
+
   def create
       @trip = current_user.trips.new(trip_params)
       authorize_trip
@@ -53,4 +54,5 @@ class TripsController < ApplicationController
       @trip = Trip.find(params[:id])
       authorize_trip
   end
+
 end

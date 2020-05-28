@@ -15,7 +15,7 @@ class TripPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user_is_owner_or_admin?
   end
 
   def create?
