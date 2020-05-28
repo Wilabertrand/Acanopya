@@ -5,7 +5,7 @@ class ActivitiesBookingsController < ApplicationController
 		@booking_activity = BookingActivity.new(booking_params)
         @booking_activity.activity = @activity
         @booking_activity.status = true
-        authorize_booking_activities
+        authorize(@booking_activity)
         @trip = @booking_activity.trip
 		if @booking_activity.save
 			flash[:success] = "Votre activité est maintenant réservée"

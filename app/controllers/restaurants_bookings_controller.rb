@@ -1,11 +1,12 @@
 class RestaurantsBookingsController < ApplicationController
+
   
     def create
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@booking_restaurant = BookingRestaurant.new(booking_params)
         @booking_restaurant.restaurant = @restaurant
         @booking_restaurant.status = true
-        authorize_booking_restaurants
+        authorize(@booking_restaurant)
         @trip = @booking_restaurant.trip
 		if @booking_restaurant.save
             flash[:success] = "Votre réservation a bien été effectuée"
