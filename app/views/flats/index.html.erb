@@ -1,31 +1,5 @@
 <div class="container">
 <h1>Tous les hébergements</h1>
-<%#= form_tag flats_path, method: :get do %>
-  <%#= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Précisez votre destination"
-    %>
-  <%#= number_field :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Combien serez-vous ?"
-    %>
-  <%#= number_field :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Combien serez-vous ?"
-    %>
-  <%#= date_field :query,
-    params[:query],
-    class: "form-control"
-    %>
-  <%#= date_field :query,
-    params[:query],
-    class: "form-control"
-  %>
-  <%#= submit_tag "Search", class: "btn btn-primary" %>
-<%# end %>
 <ul>
     <% @flats.each do |flat| %>
       <li><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></li>
