@@ -2,7 +2,15 @@ class FlatsController < ApplicationController
 	before_action :set_flat, only: [:show]
 
 	def index
-		@flats = policy_scope(Flat).order(created_at: :desc)
+		@flats =  if params[:filter]
+			Flat.where(
+			  address: params[:filter][:address],
+			  capacity: params[:filter][:capacity]
+			)
+		else
+			@flats = policy_scope(Flat).order(created_at: :desc)
+		end
+		redirect_to flats_path
 	end
 
 	def show

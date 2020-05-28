@@ -19,7 +19,7 @@ class TripsController < ApplicationController
             redirect_to flats_path
         else
             flash[:alert] = "Votre voyage ne s'est pas bien créé"
-            render :new
+            redirect_to(root_path)
         end
     end
     
