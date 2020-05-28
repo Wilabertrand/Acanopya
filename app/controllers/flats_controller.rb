@@ -3,9 +3,11 @@ class FlatsController < ApplicationController
 
 	def index
 		@flats = policy_scope(Flat).order(created_at: :desc)
+		@trip = Trip.find(params[:trip_id])
 	end
 
 	def show
+		@booking_flat = BookingFlat.new
 	end
 
 	private 
