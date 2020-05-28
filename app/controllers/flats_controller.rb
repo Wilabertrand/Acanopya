@@ -8,6 +8,7 @@ class FlatsController < ApplicationController
 
 	def show
 		@booking_flat = BookingFlat.new
+		@trip = Trip.find(params[:trip_id])
 	end
 
 	private 

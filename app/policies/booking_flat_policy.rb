@@ -9,7 +9,7 @@ class BookingFlatPolicy < ApplicationPolicy
     end
   end 
 
-  def new?
+    def new?
     create?
     end
     
