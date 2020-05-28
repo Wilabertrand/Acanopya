@@ -11,19 +11,24 @@ class TripsController < ApplicationController
     end
 
     def create
+
         @trip = current_user.trips.new(trip_params)
         authorize_trip
+#        @trip.user = current_user
 #       if policy(Trip).create?
         if @trip.save
             flash[:notice] = "Votre voyage a bien été créé"
-            redirect_to flats_path
+            redirect_to trip_flats_path(@trip)
         else
             flash[:alert] = "Votre voyage ne s'est pas bien créé"
-            render :new
+            render 'pages/home'
+
         end
     end
     
     def show
+        @trip = Trip.find(params[:id])
+        @flats_bookings = BookingFlat.where(trip_id: @trip)
     end
 
     def edit
