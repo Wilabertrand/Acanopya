@@ -17,7 +17,7 @@ class TripsController < ApplicationController
 #       if policy(Trip).create?
       if @trip.save
           flash[:notice] = "Votre voyage a bien été créé"
-          redirect_to flats_path
+          redirect_to trip_flats_path(@trip.id)
       else
           flash[:alert] = "Votre voyage ne s'est pas bien créé"
           render :new
