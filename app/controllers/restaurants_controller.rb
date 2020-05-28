@@ -4,11 +4,18 @@ class RestaurantsController < ApplicationController
   def index
     @trip = Trip.find(params[:trip_id])
 		restaurants = Restaurant.where("address ILIKE ?", "%#{@trip.location}%")
-		@restaurants = policy_scope(restaurants).order(created_at: :desc) # à bien garder!!!
+		@restaurants = policy_scope(restaurants).order(created_at: :desc).geocoded
 		if @restaurants.empty?
 			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
-			@restaurants = policy_scope(Restaurant).order(created_at: :desc) if @restaurants.empty? # à bien garder!!!
-		end
+			@restaurants = policy_scope(Restaurant).order(created_at: :desc) if @restaurants.empty?
+    end
+    @markers = @restaurants.map do |restaurant|
+			{
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+				infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })				
+      }
+    end
   end
 
   def show

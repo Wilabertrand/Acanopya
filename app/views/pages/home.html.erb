@@ -12,15 +12,15 @@
                   <%= f.input :name, placeholder: "Où allez vous?" %>
                 </div>
                 <div class="col-xs-6">
-                  <%= f.input :start_date %>
+                  <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
                 </div>
                 <div class="col-xs-6">
-                  <%= f.input :end_date %>
+                  <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
                 </div>
               </div>
               <%= f.input :location %>
               <%= f.input :number_of_travellers %>
-              <%= f.submit %>
+              <%= f.submit "Réserver", class: "btn btn-primary w-100" %>
             <% end %>
           </div>
        </div>

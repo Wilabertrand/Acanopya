@@ -3,16 +3,6 @@ class TripsController < ApplicationController
 
     def index
         @trips = policy_scope(Trip).order(created_at: :desc)
-        @trip = current_user.trips.new(trip_params)
-        authorize_trip
-        if @trip.save
-            flash[:notice] = "Votre voyage a bien été créé"
-            redirect_to trip_flats_path(@trip.id)
-        else
-            flash[:alert] = "Votre voyage ne s'est pas bien créé"
-            redirect_to(root_path)
-
-        end
     end
 
     def show
@@ -28,7 +18,7 @@ class TripsController < ApplicationController
             redirect_to trip_flats_path(@trip.id)
         else
             flash[:alert] = "Votre voyage ne s'est pas bien créé"
-            render :new
+            redirect_to root_path
         end
     end
 

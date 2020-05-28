@@ -7,7 +7,6 @@ class Trip < ApplicationRecord
   has_many :activities, through: :booking_activities
   has_many :booking_restaurants, dependent: :destroy
   has_many :restaurants, through: :booking_restaurants
-
   # validates :start_date, presence: true
   # validates :end_date, presence: true
   validates :number_of_travellers, presence: true

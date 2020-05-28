@@ -4,10 +4,17 @@ class FlatsController < ApplicationController
 	def index
 		@trip = Trip.find(params[:trip_id])
 		flats = Flat.where("address ILIKE ?", "%#{@trip.location}%").where("capacity >= ?", "#{@trip.number_of_travellers}")
-		@flats = policy_scope(flats).order(created_at: :desc) # à bien garder!!!
+		@flats = policy_scope(flats).order(created_at: :desc).geocoded
 		if @flats.empty?
 			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
-			@flats = policy_scope(Flat).order(created_at: :desc) if @flats.empty? # à bien garder!!!
+			@flats = policy_scope(Flat).order(created_at: :desc) if @flats.empty?
+		end
+		@markers = @flats.map do |flat|
+			{
+        lat: flat.latitude,
+        lng: flat.longitude,
+				infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })				
+			}
 		end
 	end
 
