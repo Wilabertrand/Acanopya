@@ -1,6 +1,15 @@
 <div class="container">
 	<h1>Toutes les activités</h1>
 	<p>Découvrez nos merveilleures activités</p>
+	<div class="content" 'marseille'>
+			<%= cl_image_tag 'photo-1573137008916-8930812a0978_sextbx' %>
+      <%= cl_image_tag 'photo-1463567517034-628c51048aa2_pifssj' %>
+		</div>
+		<div class="content" 'saint-r'>
+			<%= cl_image_tag 'photo-1535106356142-e3169a8b17d2_jjafj0' %>
+      <%= cl_image_tag 'photo-1566328978798-5deee905cf07_mn5zme' %>
+      <%= cl_image_tag 'photo-1547768126-7baafccffdd8_djiisc' %>
+		</div>
 	<ul>
 		<% @activities.each do |activity| %>
 			<li><%= link_to activity.name, activity_path(activity) %></li>
