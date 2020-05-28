@@ -1,0 +1,15 @@
+<div class="container">
+<h1>Tous les hébergements</h1>
+<ul>
+  <% @flats.each do |flat| %>
+    <li><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></li>
+  <% end %>
+</ul>
+</div>
+
+<div 
+  id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

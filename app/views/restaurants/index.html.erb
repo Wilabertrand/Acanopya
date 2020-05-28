@@ -3,7 +3,14 @@
 	<p>Découvrez nos merveilleux restaurants</p>
 	<ul>
 		<% @restaurants.each do |restaurant| %>
-			<li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+			<li><%= link_to restaurant.name, trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) %></li>
 		<% end %>
 	</ul>
+</div>
+
+<div 
+  id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>

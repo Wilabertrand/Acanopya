@@ -3,7 +3,14 @@
 	<p>Découvrez nos merveilleures activités</p>
 	<ul>
 		<% @activities.each do |activity| %>
-			<li><%= link_to activity.name, activity_path(activity) %></li>
+			<li><%= link_to activity.name, trip_activity_path(trip_id: @trip.id, id: activity.id) %></li>
 		<% end %>
 	</ul>
+</div>
+
+<div 
+  id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
