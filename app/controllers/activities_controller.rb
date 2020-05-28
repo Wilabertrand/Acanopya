@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
   
   def index
     @activities = policy_scope(Activity).order(created_at: :desc)
+    redirect_to activities_path
   end
 
   def show
@@ -10,8 +11,14 @@ class ActivitiesController < ApplicationController
 
   private
 
-  def set_restaurant
+  def set_activity
     @activity = Activity.find(params[:id])
     authorize_activity
   end
+
+  def authorize_activity
+    authorize(@activity)
+  end
+
+
 end

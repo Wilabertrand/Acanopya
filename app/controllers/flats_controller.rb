@@ -2,14 +2,11 @@ class FlatsController < ApplicationController
 	before_action :set_flat, only: [:show]
 
 	def index
-		@flats =  if params[:filter]
-			Flat.where(
-			  address: params[:filter][:address],
-			  capacity: params[:filter][:capacity]
-			)
-		else
-			@flats = policy_scope(Flat).order(created_at: :desc)
-		end
+	# if params[:query].present?
+    #   @flats = Flat.where("address ILIKE ?", "%#{params[:query]}%") && || Flat.where(capacity: >= params[:query]) && || Flat.where(price: <= params[:query])
+	# else
+		@flats = policy_scope(Flat).order(created_at: :desc)
+    # end
 		redirect_to flats_path
 	end
 
@@ -22,5 +19,9 @@ class FlatsController < ApplicationController
 		@flat = Flat.find(params[:id])
 		authorize_flat
 	end 
+
+	def authorize_flat
+		authorize(@flat)
+	end
 
 end
