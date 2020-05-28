@@ -37,7 +37,7 @@ class PagesController < ApplicationController
   #                   @activities = policy_scope(Activity).order(created_at: :desc)
   #                 end
   
-    redirect_to flats_path
+   # redirect_to flats_path
   end
 
   def about

@@ -3,41 +3,6 @@
 <%= link_to 'Contact', contact_path %>
     <div class='container'>
     <h1>VOTRE 1er VOYAGE</h1>
-        <%= simple_form_for(@trip) do |f| %>
-            <%= f.input :name %>
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
-            <%#= f.input :location %>
-            <%#= f.input :number_of_travellers %>
-            <%= f.submit %>
-        <% end %>
-        <%#= render "../views/trips/_form.html.erb", trip: @trip %> 
-    
-    <%= form_tag flats_path, method: :get do %>
-        <%#= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Nom du voyage"
-        %>
-        <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Précisez votre destination"
-        %>
-        <%= number_field :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Combien serez-vous ?"
-        %>
-        <%#= date_field :query,
-            params[:query],
-            class: "form-control"
-        %>
-        <%#= date_field :query,
-            params[:query],
-            class: "form-control"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+        <%= render "trips/form.html.erb", trip: @trip %> 
     
     </div>

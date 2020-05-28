@@ -3,7 +3,6 @@ class ActivitiesController < ApplicationController
   
   def index
     @activities = policy_scope(Activity).order(created_at: :desc)
-    redirect_to activities_path
   end
 
   def show

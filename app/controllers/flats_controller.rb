@@ -7,7 +7,6 @@ class FlatsController < ApplicationController
 	# else
 		@flats = policy_scope(Flat).order(created_at: :desc)
     # end
-		redirect_to flats_path
 	end
 
 	def show
@@ -15,7 +14,7 @@ class FlatsController < ApplicationController
 
 	private 
 
-	def before_action
+	def set_flat
 		@flat = Flat.find(params[:id])
 		authorize_flat
 	end 
