@@ -1,12 +1,9 @@
 class TripsController < ApplicationController
-    before_action :set_trip, only: [:show, :update, :edit, :destroy]
+  before_action :set_trip, only: [:show, :update, :edit, :destroy]
+
 
     def index
         @trips = policy_scope(Trip).order(created_at: :desc)
-    end
-
-    def create
-
         @trip = current_user.trips.new(trip_params)
         authorize_trip
         if @trip.save
@@ -15,7 +12,6 @@ class TripsController < ApplicationController
         else
             flash[:alert] = "Votre voyage ne s'est pas bien créé"
             redirect_to(root_path)
-        #   render 'pages/home'
 
         end
     end
@@ -23,6 +19,18 @@ class TripsController < ApplicationController
     def show
         @trip = Trip.find(params[:id])
         @flats_bookings = BookingFlat.where(trip_id: @trip)
+    end
+
+    def create
+        @trip = current_user.trips.new(trip_params)
+        authorize_trip
+        if @trip.save
+            flash[:notice] = "Votre voyage a bien été créé"
+            redirect_to trip_flats_path(@trip.id)
+        else
+            flash[:alert] = "Votre voyage ne s'est pas bien créé"
+            render :new
+        end
     end
 
     def edit
