@@ -1,15 +1,30 @@
-<h1>home</h1>
-<%= link_to 'About', about_path %>
-<%= link_to 'Contact', contact_path %>
-<%#= link_to 'Trips > [lien a supprimer]', trip_path %>
-    <div class='container'>
-    <h1>VOTRE 1er VOYAGE</h1>
-        <%= simple_form_for(@trip) do |f| %>
-            <%= f.input :name %>
-            <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
-            <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
-            <%= f.input :location %>
-            <%= f.input :number_of_travellers %>
-            <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
-        <% end %>
+<div class='background-img'>
+  <div class="banner">
+    <div class="container">
+       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <h1>Acanopya</h1>
+        <h2>Le voyage durable</h2>
+          <div class='container'>
+            <h1>CREEZ VOTRE PREMIER</h1>
+            <%= simple_form_for(@trip) do |f| %>
+              <div class="row">
+                <div class="col-xs-6">
+                  <%= f.input :name, placeholder: "Où allez vous?" %>
+                </div>
+                <div class="col-xs-6">
+                  <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
+                </div>
+                <div class="col-xs-6">
+                  <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
+                </div>
+              </div>
+              <%= f.input :location %>
+              <%= f.input :number_of_travellers %>
+              <%= f.submit "Réserver", class: "btn btn-primary w-100" %>
+            <% end %>
+          </div>
+       </div>
     </div>
+  </div>
+</div>
+

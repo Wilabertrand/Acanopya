@@ -3,7 +3,7 @@
 	<p>Découvrez nos merveilleux restaurants</p>
 	<ul>
 		<% @restaurants.each do |restaurant| %>
-			<li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+			<li><%= link_to restaurant.name, trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) %></li>
 		<% end %>
 	</ul>
 </div>
