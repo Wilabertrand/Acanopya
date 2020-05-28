@@ -11,15 +11,10 @@ Rails.application.routes.draw do
   resources :flats, only: [] do
     resources :flats_bookings, only: [:create]
   end
-  /resources :restaurants do
+  resources :restaurants, only: [] do
     resources :restaurants_bookings, only: [:create]
   end
-  resources :activities do
+  resources :activities, only: [] do
     resources :activities_bookings, only: [:create]
-  end/
-
-  resources :flats_bookings, only: [:show]
-  /resources :restaurants_bookings, only: [:show]
-  resources :activities_bookings, only: [:show]/
-  
+  end  
 end

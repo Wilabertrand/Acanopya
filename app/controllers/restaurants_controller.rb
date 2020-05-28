@@ -12,6 +12,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @booking_restaurant = BookingRestaurant.new
+		@trip = Trip.find(params[:trip_id])
   end
 
   private

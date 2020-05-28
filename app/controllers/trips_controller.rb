@@ -1,7 +1,6 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :update, :edit, :destroy]
 
-
     def index
         @trips = policy_scope(Trip).order(created_at: :desc)
         @trip = current_user.trips.new(trip_params)
@@ -15,7 +14,7 @@ class TripsController < ApplicationController
 
         end
     end
-    
+
     def show
         @trip = Trip.find(params[:id])
         @flats_bookings = BookingFlat.where(trip_id: @trip)

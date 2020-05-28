@@ -12,8 +12,11 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @booking_activity = BookingActivity.new
+		@trip = Trip.find(params[:trip_id])
   end
 
+  
   private
 
   def set_activity
