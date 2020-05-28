@@ -11,7 +11,7 @@ class TripsController < ApplicationController
         authorize_trip
         if @trip.save
             flash[:notice] = "Votre voyage a bien été créé"
-            redirect_to trip_flats_path(@trip)
+            redirect_to trip_restaurants_path(@trip.id)
         else
             flash[:alert] = "Votre voyage ne s'est pas bien créé"
             redirect_to(root_path)

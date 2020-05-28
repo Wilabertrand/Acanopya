@@ -5,9 +5,10 @@ class FlatsController < ApplicationController
 		@trip = Trip.find(params[:trip_id])
 		flats = Flat.where("address ILIKE ?", "%#{@trip.location}%").where("capacity >= ?", "#{@trip.number_of_travellers}")
 		@flats = policy_scope(flats).order(created_at: :desc) # à bien garder!!!
-		@flats = policy_scope(Flat).order(created_at: :desc) if @flats.empty? # à bien garder!!!
-		@trip = Trip.find(params[:trip_id])
-
+		if @flats.empty?
+			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
+			@flats = policy_scope(Flat).order(created_at: :desc) if @flats.empty? # à bien garder!!!
+		end
 	end
 
 	def show
