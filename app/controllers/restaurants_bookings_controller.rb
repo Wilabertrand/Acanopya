@@ -8,13 +8,9 @@ class RestaurantsBookingsController < ApplicationController
         @booking_restaurant.status = true
         authorize(@booking_restaurant)
         @trip = @booking_restaurant.trip
-		if @booking_restaurant.save
-            flash[:success] = "Votre réservation a bien été effectuée"
-            redirect_to trip_restaurants_path(@trip)
-		else
-			flash[:error] = "Quelque chose ne s'est pas passé comme prévu"
-			render @BookingRestaurant
-		end
+	    @booking_restaurant.save
+        flash[:success] = "Votre réservation a bien été effectuée"
+        redirect_to trip_restaurants_path(@trip)
 	end
 
     private
