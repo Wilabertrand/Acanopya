@@ -9,7 +9,7 @@
             <%= simple_form_for(@trip) do |f| %>
               <div class="row">
                 <div class="col-xs-6">
-                  <%= f.input :name, placeholder: "Où allez vous?" %>
+                  <%= f.input :name, placeholder: "Comment s'appelle ton voyage?" %>
                 </div>
                 <div class="col-xs-6">
                   <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
@@ -18,7 +18,7 @@
                   <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
                 </div>
               </div>
-              <%= f.input :location %>
+              <%= f.input :location, placeholder: "où vas-tu?" %>
               <%= f.input :number_of_travellers %>
               <%= f.submit "Réserver", class: "btn btn-primary w-100" %>
             <% end %>
