@@ -7,13 +7,9 @@ class FlatsBookingsController < ApplicationController
         @booking_flat.status = true
         authorize_booking_flats
         @trip = @booking_flat.trip
-		if @booking_flat.save
-			flash[:success] = "Votre logement est maintenant réservé"
-            redirect_to trip_flats_path(@trip)
-		else
-			flash[:error] = "Quelque chose ne s'est pas passé comme prévu"
-			render @flat
-        end
+		@booking_flat.save
+		flash[:success] = "Votre logement est maintenant réservé"
+        redirect_to trip_flats_path(@trip)
 	end
 
     private
