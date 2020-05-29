@@ -7,7 +7,7 @@
           <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
             <div class="card-trip">
               <div class='card-img'>
-                <%= image_tag 'photo.jpg', class:"card-img" %>
+                <%= image_tag '', class:"card-img" %>
               </div>
               <div class="card-trip-infos">
                 <div class='card-trip-text'>
@@ -44,7 +44,7 @@
       <% @activities.each do |activity| %>
         <%= link_to trip_activity_path(trip_id: @trip.id, id: activity.id) do %>
         <div class="card-trip">
-            <%= image_tag 'photo.jpg', class:"card-img" %>
+            <%= image_tag '', class:"card-img" %>
             <div class="card-trip-infos">
               <h2><%= activity.name %></h2>
               <p><%= activity.price %>€</p>
@@ -57,3 +57,4 @@
     </div>
   </div>
 </div>
+

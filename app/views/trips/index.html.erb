@@ -1,20 +1,27 @@
 <div class="container">
 	<h1>Tous Mes voyages</h1>
 	<ul>
-	<% @trips.each do |trip| %>
-		<li><%= link_to trip.name, trip_path(trip) %></li>
-		<% if policy(trip).show? %>
-			<p><%= link_to "Voir", trip_path(trip) %></p>
-		<% end %>
-		<% if policy(trip).edit? %>
-			<p><%= link_to "Updater", edit_trip_path(trip) %></p>
-		<% end %>
-		<% if policy(trip).destroy? %>
-			<%= link_to "Supprimer",
-                  trip_path(trip),
-                  method: :delete,
-                  data: { confirm: "Êtes-vous sûr?" } %>
-		<% end %>
-	<% end %>
+  <div class="sumup">
+    <% @trips.each do |trip| %>
+      <div class="cards-sumup">
+      <%= image_tag 'photo.jpg', class:"card-img" %>
+      <div class='card-infos-summup'>
+        <% if policy(trip).show? %>
+          <p><%= link_to "Voir", trip_path(trip) %></p>
+        <% end %>
+        <% if policy(trip).edit? %>
+          <p><%= link_to "Updater", edit_trip_path(trip) %></p>
+        <% end %>
+        <% if policy(trip).destroy? %>
+          <%= link_to "Supprimer",
+            trip_path(trip),
+            method: :delete,
+            data: { confirm: "Êtes-vous sûr?" } %>
+        <% end %>
+        </div>
+      </div>
+	  <% end %>
+  </div>
 	</ul>
 </div>
+
