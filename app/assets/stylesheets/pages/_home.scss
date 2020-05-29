@@ -8,11 +8,58 @@
 
 h1 {
   font-size: 70px;
-  font-family: 'Literata', serif;
-  color: #41E2BA;
+  color: $blue;
 }
 
 h5 {
   font-size: 20px;
   color: rgb(105, 105, 105);
 }
+ 
+
+#form_trip {
+  position: fixed;
+  top: 90px;
+  right: 200px;
+  border-radius: 15px;
+  background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);
+  #new_trip {
+    padding: 10px 20px;
+    width: 100%;
+    h2 {
+      color: white;
+    }
+    input, select {
+      border: none;
+      border-bottom: 2px solid white;
+      background: none;
+      border-radius: 0px;
+      color: white;
+      height: 35px;
+      &::placeholder {
+        color: white;
+        // font-size: 12px;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    select option {
+        color: gray;
+    }
+    input.btn-primary {
+      background: white;
+      color: $green;
+      border-radius: 30px;
+      width: 50% !important;
+      display:block;
+      margin: 30px auto 0;
+    }
+    label {
+      color: white;
+      font-size: 14px;
+    }
+  }
+}
+
+

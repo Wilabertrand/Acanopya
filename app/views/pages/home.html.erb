@@ -8,10 +8,10 @@
           Devenir collectivement<br>plus conscient de ses choix peut avoir un impact<br>cumulatif énorme.
         </h5>
       </div>
-      <div class="p-4 position-sticky" style="top:0; border-radius: 15px 0px 0px 15px; background-color: #41E2BA;">
-        <div class="d-flex justify-content-between mt-2">
+      <div class="col-md-5 pb-5">
+        <div class="p-4" id="form_trip">
           <%= simple_form_for(@trip) do |f| %>
-            <h4>Créez votre voyage</h4>
+            <h2>Créez votre voyage</h2>
             <%= f.input :name, placeholder: "Nommez votre voyage" %>              
             <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>              
             <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
@@ -19,6 +19,14 @@
             <%= f.input :number_of_travellers %>
             <%= f.submit "Réserver", class: "btn btn-primary w-100" %>
           <% end %>
+        </div>
+      </div>
+    </div>  
+    <div class="wrapper row">
+      <div class="col-md-7 pb-5">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et enim ac ex eleifend dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eget metus id lorem dictum fringilla ac sit amet tortor. Nam nec ullamcorper ligula, vel scelerisque lorem. Sed malesuada ligula ut maximus auctor. Vivamus auctor id lectus eu fermentum. Nulla convallis dictum imperdiet. Curabitur urna massa, maximus ut ex sed, volutpat pretium tortor. In hac habitasse platea dictumst. Vestibulum massa libero, vestibulum dictum cursus sed, tincidunt ut eros. Cras eu dui non augue convallis laoreet vitae a quam. Etiam pretium sem nec rhoncus volutpat. Aenean a nibh tristique, fringilla ante sit amet, egestas metus. Praesent dictum rhoncus posuere. Maecenas rutrum libero justo. Nullam venenatis mauris at sagittis egestas. Mauris metus turpis, euismod vel volutpat vitae, laoreet non massa. Sed lorem sapien, ultrices pretium congue in, consequat non justo. Nulla vitae consectetur purus. Suspendisse pulvinar tortor id nisi rhoncus vehicula. Vivamus sed sem magna. Curabitur sit amet tempor odio. Fusce scelerisque elit eu pulvinar consectetur. Nunc risus libero, dapibus quis accumsan sit amet, blandit ut risus. Nunc in efficitur enim. Proin consequat luctus mauris pharetra condimentum. Curabitur scelerisque dictum eros, nec volutpat ipsum mattis eget. Integer eu purus dignissim, accumsan diam ut, scelerisque nisl. Nulla venenatis egestas tincidunt. Nam aliquam ut ipsum rhoncus cursus. Nunc accumsan pellentesque posuere. Sed sit amet placerat ipsum. Cras gravida eros vel volutpat euismod. In id dapibus sem. Proin gravida nisl eu ipsum fermentum, quis gravida augue ornare. Vestibulum placerat risus tellus, sagittis tempus est lobortis ut. Vestibulum vestibulum feugiat libero, in maximus metus. Ut ac semper justo. Sed porta nisi quis erat imperdiet, sed semper nisl tincidunt. Integer finibus mi lorem, vel egestas quam finibus malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris vulputate rhoncus dui, nec interdum ex iaculis quis. Integer ullamcorper, ex at commodo pulvinar, quam risus auctor ligula, at vulputate urna ligula ac orci. Etiam odio leo, bibendum fringilla felis quis, porta condimentum dui. Suspendisse consequat gravida ligula, vehicula eleifend sem tempor sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sollicitudin ex et leo tristique, id gravida lorem lacinia. Duis risus purus, faucibus nec lacus nec, mollis varius arcu. Sed mattis velit ut sollicitudin tempor. Nulla aliquam eget velit quis hendrerit. Praesent sit amet justo sit amet elit scelerisque sagittis sit amet iaculis neque. Nullam maximus aliquet felis, et venenatis diam ullamcorper eu. Nullam efficitur lacus eu purus facilisis molestie. In quis tellus at purus finibus blandit vitae id felis. Aliquam erat volutpat. Duis faucibus ornare velit at auctor.
+        </p>
       </div>
     </div>
   </div>
