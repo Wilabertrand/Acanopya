@@ -1,4 +1,5 @@
 <div class="container">
+  <%= link_to "retour", trip_activities_path(@trip) %>
 	<h1><%= @activity.name %></h1>
 
 	<p><%= @activity.address %></p>
@@ -13,11 +14,19 @@
       <% end %>
     </div>
     <div class="d-flex justify-content-between mt-3 border-bottom">
+      <p><%= @activity.price %>€</p>
     </div>
 
     <div class="d-flex justify-content-between mt-3">
+      <p><strong>Total</strong></p>
+      <p><strong>200€</strong></p>
     </div>
   </div>
-
-
+  <div class="pb-2"><h3>Emplacement</h3>
+    <div id="map"
+      style="width: 100%; height: 600px; border-radius: 30px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>

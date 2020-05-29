@@ -1,0 +1,8 @@
+.btn-primary {
+  transition: scale .7s ease-out;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.03);
+    transition: scale .7s ease-out;
+  }
+}

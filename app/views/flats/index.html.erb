@@ -1,15 +1,41 @@
-<div class="container">
-<h1>Tous les hébergements</h1>
-<ul>
-  <% @flats.each do |flat| %>
-    <li><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></li>
-  <% end %>
-</ul>
-</div>
-
-<div
-  id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container py-4">
+  <div class="pb-4">
+    <h1 class="text-center">Nos hébergements</h1>
+    <h2 class="text-center">Eco-responsables</h2>
+    <br>
+    <br>
+  </div>
+  <div class="content-cards">
+    <div class="cards">
+      <% @flats.each do |flat| %>
+      <div class="card-trip">
+        <div class="card-img">
+          <%= image_tag 'photo.jpg', class:"card-img" %>
+        </div>
+        <%# if flat.photos.present? && flat.photos.attached? %>
+          <%#= cl_image_tag flat.photos.first.key, class:"card-img" %>
+        <%# else %>
+          <%#= image_tag 'jardins-partages.jpg', class:"card-img" %>
+        <%# end %>
+        <div class="card-trip-infos">
+          <div class="card-trip-text">
+            <h2><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>
+            <p>label : <%= flat.label %></p>
+            <p>pour <%= flat.capacity %> personnes</p>
+          </div>
+          <div class="card-trip-pricing">
+            <h2><%= flat.price %>0€</h2>
+            <img src="#" class="card-trip-user avatar-bordered"/>
+          </div>
+        </div>
+      </div> 
+      <% end %>
+    </div>
+    <div id="map"
+      id="map"
+      style="width: 500px; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>

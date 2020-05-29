@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Les détails</h1>
+  <%= link_to "retour", trip_flats_path(@trip) %>
   <p><%= @flat.name %></p>
   <p><%= @flat.price %>€</p>
   <p><%= @flat.label %></p>
@@ -25,6 +26,13 @@
     <div class="d-flex justify-content-between mt-3">
       <p><strong>Total</strong></p>
       <p><strong>200€</strong></p>
+    </div>
+  </div>
+  <div class="pb-2"><h3>Emplacement</h3>
+    <div id="map"
+      style="width: 100%; height: 600px; border-radius: 30px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>
