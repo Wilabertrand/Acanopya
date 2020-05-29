@@ -13,7 +13,7 @@ class FlatsBookingsController < ApplicationController
 		else
 			flash[:error] = "Quelque chose ne s'est pas passé comme prévu"
 			render @flat
-		end
+        end
 	end
 
     private
