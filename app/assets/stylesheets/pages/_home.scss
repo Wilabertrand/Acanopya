@@ -15,16 +15,17 @@ h5 {
   font-size: 20px;
   color: rgb(105, 105, 105);
 }
- 
+
 
 #form_trip {
   position: fixed;
-  top: 90px;
-  right: 200px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10%;
   border-radius: 15px;
   background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);
   #new_trip {
-    padding: 10px 20px;
+    padding: 0px 20px;
     width: 100%;
     h2 {
       color: white;
@@ -35,7 +36,6 @@ h5 {
       background: none;
       border-radius: 0px;
       color: white;
-      height: 35px;
       &::placeholder {
         color: white;
         // font-size: 12px;
@@ -58,6 +58,7 @@ h5 {
     label {
       color: white;
       font-size: 14px;
+      margin-bottom: 0;
     }
   }
 }
