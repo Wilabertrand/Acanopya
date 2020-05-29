@@ -1,7 +1,7 @@
 <div class="container py-4">
   <div class="pb-4">
-    <h1 class="text-center">Nos hébergements</h1>
-    <h2 class="text-center">Eco-responsables</h2>
+    <div class="subtitle"><h1>Nos hébergements</h1></div>
+    <div class="subtitle"><h2 class="subtitle">Eco-responsables</h2></div>
     <br>
     <br>
   </div>
@@ -12,11 +12,6 @@
         <div class="card-img">
           <%= image_tag 'photo.jpg', class:"card-img" %>
         </div>
-        <%# if flat.photos.present? && flat.photos.attached? %>
-          <%#= cl_image_tag flat.photos.first.key, class:"card-img" %>
-        <%# else %>
-          <%#= image_tag 'jardins-partages.jpg', class:"card-img" %>
-        <%# end %>
         <div class="card-trip-infos">
           <div class="card-trip-text">
             <h2><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>

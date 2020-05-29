@@ -1,8 +1,8 @@
-<div class="container py-4">
+<div class="container py-3">
   <div class="col-md-12">
     <div class="row">
       <div class="col-md-7 pb-5">
-        <h1 class="pb-5">Le voyage responsable<br>qui respecte l'environnement</h1>
+        <div class="title"><h1 class="pb-5">Le voyage responsable<br>qui respecte l'environnement</h1></div>
         <h5>
           Le voyage durable consiste à réduire son impact négatif<br>vers une destination donnée.
           Devenir collectivement<br>plus conscient de ses choix peut avoir un impact<br>cumulatif énorme.
@@ -11,12 +11,12 @@
       <div class="col-md-5 pb-5">
         <div class="p-4" id="form_trip">
           <%= simple_form_for(@trip) do |f| %>
-            <h2>Créez votre voyage</h2>
-            <%= f.input :name, placeholder: "Nommez votre voyage" %>              
+            <h2 class="pb-4">Créez votre voyage</h2>
+            <%= f.input :name, placeholder: "Nommez votre voyage", label: false %>     
             <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>              
             <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
-            <%= f.input :location %>
-            <%= f.input :number_of_travellers %>
+            <%= f.input :location, placeholder: "Où allez-vous ?", label: false %>
+            <%= f.input :number_of_travellers, placeholder: "Nombre de voyageurs", label: false %>
             <%= f.submit "Réserver", class: "btn btn-primary w-100" %>
           <% end %>
         </div>
@@ -25,7 +25,7 @@
     <div class="wrapper row">
       <div class="col-md-7 pb-5">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et enim ac ex eleifend dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent eget metus id lorem dictum fringilla ac sit amet tortor. Nam nec ullamcorper ligula, vel scelerisque lorem. Sed malesuada ligula ut maximus auctor. Vivamus auctor id lectus eu fermentum. Nulla convallis dictum imperdiet. Curabitur urna massa, maximus ut ex sed, volutpat pretium tortor. In hac habitasse platea dictumst. Vestibulum massa libero, vestibulum dictum cursus sed, tincidunt ut eros. Cras eu dui non augue convallis laoreet vitae a quam. Etiam pretium sem nec rhoncus volutpat. Aenean a nibh tristique, fringilla ante sit amet, egestas metus. Praesent dictum rhoncus posuere. Maecenas rutrum libero justo. Nullam venenatis mauris at sagittis egestas. Mauris metus turpis, euismod vel volutpat vitae, laoreet non massa. Sed lorem sapien, ultrices pretium congue in, consequat non justo. Nulla vitae consectetur purus. Suspendisse pulvinar tortor id nisi rhoncus vehicula. Vivamus sed sem magna. Curabitur sit amet tempor odio. Fusce scelerisque elit eu pulvinar consectetur. Nunc risus libero, dapibus quis accumsan sit amet, blandit ut risus. Nunc in efficitur enim. Proin consequat luctus mauris pharetra condimentum. Curabitur scelerisque dictum eros, nec volutpat ipsum mattis eget. Integer eu purus dignissim, accumsan diam ut, scelerisque nisl. Nulla venenatis egestas tincidunt. Nam aliquam ut ipsum rhoncus cursus. Nunc accumsan pellentesque posuere. Sed sit amet placerat ipsum. Cras gravida eros vel volutpat euismod. In id dapibus sem. Proin gravida nisl eu ipsum fermentum, quis gravida augue ornare. Vestibulum placerat risus tellus, sagittis tempus est lobortis ut. Vestibulum vestibulum feugiat libero, in maximus metus. Ut ac semper justo. Sed porta nisi quis erat imperdiet, sed semper nisl tincidunt. Integer finibus mi lorem, vel egestas quam finibus malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris vulputate rhoncus dui, nec interdum ex iaculis quis. Integer ullamcorper, ex at commodo pulvinar, quam risus auctor ligula, at vulputate urna ligula ac orci. Etiam odio leo, bibendum fringilla felis quis, porta condimentum dui. Suspendisse consequat gravida ligula, vehicula eleifend sem tempor sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam sollicitudin ex et leo tristique, id gravida lorem lacinia. Duis risus purus, faucibus nec lacus nec, mollis varius arcu. Sed mattis velit ut sollicitudin tempor. Nulla aliquam eget velit quis hendrerit. Praesent sit amet justo sit amet elit scelerisque sagittis sit amet iaculis neque. Nullam maximus aliquet felis, et venenatis diam ullamcorper eu. Nullam efficitur lacus eu purus facilisis molestie. In quis tellus at purus finibus blandit vitae id felis. Aliquam erat volutpat. Duis faucibus ornare velit at auctor.
+          L’écotourisme est une forme de tourisme apparue il y a une quarantaine d’année, à l’époque où la protection de l’environnement était au cœur de tous les débats.  Sa définition est pourtant beaucoup plus récente. Terme utilisé de manière abusive tant par les professionnels que par les voyageurs, l’écotourisme est une démarche touristique engagée en faveur du développement durable visant à préserver la biodiversité et les ressources culturelles d’une zone naturelle. La sensibilisation aux enjeux sociaux et environnementaux de toutes les parties prenantes, est primordiale. Ainsi, faire une randonnée dans un parc, accompagné d’un guide local, revient à faire de l’écotourisme car elle génère des revenus non négligeables pour les communautés d’accueil.Le tourisme responsable, solidaire, équitable ou encore l’écotourisme… le domaine du tourisme durable possède un nombre incalculable de variantes. Le point commun entre toutes ces notions est le respect des principes du développement durable.Le développement durable est un développement qui répond aux besoins du présent sans compromettre la possibilité, pour les générations à venir, de pouvoir répondre à leurs propres besoins. Brundtland, 1987. Si l’objectif de ces formes de tourisme alternatif est la prise en compte des « impacts économiques, sociaux et environnementaux actuels et futurs » (Organisation Mondiale du Tourisme), il est difficile aujourd’hui de différencier ces termes. Souvent confondus, les nuances entre eux sont parfois très subtiles. Quelles sont les différences entre ces terminaisons? Afin de vous aider à mieux cerner la notion de tourisme durable, nous vous proposons, dans cette page dédiée, une série de définitions des différents concepts. La liste suivante n’est pas exhaustive.
         </p>
       </div>
     </div>

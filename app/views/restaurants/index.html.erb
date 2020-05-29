@@ -1,16 +1,35 @@
-<div class="container">
-	<h1>Tous les restaurants</h1>
-	<p>Découvrez nos merveilleux restaurants</p>
-	<ul>
-		<% @restaurants.each do |restaurant| %>
-			<li><%= link_to restaurant.name, trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) %></li>
-		<% end %>
-	</ul>
-</div>
-
-<div 
-  id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container py-4">
+  <div class="pb-4">
+    <div class="subtitle"><h1>Nos Restaurants</h1></div>
+    <div class="subtitle"><h2 class="subtitle">Eco-responsables</h2></div>
+    <br>
+    <br>
+  </div>
+  <div class="content-cards">
+    <div class="cards">
+      <% @restaurants.each do |restaurant| %>
+      <div class="card-trip">
+        <div class="card-img">
+          <%= image_tag 'photo.jpg', class:"card-img" %>
+        </div>
+        <div class="card-trip-infos">
+          <div class="card-trip-text">
+            <h2><%= link_to restaurant.name, trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) %></h2>
+            <p>pour <%= restaurant.category %> personnes</p>
+          </div>
+          <div class="card-trip-pricing">
+            <h2><%= restaurant.price %>0€</h2>
+            <img src="#" class="card-trip-user avatar-bordered"/>
+          </div>
+        </div>
+      </div> 
+      <% end %>
+    </div>
+    <div id="map"
+      id="map"
+      style="width: 500px; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
