@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
 		@restaurants = Restaurant.near(@trip.location, 20)
 		if @restaurants.empty?
 			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
-			@restaurants = policy_scope(Flat).order(created_at: :desc)
+			@restaurants = policy_scope(Restaurant).order(created_at: :desc)
 		end
 
     @markers = @restaurants.map do |restaurant|

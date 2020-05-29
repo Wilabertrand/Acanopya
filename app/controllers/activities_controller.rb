@@ -7,7 +7,7 @@ class ActivitiesController < ApplicationController
 		@activities = Activity.near(@trip.location, 20)
 		if @activities.empty?
 			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
-			@activities = policy_scope(Flat).order(created_at: :desc)
+			@activities = policy_scope(Activity).order(created_at: :desc)
 		end
     @markers = @activities.map do |activity|
 			{
