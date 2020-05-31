@@ -1,0 +1,26 @@
+.t-tabs-underlined {
+  display: flex;
+  justify-content: center;
+  // text-align: justify;
+  // align-items: center;
+  background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);;
+  padding: 12px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.t-tabs-underlined .t-tab-underlined {
+  color: white;
+  font-size: 17px;
+  padding: 14px;
+  margin: 0px 50px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  //text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+}
+
+.t-tabs-underlined .t-tab-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid $blue;
+}

@@ -1,36 +1,47 @@
 <div class="container py-4">
-  <div class="pb-4">
+  <%# <div class="pb-4">
     <div class="subtitle"><h1>Nos hébergements</h1></div>
-    <div class="subtitle"><h2 class="subtitle">Eco-responsables</h2></div>
-    <br>
-    <br>
-  </div>
-  <div class="content-cards">
+  </div>   %>
+
+  <div class="content"> 
     <div class="cards">
       <% @flats.each do |flat| %>
-      <div class="card-trip">
-        <div class="card-img">
-          <%= image_tag 'photo.jpg', class:"card-img" %>
-        </div>
-        <div class="card-trip-infos">
-          <div class="card-trip-text">
-            <h2><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>
-            <p>label : <%= flat.label %></p>
-            <p>pour <%= flat.capacity %> personnes</p>
-          </div>
-          <div class="card-trip-pricing">
-            <h2><%= flat.price %>0€</h2>
-            <img src="#" class="card-trip-user avatar-bordered"/>
-          </div>
-        </div>
-      </div> 
-      <% end %>
+        <%#= link_to flat do %>
+          <div class="card-trip">  
+            <%= image_tag 'photo.jpg', class:"w-100 h-100" %>
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>
+                <p>label : <%= flat.label %></p>
+                <p>pour <%= flat.capacity %> personnes</p>
+              </div>
+              <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+            </div>
+          </div> 
+        <% end %> 
+      <%# end %>
     </div>
-    <div id="map"
-      id="map"
-      style="width: 500px; height: 100vh;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+    <div id="trip-box" style="width: 400px; height: 100vh;">
+      <ul class="list-inline t-tabs-underlined">
+        <li>
+          <%= link_to "Carte", trip_flats_path(@trip.id), class: "t-tab-underlined active" %>
+        </li>
+        <li>
+          <%= link_to "Voyage", trip_restaurants_path(@trip.id), class: "t-tab-underlined" %>
+        </li>
+      </ul>
+      <div id="map"
+        style="width: 400px; height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>  
   </div>
 </div>
+
+          
+         
+
+
+    

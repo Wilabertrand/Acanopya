@@ -1,21 +1,36 @@
-<div class="container">
-  <h1>Les détails</h1>
+<div class="container py-4">
   <%= link_to "retour", trip_flats_path(@trip) %>
-  <p><%= @flat.name %></p>
-  <p><%= @flat.price %>€</p>
-  <p><%= @flat.label %></p>
-  <p>pour <%= @flat.capacity %>personnes</p>
-  <p><%= @flat.address %></p>
-  <p><%= @flat.description %></p>
-  <div class="bg-white p-4 position-sticky" style="top:0; box-shadow: 0 5px 5px rgba(0,0,0,0.2); border-radius: 8px;">
-    <div class="d-flex justify-content-between mt-2">
-      <p><strong><%= @flat.price %>€</strong>/m²</p>
+	<h1><%= @flat.name %></h1>
+	<p><%= @flat.address %></p>
+
+  <div class="wrapper">
+    <div class="gallery">
+      <div class="img">
+        <%= image_tag 'photo.jpg', class:"w-100" %>
+      </div>
+      <div class="img">
+        <%= image_tag 'photo.jpg', class:"w-100" %>
+      </div>
+      <div class="img">
+        <%= image_tag 'photo.jpg', class:"w-100" %>
+      </div>
+      <div class="img">
+        <%= image_tag 'photo.jpg', class:"w-100" %>
+      </div>
+      <div class="img">
+        <%= image_tag 'photo.jpg', class:"w-100" %>
+      </div>
     </div>
-    <div>
+  </div>
+  
+
+	<p><%= @flat.price %>€</p>
+	<p><%= @flat.capacity %></p>
+	<p><%= @flat.description %></p>
+	<div>
       <%= simple_form_for [@flat, @booking_flat], url:  flat_flats_bookings_path(@flat) do |f| %>
           <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
-          <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>      
-          <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>  
+          <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %> 
         <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
       <% end %>
     </div>
@@ -36,3 +51,20 @@
     </div>
   </div>
 </div>
+
+
+<div class="row">
+    <div class="col-md-6">
+      <%= image_tag 'photo.jpg', class:"w-100 h-100" %>
+    </div>
+    <div class="col-md-6">
+      <div class="row row-cols-2">
+        <div class="col-md-6">
+          <%= image_tag 'photo.jpg', class:"w-100 h-100" %>
+        </div>
+        <div class="col-md-6"><%= image_tag 'photo.jpg', class:"w-100 h-100" %></div>
+        <div class="col-md-6"><%= image_tag 'photo.jpg', class:"w-100 h-100" %></div>
+        <div class="col-md-6"><%= image_tag 'photo.jpg', class:"w-100 h-100" %></div>
+      </div>
+    </div>
+  </div>
