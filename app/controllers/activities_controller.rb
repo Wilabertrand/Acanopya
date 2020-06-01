@@ -22,6 +22,8 @@ class ActivitiesController < ApplicationController
     @booking_activity = BookingActivity.new
     @trip = Trip.find(params[:trip_id])
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
+    @activity_review = ActivityReview.new
+    @activity_reviews = @activity.flat_reviews
   end
 
   

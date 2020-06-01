@@ -23,6 +23,8 @@ class RestaurantsController < ApplicationController
     @booking_restaurant = BookingRestaurant.new
     @trip = Trip.find(params[:trip_id])
     @markers = [{ lat: @restaurant.latitude, lng: @restaurant.longitude }]
+    @restaurant_review = RestaurantReview.new
+    @restaurant_reviews = @restaurant.flat_reviews
   end
 
   private

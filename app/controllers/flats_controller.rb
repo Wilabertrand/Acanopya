@@ -22,6 +22,9 @@ class FlatsController < ApplicationController
 		@booking_flat = BookingFlat.new
 		@trip = Trip.find(params[:trip_id])
 		@markers = [{ lat: @flat.latitude, lng: @flat.longitude }]
+		@flat_review = FlatReview.new
+        @flat_reviews = @flat.flat_reviews
+
 	end
 
 	private 

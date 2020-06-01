@@ -20,6 +20,9 @@ class TripsController < ApplicationController
         @restaurants = @trip.restaurants
         @booking_activities = @trip.booking_activities
         @activities = @trip.activities
+        @flat_review = FlatReview.new
+        @restaurant_review = RestaurantReview.new
+        @activity_review = ActivityReview.new
     end
 
     def create
