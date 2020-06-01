@@ -28,7 +28,7 @@
                         <p>Réservé du : <%= booking_flat.start_date %> au <%= booking_flat.end_date %></p> 
                         <p>Pour un montant de : <%= booking_flat.flat.price %>0€ / nuité</p>
                         <p>Statut de votre réservation : <%= booking_flat.status %></p>
-                        <p><%= link_to "Noter mon séjour", trip_flat_path(trip, booking_flat.flat) %></p>
+                        <p><%= link_to "Noter l'hébergement", trip_flat_path(trip, booking_flat.flat) %></p>
                     </div>
                 <% end %>
             </div>
@@ -58,7 +58,7 @@
                         <p>Réservé le : <%= booking_activity.start_date %></p> 
                         <p>Pour un montant de : <%= booking_activity.activity.price %>0€ / personne</p>
                         <p>Statut de votre réservation : <%= booking_activity.status %></p>
-                        <p><%= link_to "Noter mon activité", trip_activity_path(trip, booking_activity.activity) %></p>
+                        <p><%= link_to "Noter l'activité", trip_activity_path(trip, booking_activity.activity) %></p>
                     </div>
                 <% end %>
             </div>
