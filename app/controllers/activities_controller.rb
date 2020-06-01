@@ -24,7 +24,7 @@ class ActivitiesController < ApplicationController
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
     @activityreservation = BookingActivity.find_by(activity: @activity, trip: @trip)
     @activity_review = ActivityReview.new
-    @activity_reviews = @activity.activity_reviews
+    @activity_reviews = @booking_activity.activity_reviews
   end
 
   

@@ -34,14 +34,15 @@
       <div id="form_booking">
         <div class="d-flex justify-content-between mt-2">
           <div class="important">
-            <p><%= @flat.price %><span style="font-size: 16px">€/m²</span></p>
+            <p><%= @flat.price %><span style="font-size: 16px">0€</span></p>
           </div>
         </div>
-        <p><%= @flat.capacity %></p>
+        <p>Pour <%= @flat.capacity %>personnes </p>
         <div>
-          <%= simple_form_for [@flat, @booking_flat], url:  flat_flats_bookings_path(@flat) do |f| %>
+          <%= simple_form_for [@flat, @booking_flat], url: flat_flats_bookings_path(@flat) do |f| %>
               <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
               <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %> 
+              <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %> 
             <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
           <% end %>
         </div>
@@ -89,7 +90,7 @@
     </div>
   </div>
 
-<p>Moyenne : <%= @average_rating %></p>
+<p>Moyenne : <%#= @average_rating %></</p>
 
   <div class="reviews"> 
     <% @flat_reviews.each do |flat_review| %>

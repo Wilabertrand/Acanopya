@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     resources :flat_reviews, only: [:create]
   end
 
-
   resources :restaurants, only: [] do
     resources :restaurants_bookings, only: [:create]
   end

@@ -24,7 +24,7 @@ class FlatsController < ApplicationController
 		@markers = [{ lat: @flat.latitude, lng: @flat.longitude }]
 		@flatreservation = BookingFlat.find_by(flat: @flat, trip: @trip)
 		@flat_review = FlatReview.new
-        @flat_reviews = @flat.flat_reviews
+        @flat_reviews = @booking_flat.flat_reviews
 	end
 
 	private 
