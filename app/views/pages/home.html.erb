@@ -1,30 +1,33 @@
-<div class='background-img'>
-  <div class="banner">
-    <div class="container">
-       <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-        <h1>Acanopya</h1>
-        <h2>Le voyage durable</h2>
-          <div class='container'>
-            <h1>CREEZ VOTRE PREMIER</h1>
-            <%= simple_form_for(@trip) do |f| %>
-              <div class="row">
-                <div class="col-xs-6">
-                  <%= f.input :name, placeholder: "Nom de votre voyage voyage ?" %>
-                </div>
-                <div class="col-xs-6">
-                  <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>
-                </div>
-                <div class="col-xs-6">
-                  <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
-                </div>
-              </div>
-              <%= f.input :location, placeholder: "où allez-vous ?" %>
-              <%= f.input :number_of_travellers %>
-              <%= f.submit "Réserver", class: "btn btn-primary w-100" %>
-            <% end %>
-          </div>
-       </div>
+<div class="container py-3">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-7 pb-5">
+        <div class="title"><h1 class="pb-5">Le voyage responsable<br>qui respecte l'environnement</h1></div>
+        <h5>
+          Le voyage durable consiste à réduire son impact négatif<br>vers une destination donnée.
+          Devenir collectivement<br>plus conscient de ses choix peut avoir un impact<br>cumulatif énorme.🌍
+        </h5>
+      </div>
+      <div class="col-md-5 pb-5">
+        <div class="p-4" id="form_trip">
+          <%= simple_form_for(@trip) do |f| %>
+            <h2 class="pb-4">Créez votre voyage</h2>
+            <%= f.input :name, placeholder: "Nommez votre voyage", label: false %>     
+            <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %>              
+            <%= f.input :end_date, :as => :date, :order => [:day, :month, :year] %>
+            <%= f.input :location, placeholder: "Où allez-vous ?", label: false %>
+            <%= f.input :number_of_travellers, placeholder: "Nombre de voyageurs", label: false %>
+            <%= f.submit "Réserver", class: "btn btn-primary w-100" %>
+          <% end %>
+        </div>
+      </div>
+    </div>  
+    <div class="wrapper row">
+      <div class="subtitle col-md-7 pb-4">
+        <p>
+          L’écotourisme est une forme de tourisme apparue il y a une quarantaine d’année, à l’époque où la protection de l’environnement était au cœur de tous les débats.  Sa définition est pourtant beaucoup plus récente. Terme utilisé de manière abusive tant par les professionnels que par les voyageurs, l’écotourisme est une démarche touristique engagée en faveur du développement durable visant à préserver la biodiversité et les ressources culturelles d’une zone naturelle. La sensibilisation aux enjeux sociaux et environnementaux de toutes les parties prenantes, est primordiale. Ainsi, faire une randonnée dans un parc, accompagné d’un guide local, revient à faire de l’écotourisme car elle génère des revenus non négligeables pour les communautés d’accueil.Le tourisme responsable, solidaire, équitable ou encore l’écotourisme… le domaine du tourisme durable possède un nombre incalculable de variantes. Le point commun entre toutes ces notions est le respect des principes du développement durable.Le développement durable est un développement qui répond aux besoins du présent sans compromettre la possibilité, pour les générations à venir, de pouvoir répondre à leurs propres besoins. Brundtland, 1987. Si l’objectif de ces formes de tourisme alternatif est la prise en compte des « impacts économiques, sociaux et environnementaux actuels et futurs » (Organisation Mondiale du Tourisme), il est difficile aujourd’hui de différencier ces termes. Souvent confondus, les nuances entre eux sont parfois très subtiles. Quelles sont les différences entre ces terminaisons? Afin de vous aider à mieux cerner la notion de tourisme durable, nous vous proposons, dans cette page dédiée, une série de définitions des différents concepts. La liste suivante n’est pas exhaustive.
+        </p>
+      </div>
     </div>
   </div>
 </div>
-

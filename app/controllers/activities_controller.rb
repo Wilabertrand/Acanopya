@@ -3,12 +3,12 @@ class ActivitiesController < ApplicationController
   
   def index
     @trip = Trip.find(params[:trip_id])
-		activities = Activity.where("address ILIKE ?", "%#{@trip.location}%")
-		@activities = policy_scope(activities).order(created_at: :desc).geocoded
+		@activities = policy_scope(Activity).order(created_at: :desc).geocoded
+		@activities = Activity.near(@trip.location, 20)
 		if @activities.empty?
 			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
-			@activities = policy_scope(Activity).order(created_at: :desc) if @activities.empty?
-    end
+			@activities = policy_scope(Activity).order(created_at: :desc)
+		end
     @markers = @activities.map do |activity|
 			{
         lat: activity.latitude,
@@ -20,7 +20,8 @@ class ActivitiesController < ApplicationController
 
   def show
     @booking_activity = BookingActivity.new
-		@trip = Trip.find(params[:trip_id])
+    @trip = Trip.find(params[:trip_id])
+    @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
   end
 
   

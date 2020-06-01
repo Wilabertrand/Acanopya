@@ -7,13 +7,9 @@ class ActivitiesBookingsController < ApplicationController
         @booking_activity.status = true
         authorize(@booking_activity)
         @trip = @booking_activity.trip
-		if @booking_activity.save
-			flash[:success] = "Votre activité est maintenant réservée"
-            redirect_to trip_activities_path(@trip)
-		else
-			flash[:error] = "Quelque chose ne s'est pas passé comme prévu"
-			render @activity
-		end
+		@booking_activity.save
+        flash[:success] = "Votre activité est maintenant réservée"
+        redirect_to trip_activities_path(@trip)
 	end
 
     private

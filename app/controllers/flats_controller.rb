@@ -3,11 +3,11 @@ class FlatsController < ApplicationController
 
 	def index
 		@trip = Trip.find(params[:trip_id])
-		flats = Flat.where("address ILIKE ?", "%#{@trip.location}%").where("capacity >= ?", "#{@trip.number_of_travellers}")
-		@flats = policy_scope(flats).order(created_at: :desc).geocoded
+		@flats = policy_scope(Flat).order(created_at: :desc).geocoded
+		@flats = Flat.near(@trip.location, 20).where("capacity >= ?", "#{@trip.number_of_travellers}")
 		if @flats.empty?
 			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
-			@flats = policy_scope(Flat).order(created_at: :desc) if @flats.empty?
+			@flats = policy_scope(Flat).order(created_at: :desc)
 		end
 		@markers = @flats.map do |flat|
 			{
@@ -21,6 +21,7 @@ class FlatsController < ApplicationController
 	def show
 		@booking_flat = BookingFlat.new
 		@trip = Trip.find(params[:trip_id])
+		@markers = [{ lat: @flat.latitude, lng: @flat.longitude }]
 	end
 
 	private 
