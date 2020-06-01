@@ -6,9 +6,9 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 60px 60px;
   // grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 10px 10px;
 }
 
 

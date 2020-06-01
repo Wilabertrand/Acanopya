@@ -10,3 +10,18 @@
 	<% end %>
 	</div>
 </div>
+
+	<div class="sumup">
+		 <% @flats_bookings.each do |booking|%>
+			<div class="cards-sumup">
+			<% if booking.potager.photos.present? %>
+				<%= cl_image_tag booking.potager.photos.first.key, class:'card-booking-img-sumup' %>
+				<% end %>
+				<div class="card-booking-infos-sumup">
+      				<li><%= booking.status%></li>
+					<li><%= booking.flat.name%></li>
+					<p><%= link_to 'Voir', trip_path(trip_id: @trip.id, id: trip.id) %></p>
+				</div>
+			</div>
+		<% end %>
+	</div>

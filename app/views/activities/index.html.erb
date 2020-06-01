@@ -7,21 +7,23 @@
   <div class="content">
     <div class="cards">
       <% @activities.each do |activity| %>
-        <%#= link_to activity do %>
-          <div class="card-trip">
+       <%= link_to trip_activity_path(trip_id: @trip.id, id: activity.id) do %>
+          <div class="card-trip">  
             <%= image_tag 'photo.jpg' %>
             <div class="card-trip-infos">
               <div>
                 <p><%= activity.address %></p>
-                <h2 class="pb-2 mb-2 border-bottom"><%= link_to activity.name, trip_activity_path(trip_id: @trip.id, id: activity.id) %></h2>
+                <h2 class="pb-2 mb-2 border-bottom">
+                  <%= activity.name %>
+                </h2>
                 <p>pour <%= activity.category %> personnes</p>
               </div>
               <h2 class="card-trip-pricing"><%= activity.price %>€</h2>
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
             </div>
-          </div>
-        <% end %>
-      <%# end %>
+          </div> 
+        <% end %> 
+      <% end %>
     </div>
     <div id="trip-box" style="width: 300px; height: 100vh;">
       <ul class="list-inline t-tabs-underlined">
