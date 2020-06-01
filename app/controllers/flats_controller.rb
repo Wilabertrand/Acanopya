@@ -22,9 +22,12 @@ class FlatsController < ApplicationController
 		@booking_flat = BookingFlat.new
 		@trip = Trip.find(params[:trip_id])
 		@markers = [{ lat: @flat.latitude, lng: @flat.longitude }]
+		authorize(@flat)
 		@flatreservation = BookingFlat.find_by(flat: @flat, trip: @trip)
 		@flat_review = FlatReview.new
-        @flat_reviews = @booking_flat.flat_reviews
+		authorize(@flat_review)
+		@flat_reviews = @booking_flat.flat_reviews
+		@average_rating = @flat_reviews.average(:rating)
 	end
 
 	private 

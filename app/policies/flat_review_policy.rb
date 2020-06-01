@@ -10,7 +10,7 @@ class FlatReviewPolicy < ApplicationPolicy
     end
   
     def create?
-        true
+      true
     end
   
 end

@@ -28,6 +28,7 @@ class RestaurantsController < ApplicationController
     @restaurant_review = RestaurantReview.new
     authorize(@restaurant_review)
     @restaurant_reviews = @booking_restaurant.restaurant_reviews
+    @average_rating = @restaurant_reviews.average(:rating)
   end
 
   private
