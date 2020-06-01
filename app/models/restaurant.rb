@@ -1,6 +1,7 @@
 class Restaurant < ApplicationRecord
   has_many :trips, through: :booking_restaurants
   has_many :booking_restaurants
+  has_many_attached :photos
 
   validates :name, presence: true
   validates :address, presence: true

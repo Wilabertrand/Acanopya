@@ -1,13 +1,14 @@
 <div class="container py-4">
+<%= render 'shared/tab' %>
   <%# <div class="pb-4">
     <div class="subtitle"><h1>Nos hébergements</h1></div>
   </div>   %>
 
-  <div class="content"> 
+  <div class="content">
     <div class="cards">
       <% @activities.each do |activity| %>
         <%#= link_to activity do %>
-          <div class="card-trip">  
+          <div class="card-trip">
             <%= image_tag 'photo.jpg' %>
             <div class="card-trip-infos">
               <div>
@@ -18,8 +19,8 @@
               <h2 class="card-trip-pricing"><%= activity.price %>€</h2>
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
             </div>
-          </div> 
-        <% end %> 
+          </div>
+        <% end %>
       <%# end %>
     </div>
     <div id="trip-box" style="width: 300px; height: 100vh;">
@@ -36,6 +37,6 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>  
+    </div>
   </div>
 </div>
