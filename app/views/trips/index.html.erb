@@ -17,8 +17,8 @@
                         data: { confirm: "Êtes-vous sûr?" } %></span>
                 <% end %>
             </div>
-            <% trip.booking_flats.each do |booking_flat| %> 
             <p>Mes réservations d'hébergements</p>
+            <% trip.booking_flats.each do |booking_flat| %> 
             <div class="reservation-box">
                 <div class="cards-sumup">
                     <%= image_tag 'photo.jpg', class:"card-booking-img-sumup" %>
@@ -32,8 +32,8 @@
                     </div>
                 <% end %>
             </div>
-            <% trip.booking_restaurants.each do |booking_restaurant| %> 
             <p>Mes réservations de restaurants</p>
+            <% trip.booking_restaurants.each do |booking_restaurant| %> 
             <div class="reservation-box">
                 <div class="cards-sumup">
                     <%= image_tag 'photo.jpg', class:"card-booking-img-sumup" %>
@@ -47,14 +47,14 @@
                     </div>
                 <% end %>
             </div>
-            <% trip.booking_activities.each do |booking_activity| %> 
             <p>Mes réservations d'activités</p>
+            <% trip.booking_activities.each do |booking_activity| %> 
             <div class="reservation-box">
                 <div class="cards-sumup">
                     <%= image_tag 'photo.jpg', class:"card-booking-img-sumup" %>
                     <%#= cl_image_tag booking_flat.flat.photos.first.key, class:'card-booking-img-sumup' %>
                     <div class="card-booking-infos-sumup">
-                        <p><%= link_to booking_activities.activity.name, trip_activity_path(trip, booking_activity.activity) %></p>
+                        <p><%= link_to booking_activity.activity.name, trip_activity_path(trip, booking_activity.activity) %></p>
                         <p>Réservé le : <%= booking_activity.start_date %></p> 
                         <p>Pour un montant de : <%= booking_activity.activity.price %>0€ / personne</p>
                         <p>Statut de votre réservation : <%= booking_activity.status %></p>
