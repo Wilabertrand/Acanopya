@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'restaurant_reviews/create'
   get 'flat_reviews/create'
   devise_for :users
   root to: 'pages#home'
