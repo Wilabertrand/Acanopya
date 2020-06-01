@@ -3,3 +3,83 @@
 //   size: 40px;
 //   font-family: $font;
 // }
+
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,500;0,563;1,500;1,562&display=swap');
+
+.title {
+  h1 {
+    font-size: 70px;
+    color: $blue;
+    line-height: 80px;
+  }
+}
+
+.subtitle {
+  h1 {
+    font-size: 40px;
+    color: $blue;
+    text-align: center;
+  }
+  h2 {
+    font-family: helvetica;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+h5 {
+  font-family: helvetica;
+  font-size: 20px;
+  color: rgb(105, 105, 105);
+  line-height: 30px;
+}
+
+
+#form_trip {
+  position: fixed;
+  top: 80px;
+  right: 200px;
+  border-radius: 15px;
+  background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);
+  #new_trip {
+    padding: 0px 20px;
+    width: 100%;
+    h2 {
+      color: white;
+    }
+    input, select {
+      border: none;
+      border-bottom: 1.2px solid white;
+      background: none;
+      border-radius: 0px;
+      color: white;
+      height: 50px;
+      &::placeholder {
+        color: white;
+        // font-size: 12px;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    select option {
+        color: gray;
+    }
+    input.btn-primary {
+      background: white;
+      color: $green;
+      border-radius: 30px;
+      width: 50% !important;
+      display:block;
+      margin: 30px auto 0;
+    }
+    label {
+      color: white;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+  }
+}
+
+
