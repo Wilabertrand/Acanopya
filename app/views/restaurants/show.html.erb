@@ -57,3 +57,33 @@
     </div>
   </div>
 
+  <div class="reviews"> 
+    <% @restaurant_reviews.each do |restaurant_review| %>
+      <p>
+        <%= restaurant_review.user.first_name %>
+        <% restaurant_review.rating.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - restaurant_review.rating).times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+      </p>
+      <p><%= restaurant_review.content %></p>
+    <% end %>
+  </div>
+  <% if @restaurantreservation %>
+  <div class="review">
+    <h2>Laissez une évaluation</h2>
+    <%= simple_form_for @restaurant_review, url: restaurants_booking_restaurant_reviews_path(@restaurantreservation) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, as: :hidden  %>
+      <div class="my-3">
+        <% 5.times do |index| %>
+          <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
+        <% end %>
+      </div>
+      <%= f.submit class: "btn btn-primary", value: "Valider" %>
+    <% end %>
+  <% end %>
+  </div>
+
