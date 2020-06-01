@@ -1,9 +1,10 @@
 <div class="container py-4">
+<%= render 'shared/tab' %>
   <%# <div class="pb-4">
     <div class="subtitle"><h1>Nos hébergements</h1></div>
   </div>   %>
 
-  <div class="content"> 
+  <div class="content">
     <div class="cards">
       <% @restaurants.each do |restaurant| %>
         <%= link_to trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) do %>
@@ -36,6 +37,6 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>  
+    </div>
   </div>
 </div>
