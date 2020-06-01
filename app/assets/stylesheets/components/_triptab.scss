@@ -32,12 +32,13 @@
   border-radius: 8px 8px 0px 0px;
 }
 
-#trip-card-title {
+.trip-card-title {
+  margin-top: 8px;
   border-bottom: 2px dotted $green;
   padding: 30px 20px 5px 20px;
   background: white;
   border-radius: 5px 5px 0px 0px;
-  width: 250px;
+  width: 270px;
   color: $green;
   h6 {
     font-family: Helvetica, sans-serif;
@@ -58,18 +59,24 @@
   background: white;
   //box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 5px;
-  width: 250px;
+  width: 270px;
   line-height: 0.4;
   font-weight: lighter;
   font-size: 14px;
   span {
     font-weight: 600;
+    .two {
+      font-size: 12px;
+    }
   }
 }
 
 .trip-column {
-  
+  overflow: scroll;
+  height: 600px;
   width: 300px;
   background: #f5f5f5;
+  padding: 8px 10px 8px 10px;  
+  border-top: 1px solid lightgray;
   //opacity: 0.3;
 }

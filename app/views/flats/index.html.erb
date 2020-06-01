@@ -32,7 +32,7 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="trip" role="tabpanel" aria-labelledby="trip-tab">
           <div class="trip-column">
-            <div id="trip-card-title">
+            <div class="trip-card-title">
               <h6>Restaurants</h6>
             </div>
             <% unless @trip.restaurants.empty? %>
@@ -41,6 +41,7 @@
                   <div class="left">
                     <p><%= restaurant.name %></p>
                     <p><span><%= restaurant.price %>€/jour</span></p>
+                    <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
                   </div>
                   <div class="right">
                     <a data-dismiss="alert" aria-label="Close">
@@ -50,21 +51,48 @@
                 </div>
               <% end %>
             <% end %>
-          </div>
-          <div>
-            <h3>Hébergements</h3>
-            <% unless @trip.flats.empty? %>
-              <% @trip.flats.each do |flat| %>
-                <p><%= flat.name %></p>
+            <div>
+              <div class="trip-card-title">
+                <h6>Hébergements</h6>
+              </div>
+              <% unless @trip.flats.empty? %>
+                <% @trip.flats.each do |flat| %>
+                  <div id="trip-card">
+                    <div class="left">
+                      <p><%= flat.name %></p>
+                      <p><span><%= flat.price %>€/jour</span></p>
+                      <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
+                    </div>
+                    <div class="right">
+                      <a data-dismiss="alert" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                      </a>
+                    </div>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
-          </div><div>
-            <h3>Activités</h3>
-            <% unless @trip.activities.empty? %>
-              <% @trip.activities.each do |activity| %>
-                <p><%= activity.name %></p>
+            </div>
+            <div>
+              <div class="trip-card-title">
+                <h6>Activités</h6>
+              </div>
+              <% unless @trip.activities.empty? %>
+                <% @trip.activities.each do |activity| %>
+                  <div id="trip-card">
+                    <div class="left">
+                      <p><%= activity.name %></p>
+                      <p><span><%= activity.price %>€/jour</span></p>
+                      <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
+                    </div>
+                    <div class="right">
+                      <a data-dismiss="alert" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                      </a>
+                    </div>
+                  </div>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         </div>
         <div class="tab-pane fade"
