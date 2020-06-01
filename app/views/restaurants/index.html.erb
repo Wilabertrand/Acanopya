@@ -1,16 +1,41 @@
-<div class="container">
-	<h1>Tous les restaurants</h1>
-	<p>Découvrez nos merveilleux restaurants</p>
-	<ul>
-		<% @restaurants.each do |restaurant| %>
-			<li><%= link_to restaurant.name, trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) %></li>
-		<% end %>
-	</ul>
-</div>
+<div class="container py-4">
+  <%# <div class="pb-4">
+    <div class="subtitle"><h1>Nos hébergements</h1></div>
+  </div>   %>
 
-<div 
-  id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="content"> 
+    <div class="cards">
+      <% @restaurants.each do |restaurant| %>
+        <%#= link_to restaurant do %>
+          <div class="card-trip">  
+            <%= image_tag 'photo.jpg' %>
+            <div class="card-trip-infos">
+              <div>
+                <p><%= restaurant.address %></p>
+                <h2 class="pb-2 mb-2 border-bottom"><%= link_to restaurant.name, trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) %></h2>
+                <p>pour <%= restaurant.category %> personnes</p>
+              </div>
+              <h2 class="card-trip-pricing"><%= restaurant.price %>€</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+            </div>
+          </div> 
+        <% end %> 
+      <%# end %>
+    </div>
+    <div id="trip-box" style="width: 300px; height: 100vh;">
+      <ul class="list-inline t-tabs-underlined">
+        <li>
+          <%= link_to "Carte", trip_restaurants_path(@trip.id), class: "t-tab-underlined active" %>
+        </li>
+        <li>
+          <%= link_to "Voyage", trip_restaurants_path(@trip.id), class: "t-tab-underlined" %>
+        </li>
+      </ul>
+      <div id="map"
+        style="width: 300px; height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>  
+  </div>
 </div>

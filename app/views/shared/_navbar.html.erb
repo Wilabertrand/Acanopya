@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar  sticky-top navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo-acanopya.png" %>
     <% end %>
@@ -13,19 +13,12 @@
       <% if user_signed_in? %>
        <% if @trip&.persisted? %>
           <li class="nav-item active">
-            <%= link_to "Votre sélections flats", trip_flats_path(@trip.id), class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Votre sélections restaurants", trip_restaurants_path(@trip.id), class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "Votre sélections activités", trip_activities_path(@trip.id), class: "nav-link" %>
+            <%= link_to "Mes voyages", trips_path, class: "nav-link" %>
           </li>
           <% end %>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Mes séjours", trips_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

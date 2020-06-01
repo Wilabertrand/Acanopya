@@ -1,0 +1,19 @@
+<div class="container pt-4 pb-1">
+  <ul class="list-inline tabs-underlined">
+    <%# if current_page?(flats_path, restaurants_path, activities_path) %>
+      <% if user_signed_in? %>
+        <% if @trip&.persisted? %>
+          <li>
+            <%= link_to "Hébergements", trip_flats_path(@trip.id), class: "tab-underlined active" %>
+          </li>
+          <li>
+            <%= link_to "Restaurants", trip_restaurants_path(@trip.id), class: "tab-underlined" %>
+          </li>
+          <li>
+            <%= link_to "Activités", trip_activities_path(@trip.id), class: "tab-underlined" %>
+          </li>
+        <% end %>
+      <% end %>
+    <%# end %>
+  </ul>
+</div>
