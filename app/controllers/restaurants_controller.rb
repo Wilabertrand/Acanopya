@@ -26,7 +26,6 @@ class RestaurantsController < ApplicationController
     authorize(@restaurant)
     @restaurantreservation = BookingRestaurant.find_by(restaurant: @restaurant, trip: @trip)
     @restaurant_review = RestaurantReview.new
-    authorize(@restaurant_review)
     @restaurant_reviews = @booking_restaurant.restaurant_reviews
     @average_rating = @restaurant_reviews.average(:rating)
   end

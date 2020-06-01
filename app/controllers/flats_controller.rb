@@ -25,7 +25,6 @@ class FlatsController < ApplicationController
 		authorize(@flat)
 		@flatreservation = BookingFlat.find_by(flat: @flat, trip: @trip)
 		@flat_review = FlatReview.new
-		authorize(@flat_review)
 		@flat_reviews = @booking_flat.flat_reviews
 		@average_rating = @flat_reviews.average(:rating)
 	end
