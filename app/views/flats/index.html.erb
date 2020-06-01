@@ -24,19 +24,52 @@
       <%# end %>
     </div>
     <div id="trip-box" style="width: 300px; height: 100vh;">
-      <ul class="list-inline t-tabs-underlined">
-        <li>
-          <%= link_to "Carte", trip_flats_path(@trip.id), class: "t-tab-underlined active" %>
+      <ul class="list-inline t-tabs-underlined nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="t-tab-underlined nav-link" id="map-tab" data-toggle="tab" href="#map" role="tab" aria-controls="map" aria-selected="true">Carte</a>
         </li>
-        <li>
-          <%= link_to "Voyage", trip_restaurants_path(@trip.id), class: "t-tab-underlined" %>
+        <li class="nav-item">
+          <a class="t-tab-underlined nav-link active" id="trip-tab" data-toggle="tab" href="#trip" role="tab" aria-controls="trip" aria-selected="false">Voyage</a> 
         </li>
       </ul>
-      <div id="map"
-        style="width: 300px; height: 100vh;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade"
+          id="map"
+          role="tabpanel"
+          aria-labelledby="map-tab"
+          style="width: 300px; height: 100vh;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+
+        <div class="tab-pane fade show active" id="trip" role="tabpanel" aria-labelledby="trip-tab">
+          <div>
+            <h3>Restaurants</h3>
+            <% unless @trip.restaurants.empty? %>
+              <% @trip.restaurants.each do |restaurant| %>
+                <p><%= restaurant.name %></p>
+              <% end %>
+            <% end %>
+          </div>
+          <div>
+            <h3>Hébergements</h3>
+            <% unless @trip.flats.empty? %>
+              <% @trip.flats.each do |flat| %>
+                <p><%= flat.name %></p>
+              <% end %>
+            <% end %>
+          </div><div>
+            <h3>Activités</h3>
+            <% unless @trip.activities.empty? %>
+              <% @trip.activities.each do |activity| %>
+                <p><%= activity.name %></p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
+      
     </div>  
   </div>
 </div>

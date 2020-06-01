@@ -43,7 +43,8 @@
         <div>
           <%= simple_form_for [@flat, @booking_flat], url:  flat_flats_bookings_path(@flat) do |f| %>
               <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
-              <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %> 
+              <%= f.input :start_date, as: :date, order: [:day, :month, :year], selected: @trip.start_date %>
+              <%= f.input :end_date, as: :date, order: [:day, :month, :year], selected: @trip.end_date %>
             <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
           <% end %>
         </div>
