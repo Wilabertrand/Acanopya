@@ -6,13 +6,13 @@
   <div class="content"> 
     <div class="cards">
       <% @flats.each do |flat| %>
-        <%#= link_to flat do %>
+      <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
           <div class="card-trip">  
             <%= image_tag 'photo.jpg' %>
             <div class="card-trip-infos">
               <div>
                 <p><%= flat.address %></p>
-                <h2 class="pb-2 mb-2 border-bottom"><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>
+                <h2 class="pb-2 mb-2 border-bottom"><%= flat.name %></h2>
                 <p>label : <%= flat.label %></p>
                 <p>pour <%= flat.capacity %> personnes</p>
               </div>
@@ -20,8 +20,8 @@
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
             </div>
           </div> 
-        <% end %> 
-      <%# end %>
+      <% end %> 
+      <% end %>
     </div>
     <div id="trip-box" style="width: 300px; height: 100vh;">
       <ul class="list-inline t-tabs-underlined">

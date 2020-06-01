@@ -6,13 +6,13 @@
   <div class="content"> 
     <div class="cards">
       <% @restaurants.each do |restaurant| %>
-        <%#= link_to restaurant do %>
+        <%= link_to trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) do %>
           <div class="card-trip">  
             <%= image_tag 'photo.jpg' %>
             <div class="card-trip-infos">
               <div>
                 <p><%= restaurant.address %></p>
-                <h2 class="pb-2 mb-2 border-bottom"><%= link_to restaurant.name, trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) %></h2>
+                <h2 class="pb-2 mb-2 border-bottom"><%= restaurant.name %></h2>
                 <p>pour <%= restaurant.category %> personnes</p>
               </div>
               <h2 class="card-trip-pricing"><%= restaurant.price %>€</h2>
@@ -20,7 +20,7 @@
             </div>
           </div> 
         <% end %> 
-      <%# end %>
+      <% end %>
     </div>
     <div id="trip-box" style="width: 300px; height: 100vh;">
       <ul class="list-inline t-tabs-underlined">
