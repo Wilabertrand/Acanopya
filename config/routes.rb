@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'activity_reviews/create'
-  get 'restaurant_reviews/create'
-  get 'flat_reviews/create'
   devise_for :users
   root to: 'pages#home'
 
@@ -14,10 +11,22 @@ Rails.application.routes.draw do
   resources :flats, only: [] do
     resources :flats_bookings, only: [:create]
   end
+  resources :flats_bookings, only: [] do
+    resources :flat_reviews, only: [:create]
+  end
+
+
   resources :restaurants, only: [] do
     resources :restaurants_bookings, only: [:create]
   end
+  resources :restaurants_bookings, only: [] do
+    resources :restaurant_reviews, only: [:create]
+  end
+
   resources :activities, only: [] do
     resources :activities_bookings, only: [:create]
-  end  
+  end
+  resources :activities_bookings, only: [] do
+    resources :activity_reviews, only: [:create]
+  end
 end
