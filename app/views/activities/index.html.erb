@@ -22,7 +22,7 @@
         <% end %> 
       <%# end %>
     </div>
-    <div id="trip-box" style="width: 400px; height: 100vh;">
+    <div id="trip-box" style="width: 300px; height: 100vh;">
       <ul class="list-inline t-tabs-underlined">
         <li>
           <%= link_to "Carte", trip_activities_path(@trip.id), class: "t-tab-underlined active" %>
@@ -32,7 +32,7 @@
         </li>
       </ul>
       <div id="map"
-        style="width: 400px; height: 100vh;"
+        style="width: 300px; height: 100vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
