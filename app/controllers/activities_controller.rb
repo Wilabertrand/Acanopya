@@ -23,7 +23,7 @@ class ActivitiesController < ApplicationController
     @trip = Trip.find(params[:trip_id])
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
     @activity_review = ActivityReview.new
-    @activity_reviews = @activity.flat_reviews
+    @activity_reviews = @activity.activity_reviews
   end
 
   
