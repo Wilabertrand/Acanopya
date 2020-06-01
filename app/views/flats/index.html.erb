@@ -8,10 +8,11 @@
       <% @flats.each do |flat| %>
         <%#= link_to flat do %>
           <div class="card-trip">  
-            <%= image_tag 'photo.jpg', class:"w-100 h-100" %>
+            <%= image_tag 'photo.jpg' %>
             <div class="card-trip-infos">
               <div>
-                <h2><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>
+                <p><%= flat.address %></p>
+                <h2 class="pb-2 mb-2 border-bottom"><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>
                 <p>label : <%= flat.label %></p>
                 <p>pour <%= flat.capacity %> personnes</p>
               </div>

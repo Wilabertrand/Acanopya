@@ -24,3 +24,51 @@
 //     grid-template-columns: 1fr;
 //   }
 // }
+
+#form_booking {
+  position: sticky;
+  top: 0;
+  right: 200px;
+  border-radius: 15px;
+  background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);
+  padding: 30px;
+    p {
+      color: white;
+    }
+    .important {
+      font-size: 26px;
+    }
+    .btn.btn-primary {
+      background: white;
+      color: $green;
+      border-radius: 30px;
+      width: 50% !important;
+      display:block;
+      margin: 30px auto 0;
+    }
+    input, select {
+      border: none;
+      border-bottom: 1.2px solid white;
+      background: none;
+      border-radius: 0px;
+      color: white;
+      height: 50px;
+      &::placeholder {
+        color: white;
+        // font-size: 12px;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    select option {
+        color: gray;
+    }
+    
+    label {
+      color: white;
+      font-size: 13px;
+    }
+  }
+
+
