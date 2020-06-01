@@ -37,7 +37,7 @@
           </div>
         </div>
         <p><%= @restaurant.category %></p>
-        <div>
+        <div class='padding'>
           <%= simple_form_for [@restaurant, @booking_restaurant], url:  restaurant_restaurants_bookings_path(@restaurant) do |f| %>
               <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
               <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %> 

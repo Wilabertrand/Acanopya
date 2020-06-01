@@ -3,19 +3,29 @@ class RestaurantsController < ApplicationController
   
   def index
     @trip = Trip.find(params[:trip_id])
-		@restaurants = policy_scope(Restaurant).order(created_at: :desc).geocoded
-		@restaurants = Restaurant.near(@trip.location, 20)
-		if @restaurants.empty?
-			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
-			@restaurants = policy_scope(Restaurant).order(created_at: :desc)
-		end
-
+    @search = params["search"]
+    if @search.present?
+      @price = @search["price"]
+      @category = @search["category"]
+      @restaurants = policy_scope(Restaurant).order(created_at: :desc).geocoded
+        if @restaurants.empty?
+          flash[:alert] = "Aucun restaurant ne correspond à vos critères."
+          @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+		    end
+        else  
+            @restaurants = policy_scope(Restaurant).order(created_at: :desc).geocoded
+            @restaurants = Restaurant.near(@trip.location, 20).where("category >= ?", "#{@trip.number_of_travellers}")
+        if @restaurants.empty?
+          flash[:alert] = "Tous les critères de recherches ne sont pas remplis."
+          @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+        end
+    end
     @markers = @restaurants.map do |restaurant|
-			{
-        lat: restaurant.latitude,
-        lng: restaurant.longitude,
-				infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })				
-      }
+    {
+      lat: restaurant.latitude,
+      lng: restaurant.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })				
+    }
     end
   end
 
