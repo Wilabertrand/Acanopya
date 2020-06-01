@@ -14,4 +14,3 @@ class ActivityReviewPolicy < ApplicationPolicy
     end
   
 end
-  
