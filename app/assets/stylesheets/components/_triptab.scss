@@ -1,31 +1,75 @@
-.t-tabs-underlined {
-  display: flex;
-  justify-content: center;
-  // text-align: justify;
-  // align-items: center;
-  background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);;
-  padding: 12px;
-  border-radius: 10px 10px 0px 0px;
-}
-
-.t-tabs-underlined .t-tab-underlined {
-  color: white;
-  font-size: 17px;
-  padding: 14px;
-  margin: 0px 30px;
-  opacity: .4;
-  cursor: pointer;
-  text-decoration: none;
-  //text-transform: uppercase;
-  border-bottom: 3px solid transparent;
-}
-
-.t-tabs-underlined .t-tab-underlined.active {
-  opacity: 1;
-  border-bottom: 3px solid $blue;
-}
-
 #myTabContent {
-  display: flex;
   justify-content: center;
+  margin-top: -2px;
+}
+
+.nav-link.active {
+  color: white !important;
+  background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);
+  border: none;
+  border-radius: 8px 8px 0px 0px;
+}
+
+#trip-tab.active {
+  box-shadow: 2px 0px 5px rgba(0,0,0,0.2);
+}
+
+#map-tab.active {
+  box-shadow: -2px 0px 5px rgba(0,0,0,0.2);
+}
+
+.nav-tabs .nav-item {
+  width: 50%;
+  text-align: center;
+}
+
+#trip-box .nav-link {
+  padding: 12px;
+}
+
+#myTab {
+  background: #f5f5f5;
+  border-radius: 8px 8px 0px 0px;
+}
+
+#trip-card-title {
+  border-bottom: 2px dotted $green;
+  padding: 30px 20px 5px 20px;
+  background: white;
+  border-radius: 5px 5px 0px 0px;
+  width: 250px;
+  color: $green;
+  h6 {
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+#trip-card {
+  border-bottom: 2px dotted lightgray;
+  color: gray;
+  //vertical-align: text-top;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  //box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  width: 250px;
+  line-height: 0.4;
+  font-weight: lighter;
+  font-size: 14px;
+  span {
+    font-weight: 600;
+  }
+}
+
+.trip-column {
+  
+  width: 300px;
+  background: #f5f5f5;
+  //opacity: 0.3;
 }
