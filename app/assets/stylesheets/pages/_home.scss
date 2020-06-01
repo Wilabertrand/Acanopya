@@ -37,7 +37,9 @@ h5 {
 
 #form_trip {
   position: fixed;
-  top: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1021;
   right: 200px;
   border-radius: 15px;
   background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);
