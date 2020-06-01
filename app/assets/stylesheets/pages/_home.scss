@@ -38,6 +38,7 @@ h5 {
 #form_trip {
   position: fixed;
   top: 50%;
+  right: 15px !important;
   transform: translateY(-50%);
   z-index: 1021;
   right: 200px;
@@ -83,5 +84,6 @@ h5 {
     }
   }
 }
+
 
 
