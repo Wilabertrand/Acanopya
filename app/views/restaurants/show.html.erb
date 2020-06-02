@@ -36,11 +36,11 @@
       <div id="form_booking">
         <div class="d-flex justify-content-between mt-2">
           <div class="important">
-            <p><%= @restaurant.price %><span style="font-size: 16px">€/m²</span></p>
+            <p><%= @restaurant.price %><span style="font-size: 16px">€/ menu par personne</span></p>
           </div>
         </div>
         <p><%= @restaurant.category %></p>
-        <div>
+        <div class='padding'>
           <%= simple_form_for [@restaurant, @booking_restaurant], url:  restaurant_restaurants_bookings_path(@restaurant) do |f| %>
               <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
               <%= f.input :start_date, placeholder: "Date", as: :string, required: false, input_html: {class: "datepicker"}, order: [:day, :month, :year], label: false %>
@@ -53,10 +53,43 @@
         <div class="important">
           <div class="d-flex justify-content-between mt-3">
             <p><strong>Total</strong></p>
-            <p><strong>200€</strong></p>
+            <p><%= @price %>€</p>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+<p>Ce restaurant est noté : 
+  <% @restaurant.average_rating.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <% (5 - @restaurant.average_rating).times do %>
+    <i class="far fa-star"></i>
+  <% end %></p>
+    <div class="reviews">
+    <h2>Voir les évaluations</h2>
+      <% @restaurant_reviews.each do |restaurant_review| %>
+        <p><%= restaurant_review.user.first_name %></p>
+        <p><% restaurant_review.rating.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - restaurant_review.rating).times do %>
+        <i class="far fa-star"></i>
+        <% end %>
+        <p><%= restaurant_review.content %></p>
+      <% end %>
+    </div>
+
+  <% if @restaurantreservation %>
+  <div class="review">
+    <h2>Laissez une évaluation</h2>
+    <%= simple_form_for @restaurant_review, url: restaurants_booking_restaurant_reviews_path(@restaurantreservation, html: { class: "review_form" }) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
+      <%= f.submit class: "d-none" %>
+    <% end %>
+  <% end %>
+
   </div>
 

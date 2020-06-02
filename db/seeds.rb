@@ -44,7 +44,8 @@ User.create!(
 )
   r1 = Restaurant.create!(
   name: "Maman sardine",
-  description: "Nous travaillons à l'anti-gaspillage alimentaire. Decouvrez nos gestes",
+  address: 'Marseille',
+  description: "La délice des Sardines à Marseille. Poissons grillés, fruits de mer, tartares d'algues... de quoi ravir vos papilles avec des produits frais de la pêche du matin.",
   category: 'Poissons',
   price: 15,
   address: "7 quai de Rive Neuve, 13001 Marseille"

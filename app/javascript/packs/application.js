@@ -29,10 +29,12 @@ import "../plugins/flatpickr";
 // MAPBOX
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
+import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   flatpickr(".datepicker", {});
+  initStarRating();
 })
 
