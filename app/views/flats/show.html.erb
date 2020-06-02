@@ -91,21 +91,22 @@
   </div>
 
 <p>Moyenne : <%#= @average_rating %></</p>
-
-  <div class="reviews"> 
-    <% @flat_reviews.each do |flat_review| %>
-      <p>
-        <%= flat_review.user.first_name %>
-        <% flat_review.rating.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
-        <% (5 - flat_review.rating).times do %>
-          <i class="far fa-star"></i>
-        <% end %>
-      </p>
-      <p><%= flat_review.content %></p>
-    <% end %>
-  </div>
+  <%# if @booking.display_flat_review_form(current_user) %>
+    <div class="reviews"> 
+      <% @flat_reviews.each do |flat_review| %>
+        <p>
+          <%= flat_review.user.first_name %>
+          <% flat_review.rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - flat_review.rating).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        </p>
+        <p><%= flat_review.content %></p>
+      <% end %>
+    </div>
+  <%# end %>
   <% if @flatreservation %>
   <div class="review">
     <h2>Laissez une évaluation</h2>
