@@ -14,6 +14,7 @@ class TripsController < ApplicationController
 
     def show
         @trip = Trip.find(params[:id])
+        @duration = @trip.end_date - @trip.start_date
         @booking_flats = @trip.booking_flats
         @flats = @trip.flats
         @booking_restaurants = @trip.booking_restaurants

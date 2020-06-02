@@ -1,20 +1,26 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show]
+  skip_after_action :verify_policy_scoped, only: :index
   
   def index
     @trip = Trip.find(params[:trip_id])
-		@restaurants = policy_scope(Restaurant).order(created_at: :desc).geocoded
-		@restaurants = Restaurant.near(@trip.location, 20)
-		if @restaurants.empty?
-			flash[:alert] = "Tous vos critères ne sont pas remplis, mais consultez nos alternatives !"
-			@restaurants = policy_scope(Restaurant).order(created_at: :desc)
-		end
+    @restaurants = Restaurant.near(@trip.location, 20)
+
+    if params[:search]&.fetch(:price_max).present?
+      @price_max = params[:search][:price_max]
+      @restaurants = @restaurants.where("price <= ?", @price_max)
+    end
+
+    if params[:search]&.fetch(:category).present?
+      @category = params[:search][:category]
+      @restaurants = @restaurants.where("category = ?", @category)
+    end
 
     @markers = @restaurants.map do |restaurant|
-			{
+      {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
-				infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })				
+        infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })				
       }
     end
   end
@@ -22,7 +28,10 @@ class RestaurantsController < ApplicationController
   def show
     @booking_restaurant = BookingRestaurant.new
     @trip = Trip.find(params[:trip_id])
+    @flat = Restaurant.find(params[:id])
     @markers = [{ lat: @restaurant.latitude, lng: @restaurant.longitude }]
+    @duration = @trip.end_date - @trip.start_date
+		@price = @restaurant.price * @duration
     authorize(@restaurant)
     @restaurantreservation = BookingRestaurant.find_by(restaurant: @restaurant, trip: @trip)
     @restaurant_review = RestaurantReview.new

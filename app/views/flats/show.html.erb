@@ -52,7 +52,8 @@
         <div class="important">
           <div class="d-flex justify-content-between mt-3">
             <p><strong>Total</strong></p>
-            <p><strong>200€</strong></p>
+            <%= @price %>
+            <p><strong></strong></p>
           </div>
         </div>
       </div>
@@ -68,27 +69,6 @@
     </div>
   </div>
 </div>
-
-
-<div class="row">
-    <div class="gallery">
-      <div class="img">
-        <%= image_tag 'photo.jpg', class:"w-100" %>
-      </div>
-      <div class="img">
-        <%= image_tag 'photo.jpg', class:"w-100" %>
-      </div>
-      <div class="img">
-        <%= image_tag 'photo.jpg', class:"w-100" %>
-      </div>
-      <div class="img">
-        <%= image_tag 'photo.jpg', class:"w-100" %>
-      </div>
-      <div class="img">
-        <%= image_tag 'photo.jpg', class:"w-100" %>
-      </div>
-    </div>
-  </div>
 
   <p>Cet hébergement est noté : 
   <% @flat.average_rating.times do %>

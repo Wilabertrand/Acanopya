@@ -3,8 +3,13 @@
   <%# <div class="pb-4">
     <div class="subtitle"><h1>Nos hébergements</h1></div>
   </div>   %>
-
-  <div class="content">
+      <%= simple_form_for :search, url: trip_restaurants_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
+      <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: { value: @price_max } %>
+      <%= f.input :category, label: false, collection: Restaurant::CATEGORIES, prompt: 'catégorie', selected: @category, include_blank: 'Tous' %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+    <div class="container pt-4 pb-1">
+  <div class="content"> 
     <div class="cards">
       <% @restaurants.each do |restaurant| %>
         <%= link_to trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) do %>
@@ -14,7 +19,7 @@
               <div>
                 <p><%= restaurant.address %></p>
                 <h2 class="pb-2 mb-2 border-bottom"><%= restaurant.name %></h2>
-                <p>pour <%= restaurant.category %> personnes</p>
+                <p><%= restaurant.category %></p>
               </div>
               <h2 class="card-trip-pricing"><%= restaurant.price %>€</h2>
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>

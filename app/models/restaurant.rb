@@ -1,4 +1,7 @@
 class Restaurant < ApplicationRecord
+
+  CATEGORIES = ['Poissons', 'Monde', 'Italien', 'Japonais', 'Cuisine française']
+
   has_many :trips, through: :booking_restaurants
   has_many :booking_restaurants
   has_many_attached :photos

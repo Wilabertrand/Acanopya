@@ -1,4 +1,7 @@
 class Activity < ApplicationRecord
+  
+  CATEGORIES = ['Randonnée', 'Mer', 'Shopping']
+
   has_many :trips, through: :booking_activities
   has_many :booking_activities
   has_many_attached :photos
