@@ -113,7 +113,7 @@
     <h2>Laissez une évaluation</h2>
     <%= simple_form_for @flat_review, url: flats_booking_flat_reviews_path(@flatreservation) do |f| %>
       <%= f.input :content %>
-      <%= f.input :rating, as: :hidden  %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
       <div class="my-3">
         <% 5.times do |index| %>
           <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>

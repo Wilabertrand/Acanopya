@@ -76,7 +76,7 @@
     <h2>Laissez une évaluation</h2>
     <%= simple_form_for @restaurant_review, url: restaurants_booking_restaurant_reviews_path(@restaurantreservation) do |f| %>
       <%= f.input :content %>
-      <%= f.input :rating, as: :hidden  %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
       <div class="my-3">
         <% 5.times do |index| %>
           <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
