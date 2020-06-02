@@ -1,7 +1,7 @@
 class FlatReviewsController < ApplicationController
 
   def create
-    @booking_flat = BookingFlat.find(params[:flats_booking_id])
+    @booking_flat = BookingFlat.find(params[:flats_booking_id]) #je ne comprends pas
     @flat_review = FlatReview.new(flat_review_params)
     authorize_flat_review
     @flat_review.user = current_user
@@ -15,7 +15,7 @@ class FlatReviewsController < ApplicationController
     end
   end
 
-  private
+ private
 
   def flat_review_params
     params.require(:flat_review).permit(:content, :rating, :booking_flat_id, :user_id)

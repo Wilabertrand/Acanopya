@@ -28,7 +28,9 @@
                             <p>Réservé du : <%= booking_flat.start_date %> au <%= booking_flat.end_date %></p> 
                             <p>Pour un montant de : <%= booking_flat.flat.price %>0€ / nuité / personne </p>
                             <p>Statut de votre réservation : <%= booking_flat.status %></p>
-                            <p><%= link_to "Noter l'hébergement", trip_flat_path(trip, booking_flat.flat) %></p>
+                            <p><%# if !booking_flat.flat_review.present? %>
+                                <%= link_to "Noter l'hébergement", trip_flat_path(trip, booking_flat.flat) %></p>
+                            <%# end %></p>
                         </div>
                     </div>
                 </div>
@@ -38,7 +40,7 @@
                 <div class="reservation-box">
                     <div class="cards-sumup">
                         <%= image_tag 'photo.jpg', class:"card-booking-img-sumup" %>
-                        <%#= cl_image_tag booking_flat.flat.photos.first.key, class:'card-booking-img-sumup' %>
+                        <%#= cl_image_tag booking_restaurant.restaurant.photos.first.key, class:'card-booking-img-sumup' %>
                         <div class="card-booking-infos-sumup">
                             <p><%= link_to booking_restaurant.restaurant.name, trip_restaurant_path(trip, booking_restaurant.restaurant) %></p>
                             <p>Réservé le : <%= booking_restaurant.start_date %>
@@ -54,7 +56,7 @@
                 <div class="reservation-box">
                     <div class="cards-sumup">
                         <%= image_tag 'photo.jpg', class:"card-booking-img-sumup" %>
-                        <%#= cl_image_tag booking_flat.flat.photos.first.key, class:'card-booking-img-sumup' %>
+                        <%#= cl_image_tag booking_activity.activity.photos.first.key, class:'card-booking-img-sumup' %>
                         <div class="card-booking-infos-sumup">
                             <p><%= link_to booking_activity.activity.name, trip_activity_path(trip, booking_activity.activity) %></p>
                             <p>Réservé le : <%= booking_activity.start_date %></p> 
@@ -65,6 +67,7 @@
                     </div>
                 </div>
                 <% end %>
+                <p>Calculez votre emprunte carbone</p>
             </div>
         </div>
         <% end %>
