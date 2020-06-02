@@ -13,7 +13,8 @@ class FlatsController < ApplicationController
 			{
         lat: flat.latitude,
         lng: flat.longitude,
-				infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })				
+				infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
+				info_price: flat.price				
 			}
 		end
 	end
