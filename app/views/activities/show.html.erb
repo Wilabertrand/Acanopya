@@ -75,7 +75,7 @@
   <% if @activityreservation %>
   <div class="review">
     <h2>Laissez une évaluation</h2>
-    <%= simple_form_for @activity_review, url: activitys_booking_flat_reviews_path(@activityreservation, html: { class: "review_form" }) do |f| %>
+    <%= simple_form_for @activity_review, url: activities_booking_activity_reviews_path(@activityreservation, html: { class: "review_form" }) do |f| %>
       <%= f.input :content %>
       <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
       <%= f.submit class: "d-none" %>
