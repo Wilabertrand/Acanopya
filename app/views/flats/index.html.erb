@@ -10,10 +10,12 @@
               <div>
                 <p><%= flat.address %></p>
                 <h2 class="pb-2 mb-2 border-bottom"><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>
-                <p>label : <%= flat.label %></p>
-                <p>pour <%= flat.capacity %> personnes</p>
+                <p>label : <%= flat.label %></p>                
               </div>
-              <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+              <div>
+                <p>pour <%= flat.capacity %> personnes</p>
+                <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+              </div>
               <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
             </div>
           </div>

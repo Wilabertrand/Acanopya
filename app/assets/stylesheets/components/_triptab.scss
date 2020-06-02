@@ -49,25 +49,28 @@
 }
 
 #trip-card {
-  border-bottom: 2px dotted lightgray;
   color: gray;
   //vertical-align: text-top;
   padding: 15px 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   background: white;
   //box-shadow: 0 0 8px rgba(0,0,0,0.2);
   border-radius: 5px;
   width: 270px;
-  line-height: 0.4;
   font-weight: lighter;
   font-size: 14px;
+  p {
+    margin-bottom: 0;
+  }
   span {
     font-weight: 600;
     .two {
       font-size: 12px;
     }
+  }
+  &:not(:last-child) {
+    border-bottom: 2px dotted lightgray;
   }
 }
 

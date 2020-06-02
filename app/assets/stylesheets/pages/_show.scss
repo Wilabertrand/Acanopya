@@ -1,29 +1,10 @@
 @import "home";
 
-// .wrapper {
-//   flex-wrap: wrap;
-// }
-
 .gallery {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  // grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 10px;
 }
-
-
-
-// @media(max-width: 992px) {
-//   .gallery {
-//     grid-template-columns: 1fr 1fr;
-//   }
-// }
-
-// @media(max-width: 768px) {
-//   .gallery {
-//     grid-template-columns: 1fr;
-//   }
-// }
 
 #form_booking {
   position: sticky;
@@ -73,10 +54,18 @@
 
 .element {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 10px;
   padding: 10px;
   //flex-grow: 1;
 }
 
+.img-show {
+  height: 500px;
+  width: 100%;
+}
+
+// .multi-img-show {
+//   height: 500px;
+// }
 

@@ -1,11 +1,20 @@
-<div class="container py-4">
+<div class="container-fluid py-4">
   <div class="content">
     <div>
       <div>
         <%= link_to "retour", trip_flats_path(@trip) %>
         <h1><%= @flat.name %></h1>
         <p><%= @flat.address %></p>
-        <%= image_tag 'photo.jpg', class:"w-100 h-100" %>
+        <div class="row">
+          <div class="col-md-7">
+            <%= image_tag 'photo.jpg' %>
+          </div>
+          <div class="col-md-5">
+            <%= image_tag 'photo.jpg' %>
+            <%= image_tag 'photo.jpg' %>
+            <%= image_tag 'photo.jpg' %>
+          </div>
+        </div>
       </div>
       <!-- Flat card -->
       <div class="element">
