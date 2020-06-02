@@ -57,7 +57,13 @@
     </div>
   </div>
 
-<p>Ce restaurant est noté : <%= @average_rating %></</p>
+<p>Ce restaurant est noté : 
+  <% @restaurant.average_rating.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <% (5 - @restaurant.average_rating).times do %>
+    <i class="far fa-star"></i>
+  <% end %></p>
     <div class="reviews">
     <h2>Voir les évaluations</h2>
       <% @restaurant_reviews.each do |restaurant_review| %>

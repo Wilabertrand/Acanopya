@@ -57,7 +57,13 @@
       </div>
     </div>
   </div>
-  <p>Cette activité est notée : <%= @average_rating %></</p>
+  <p>Cette activité est notée : 
+  <% @activity.average_rating.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <% (5 - @activity.average_rating).times do %>
+    <i class="far fa-star"></i>
+  <% end %></p>
     <div class="reviews">
     <h2>Voir les évaluations</h2>
       <% @activity_reviews.each do |activity_review| %>

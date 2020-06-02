@@ -15,4 +15,12 @@ class Flat < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
+  def average_rating
+    sum = 0
+    flat_reviews.each do |flat_review|
+      sum += flat_review.rating
+    end
+    @average_rating = sum / flat_reviews.count
+  end
+
 end

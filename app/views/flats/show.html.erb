@@ -91,12 +91,12 @@
   </div>
 
   <p>Cet hébergement est noté : 
-  <%# @average_rating.rating.times do %>
+  <% @flat.average_rating.times do %>
     <i class="fas fa-star"></i>
-  <%# end %>
-  <%# (5 - @average_rating.rating).times do %>
-    <i class="fas fa-star"></i>
-  <%# end %>
+  <% end %>
+  <% (5 - @flat.average_rating).times do %>
+    <i class="far fa-star"></i>
+  <% end %>
   </p>
     <div class="reviews">
     <h2>Voir les évaluations</h2>

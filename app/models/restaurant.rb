@@ -14,4 +14,13 @@ class Restaurant < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def average_rating
+    sum = 0
+    restaurant_reviews.each do |restaurant_review|
+      sum += restaurant_review.rating
+    end
+    @average_rating = sum / restaurant_reviews.count
+  end
+
 end

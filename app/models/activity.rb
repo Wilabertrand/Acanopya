@@ -14,4 +14,13 @@ class Activity < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def average_rating
+    sum = 0
+    activity_reviews.each do |activity_review|
+      sum += activity_review.rating
+    end
+    @average_rating = sum / activity_reviews.count
+  end
+
 end
