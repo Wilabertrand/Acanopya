@@ -45,14 +45,14 @@ User.create!(
 Restaurant.create!(
   name: "Maman sardine",
   address: 'Marseille',
-  description: "La délice des Sardines à Marseille",
+  description: "La délice des Sardines à Marseille. Poissons grillés, fruits de mer, tartares d'algues... de quoi ravir vos papilles avec des produits frais de la pêche du matin.",
   category: 'Poissons',
   price: 15
 )
 Restaurant.create!(
   name: "Le Saint-Jacques",
   address: 'Saint-Raphaël',
-  description: "Les délices des Saint-Jacques à Marseille",
+  description: "Un restaurant qui marie les saveurs méditéranéennes au service des produits de la mer.",
   category: 'Poissons',
   price: 15
 )

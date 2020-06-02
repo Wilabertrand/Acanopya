@@ -5,9 +5,10 @@ class FlatsController < ApplicationController
 		@trip = Trip.find(params[:trip_id])
 		@search = params["search"]
 		if @search.present?
-			@price = @search["price"]
+			@price_min = @search["price_min"]
+			@price_max = @search["price_max"]
 			@capacity = @search["capacity"]
-			@flats = policy_scope(Flat).where(price: @price, capacity: @capacity).geocoded
+			@flats = policy_scope(Flat).where("price > ? AND price < ?", @price_min, @price_max).geocoded
 			if @flats.empty?
 				flash[:alert] = "Aucun logement ne correspond à votre recherche."
 				@flats = policy_scope(Flat).order(created_at: :desc)
@@ -31,8 +32,11 @@ class FlatsController < ApplicationController
 
 	def show
 		@booking_flat = BookingFlat.new
+		@flat = Flat.find(params[:id])
 		@trip = Trip.find(params[:trip_id])
 		@markers = [{ lat: @flat.latitude, lng: @flat.longitude }]
+		@duration = @trip.end_date - @trip.start_date
+		@price = @flat.price * @duration
 	end
 
 	private 

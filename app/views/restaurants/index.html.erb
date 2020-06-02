@@ -3,10 +3,11 @@
     <div class="subtitle"><h1>Nos hébergements</h1></div>
   </div>   %>
       <%= simple_form_for :search, url: trip_restaurants_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
-      <%= f.input :price, input_html: {value: ""} %>
-      <%= f.input :category, collection: ['poissons', 'pizzas', 'viandes'] %>   
+      <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: {value: ''} %>
+      <%= f.input :category, label: false, collection: ['poisson', 'viande', 'végétarien', 'pizza'], prompt: 'catégorie'%>   
       <%= f.submit "Search", class: "btn btn-primary" %>
     <% end %>
+    <div class="container pt-4 pb-1">
   <div class="content"> 
     <div class="cards">
       <% @restaurants.each do |restaurant| %>

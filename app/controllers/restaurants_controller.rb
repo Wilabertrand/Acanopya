@@ -5,13 +5,13 @@ class RestaurantsController < ApplicationController
     @trip = Trip.find(params[:trip_id])
     @search = params["search"]
     if @search.present?
-      @price = @search["price"]
+      @price_max = @search["price_max"]
       @category = @search["category"]
-      @restaurants = policy_scope(Restaurant).order(created_at: :desc).geocoded
+      @restaurants = policy_scope(Restaurant).where("price < ?", @price_max).geocoded
         if @restaurants.empty?
           flash[:alert] = "Aucun restaurant ne correspond à vos critères."
           @restaurants = policy_scope(Restaurant).order(created_at: :desc)
-		    end
+        end
         else  
             @restaurants = policy_scope(Restaurant).order(created_at: :desc).geocoded
             @restaurants = Restaurant.near(@trip.location, 20).where("category >= ?", "#{@trip.number_of_travellers}")
