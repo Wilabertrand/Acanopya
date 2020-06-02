@@ -34,8 +34,3 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
 })
 
-// Stars in form
-
-import { dynamicRating } from "../plugins/starsInReviewForm";
-
-dynamicRating();
