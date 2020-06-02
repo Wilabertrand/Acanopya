@@ -1,31 +1,28 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show]
+  skip_after_action :verify_policy_scoped, only: :index
   
   def index
     @trip = Trip.find(params[:trip_id])
-    @search = params["search"]
-    if @search.present?
-      @price_max = @search["price_max"]
-      @category = @search["category"]
-      @restaurants = policy_scope(Restaurant).where("price < ?", @price_max).geocoded
-        if @restaurants.empty?
-          flash[:alert] = "Aucun restaurant ne correspond à vos critères."
-          @restaurants = policy_scope(Restaurant).order(created_at: :desc)
-        end
-        else  
-            @restaurants = policy_scope(Restaurant).order(created_at: :desc).geocoded
-            @restaurants = Restaurant.near(@trip.location, 20).where("category >= ?", "#{@trip.number_of_travellers}")
-        if @restaurants.empty?
-          flash[:alert] = "Tous les critères de recherches ne sont pas remplis."
-          @restaurants = policy_scope(Restaurant).order(created_at: :desc)
-        end
+    if params[:search]&.fetch(:price_max).present?
+      @price_max = params[:search][:price_max]
+      # @category = params[:search]["category"]
+      @restaurants = Restaurant.near(@trip.location, 20)#.where("category >= ?", "#{@trip.number_of_travellers}")
+      @restaurants = @restaurants.where("price <= ?", @price_max).geocoded
+      # if @restaurants.empty?
+      #   flash[:alert] = "Tous les critères de recherches ne sont pas remplis."
+      #   @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+      # end
+    else
+      @restaurants = Restaurant.near(@trip.location, 20)
     end
+
     @markers = @restaurants.map do |restaurant|
-    {
-      lat: restaurant.latitude,
-      lng: restaurant.longitude,
-      infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })				
-    }
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant })				
+      }
     end
   end
 
