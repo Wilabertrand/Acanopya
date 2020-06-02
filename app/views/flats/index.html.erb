@@ -1,4 +1,4 @@
-<div class="container py-1">
+<div class="container-fluid py-1">
 <%= render 'shared/tab' %>
   <div class="content">
     <div class="cards">
@@ -93,7 +93,10 @@
                 <% end %>
               <% end %>
             </div>
-          </div>
+            <div class="book-box">
+              <%= link_to "Réserver", trip_path(@trip), class: "important-btn" %>
+            </div>
+          </div> <!--end-->
         </div>
         <div class="tab-pane fade"
           id="map"
@@ -107,6 +110,7 @@
     </div>
   </div>
 </div>
+
 
 
 

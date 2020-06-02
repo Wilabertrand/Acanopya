@@ -80,3 +80,23 @@
   border-top: 1px solid lightgray;
   //opacity: 0.3;
 }
+
+.book-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 300px;
+}
+
+.important-btn {
+  color: white;
+  background: linear-gradient(133deg, rgba(65,226,186,1) 0%, rgba(42,204,171,1) 63%, rgba(20,183,185,1) 100%);
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+  border-radius: 20px;
+}
