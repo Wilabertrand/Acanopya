@@ -9,7 +9,7 @@
       <% @flats.each do |flat| %>
        <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
           <div class="card-trip">  
-            <%= image_tag 'photo.jpg' %>
+            <%= cl_image_tag flat.photos.first.key %>
             <div class="card-trip-infos">
               <div>
                 <p><%= flat.address %></p>
