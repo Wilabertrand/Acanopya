@@ -25,7 +25,7 @@ class ActivitiesController < ApplicationController
     authorize(@activity)
     @activityreservation = BookingActivity.find_by(activity: @activity, trip: @trip)
     @activity_review = ActivityReview.new
-    @activity_reviews = @booking_activity.activity_reviews
+    @activity_reviews = @activity.activity_reviews
     @average_rating = @activity_reviews.average(:rating)
   end
 
