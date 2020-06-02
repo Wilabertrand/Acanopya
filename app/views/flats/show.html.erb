@@ -90,31 +90,28 @@
     </div>
   </div>
 
-<p>Moyenne : <%#= @average_rating %></</p>
-  <%# if @booking.display_review_form(current_user) %>
+  <p>Moyenne : <%#= @average_rating %></</p>
     <div class="reviews">
     <h2>Voir les évaluations</h2>
       <% @flat_reviews.each do |flat_review| %>
-        <p>
-          <%= flat_review.user.first_name %>
-          <%# flat_review.rating.times do %>
-            <i class="fas fa-star"></i>
-          <%# end %>
-          <%# (5 - flat_review.rating).times do %>
-            <i class="far fa-star"></i>
-          <%# end %>
-        </p>
+        <p><%= flat_review.user.first_name %></p>
+        <p><% flat_review.rating.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - flat_review.rating).times do %>
+        <i class="far fa-star"></i>
+        <% end %>
         <p><%= flat_review.content %></p>
       <% end %>
     </div>
-  <%# end %>
+
   <% if @flatreservation %>
   <div class="review">
     <h2>Laissez une évaluation</h2>
-    <%= simple_form_for @flat_review, url: flats_booking_flat_reviews_path(@flatreservation) do |f| %>
+    <%= simple_form_for @flat_review, url: flats_booking_flat_reviews_path(@flatreservation, html: { class: "review_form" }) do |f| %>
       <%= f.input :content %>
       <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
-      <%= f.submit class: "btn btn-primary", value: "Valider" %>
+      <%= f.submit class: "d-none" %>
     <% end %>
   <% end %>
   </div>
