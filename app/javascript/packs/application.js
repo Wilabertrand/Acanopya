@@ -34,3 +34,7 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
 })
 
+// app/javascript/packs/application.js
+import { initStarRating } from '../plugins/init_star_rating';
+
+initStarRating();

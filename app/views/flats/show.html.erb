@@ -97,12 +97,12 @@
       <% @flat_reviews.each do |flat_review| %>
         <p>
           <%= flat_review.user.first_name %>
-          <% flat_review.rating.times do %>
+          <%# flat_review.rating.times do %>
             <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - flat_review.rating).times do %>
+          <%# end %>
+          <%# (5 - flat_review.rating).times do %>
             <i class="far fa-star"></i>
-          <% end %>
+          <%# end %>
         </p>
         <p><%= flat_review.content %></p>
       <% end %>
@@ -114,11 +114,6 @@
     <%= simple_form_for @flat_review, url: flats_booking_flat_reviews_path(@flatreservation) do |f| %>
       <%= f.input :content %>
       <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
-      <div class="my-3">
-        <% 5.times do |index| %>
-          <i id="<%= index + 1 %>" class="review-rating far fa-star"></i>
-        <% end %>
-      </div>
       <%= f.submit class: "btn btn-primary", value: "Valider" %>
     <% end %>
   <% end %>
