@@ -6,7 +6,7 @@ class BookingFlat < ApplicationRecord
 
   # validates :status, presence: true
 
-  def display_flatreview_form(user)
+  def display_review_form(user)
     (self.end_date < Date.today) && (self.reviews.find_by(user: user).nil?)
   end
 

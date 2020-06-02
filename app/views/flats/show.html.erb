@@ -91,7 +91,7 @@
   </div>
 
 <p>Moyenne : <%#= @average_rating %></</p>
-  <%# if @booking.display_flat_review_form(current_user) %>
+  <%# if @booking.display_review_form(current_user) %>
     <div class="reviews"> 
       <% @flat_reviews.each do |flat_review| %>
         <p>
