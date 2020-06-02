@@ -95,17 +95,6 @@ ActiveRecord::Schema.define(version: 2020_06_01_164946) do
     t.index ["trip_id"], name: "index_booking_restaurants_on_trip_id"
   end
 
-  create_table "flat_bookings", force: :cascade do |t|
-    t.text "comment"
-    t.integer "rating"
-    t.bigint "user_id", null: false
-    t.bigint "booking_flat_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["booking_flat_id"], name: "index_flat_bookings_on_booking_flat_id"
-    t.index ["user_id"], name: "index_flat_bookings_on_user_id"
-  end
-
   create_table "flat_reviews", force: :cascade do |t|
     t.text "content"
     t.integer "rating"
@@ -190,8 +179,6 @@ ActiveRecord::Schema.define(version: 2020_06_01_164946) do
   add_foreign_key "booking_flats", "trips"
   add_foreign_key "booking_restaurants", "restaurants"
   add_foreign_key "booking_restaurants", "trips"
-  add_foreign_key "flat_bookings", "booking_flats"
-  add_foreign_key "flat_bookings", "users"
   add_foreign_key "flat_reviews", "booking_flats"
   add_foreign_key "flat_reviews", "users"
   add_foreign_key "restaurant_reviews", "booking_restaurants"
