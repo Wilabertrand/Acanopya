@@ -90,7 +90,14 @@
     </div>
   </div>
 
-  <p>Moyenne : <%#= @average_rating %></</p>
+  <p>Cet hébergement est noté : 
+  <%# @average_rating.rating.times do %>
+    <i class="fas fa-star"></i>
+  <%# end %>
+  <%# (5 - @average_rating.rating).times do %>
+    <i class="fas fa-star"></i>
+  <%# end %>
+  </p>
     <div class="reviews">
     <h2>Voir les évaluations</h2>
       <% @flat_reviews.each do |flat_review| %>

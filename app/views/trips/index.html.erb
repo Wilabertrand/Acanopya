@@ -8,7 +8,7 @@
             <div class="voyage-box">
                 <div class="voyage">
                     <span><%= link_to trip.name, trip_path(trip) %></span>
-                    <span>voyage du <%= trip.start_date %> au <%= trip.end_date %></span>
+                    <span>, voyage du <%= trip.start_date %> au <%= trip.end_date %></span>
                     <% if policy(trip).show? %>
                         <span><%= link_to "Voir", trip_path(trip) %></span>
                     <% end %>
@@ -19,6 +19,7 @@
                             data: { confirm: "Êtes-vous sûr?" } %></span>
                     <% end %>
                 </div>
+                <br>
                 <p>Mes réservations d'hébergements</p>
                 <% trip.booking_flats.each do |booking_flat| %> 
                 <div class="reservation-box">
