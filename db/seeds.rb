@@ -323,9 +323,9 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106335/p
   a1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106347/photo-1529178232277-053c3432b4f9_mwhm9m.jpg')
   a1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106663/opg47miclxho6kjc4ki9i8j0ovcq.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591113269/photo-1552353617-3bfd679b3bdd_jn1fk7.jpg')
   a1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106680/ssnkr8v8jpij6n9vgzhgkhankln7.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591113350/photo-1555934903-7ea439de2f44_tmft5m.jpg')
   a1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
 
