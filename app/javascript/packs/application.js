@@ -34,6 +34,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
+  flatpickr(".datepicker", {});
   initStarRating();
 })
 

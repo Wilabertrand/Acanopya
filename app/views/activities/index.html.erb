@@ -1,11 +1,8 @@
 <div class="container py-4">
 <%= render 'shared/tab' %>
-  <%# <div class="pb-4">
-    <div class="subtitle"><h1>Nos hébergements</h1></div>
-  </div>   %>
   <%= simple_form_for :search, url: trip_activities_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
     <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: { value: @price_max } %>
-    <%= f.input :category, label: false, collection: Activity::CATEGORIES, prompt: 'catégorie', selected: @category, include_blank: 'Toutes'%>   
+    <%= f.input :category, label: false, collection: Activity::CATEGORIES, prompt: 'catégorie', selected: @category, include_blank: 'Toutes' %>   
     <%= f.submit "Search", class: "btn btn-primary" %>
   <% end %>
   <div class="content"> 
@@ -13,7 +10,7 @@
       <% @activities.each do |activity| %>
        <%= link_to trip_activity_path(trip_id: @trip.id, id: activity.id) do %>
           <div class="card-trip">  
-            <%= image_tag 'photo.jpg' %>
+            <%= cl_image_tag activity.photos.first.key %>
             <div class="card-trip-infos">
               <div>
                 <p><%= activity.address %></p>

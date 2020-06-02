@@ -1,8 +1,5 @@
 <div class="container py-4">
 <%= render 'shared/tab' %>
-  <%# <div class="pb-4">
-    <div class="subtitle"><h1>Nos hébergements</h1></div>
-  </div>   %>
   <div class="container pt-4 pb-1">
     <%= simple_form_for :search, url: trip_flats_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
       <%= f.input :price_min, placeholder: 'prix minimum', label: false, input_html: { value: @price_min } %>
@@ -14,7 +11,7 @@
       <% @flats.each do |flat| %>
        <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
           <div class="card-trip">  
-            <%= image_tag 'photo.jpg' %>
+            <%= cl_image_tag flat.photos.first.key %>
             <div class="card-trip-infos">
               <div>
                 <p><%= flat.address %></p>
