@@ -1,11 +1,37 @@
 @import "home";
 
 .gallery {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 10px;
-}
+  display: flex;
+  width: 100%;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
 
+  .img-principale {
+    background-image: url("photo.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 75%;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+  }
+  .img-secondaires {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .img-secondaire {
+      height: 32%;
+      width: 100%;
+      background-image: url("photo.jpg");
+      background-size: cover;
+      background-position: center;
+      margin-left: 10px;
+    }
+  }
+}
 #form_booking {
   position: sticky;
   top: 0;
@@ -54,7 +80,7 @@
 
 .element {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   grid-gap: 10px;
   padding: 10px;
   //flex-grow: 1;
@@ -65,7 +91,23 @@
   width: 100%;
 }
 
-// .multi-img-show {
-//   height: 500px;
-// }
+.modal-dialog {
+  max-width: 100vw;
+  margin: 1.75rem auto;
+}
 
+.flat-modal {
+  width: 70%;
+  margin: 0 auto;
+  height: 90vh;
+}
+
+.modal-header {
+  padding: 5px 10px;
+}
+.modal-body {
+  text-align: center;
+  img {
+    height: 100%;
+  }
+}
