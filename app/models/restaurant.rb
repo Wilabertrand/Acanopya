@@ -16,6 +16,7 @@ class Restaurant < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def average_rating
+    return 5 if restaurant_reviews.empty?
     sum = 0
     restaurant_reviews.each do |restaurant_review|
       sum += restaurant_review.rating

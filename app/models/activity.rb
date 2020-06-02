@@ -16,6 +16,7 @@ class Activity < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   def average_rating
+    return 5 if activity_reviews.empty?
     sum = 0
     activity_reviews.each do |activity_review|
       sum += activity_review.rating
