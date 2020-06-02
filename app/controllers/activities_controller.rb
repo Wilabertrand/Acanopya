@@ -24,6 +24,11 @@ class ActivitiesController < ApplicationController
     @booking_activity = BookingActivity.new
     @trip = Trip.find(params[:trip_id])
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
+    authorize(@activity)
+    @activityreservation = BookingActivity.find_by(activity: @activity, trip: @trip)
+    @activity_review = ActivityReview.new
+    @activity_reviews = @activity.activity_reviews
+    @average_rating = @activity_reviews.average(:rating)
   end
 
   

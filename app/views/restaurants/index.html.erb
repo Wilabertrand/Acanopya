@@ -1,4 +1,5 @@
 <div class="container py-4">
+<%= render 'shared/tab' %>
   <%# <div class="pb-4">
     <div class="subtitle"><h1>Nos hébergements</h1></div>
   </div>   %>
@@ -41,6 +42,6 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>  
+    </div>
   </div>
 </div>

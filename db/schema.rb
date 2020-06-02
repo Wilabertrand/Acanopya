@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_101051) do
+ActiveRecord::Schema.define(version: 2020_06_01_164946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -25,6 +46,17 @@ ActiveRecord::Schema.define(version: 2020_05_28_101051) do
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "activity_reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.bigint "booking_activity_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_activity_id"], name: "index_activity_reviews_on_booking_activity_id"
+    t.index ["user_id"], name: "index_activity_reviews_on_user_id"
   end
 
   create_table "booking_activities", force: :cascade do |t|
@@ -63,6 +95,17 @@ ActiveRecord::Schema.define(version: 2020_05_28_101051) do
     t.index ["trip_id"], name: "index_booking_restaurants_on_trip_id"
   end
 
+  create_table "flat_reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.bigint "booking_flat_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_flat_id"], name: "index_flat_reviews_on_booking_flat_id"
+    t.index ["user_id"], name: "index_flat_reviews_on_user_id"
+  end
+
   create_table "flats", force: :cascade do |t|
     t.string "name"
     t.float "price"
@@ -75,6 +118,17 @@ ActiveRecord::Schema.define(version: 2020_05_28_101051) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "address"
     t.integer "capacity"
+  end
+
+  create_table "restaurant_reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.bigint "booking_restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_restaurant_id"], name: "index_restaurant_reviews_on_booking_restaurant_id"
+    t.index ["user_id"], name: "index_restaurant_reviews_on_user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -116,11 +170,18 @@ ActiveRecord::Schema.define(version: 2020_05_28_101051) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "activity_reviews", "booking_activities"
+  add_foreign_key "activity_reviews", "users"
   add_foreign_key "booking_activities", "activities"
   add_foreign_key "booking_activities", "trips"
   add_foreign_key "booking_flats", "flats"
   add_foreign_key "booking_flats", "trips"
   add_foreign_key "booking_restaurants", "restaurants"
   add_foreign_key "booking_restaurants", "trips"
+  add_foreign_key "flat_reviews", "booking_flats"
+  add_foreign_key "flat_reviews", "users"
+  add_foreign_key "restaurant_reviews", "booking_restaurants"
+  add_foreign_key "restaurant_reviews", "users"
   add_foreign_key "trips", "users"
 end

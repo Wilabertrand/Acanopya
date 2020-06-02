@@ -10,7 +10,7 @@ class BookingFlatPolicy < ApplicationPolicy
   end 
 
     def new?
-    create?
+      create?
     end
     
     def show?
@@ -18,7 +18,7 @@ class BookingFlatPolicy < ApplicationPolicy
     end
     
     def create?
-    true
+      true
     end
     
     private

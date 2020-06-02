@@ -1,4 +1,5 @@
 <div class="container py-4">
+<%= render 'shared/tab' %>
   <%# <div class="pb-4">
     <div class="subtitle"><h1>Nos hébergements</h1></div>
   </div>   %>
@@ -6,9 +7,13 @@
     <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: {value: ''} %>
     <%= f.input :category, label: false, collection: Activity::CATEGORIES, prompt: 'catégorie', selected: @category, include_blank: 'Toutes'%>   
 
+<<<<<<< HEAD
     <%= f.submit "Search", class: "btn btn-primary" %>
   <% end %>
   <div class="content"> 
+=======
+  <div class="content">
+>>>>>>> master
     <div class="cards">
       <% @activities.each do |activity| %>
        <%= link_to trip_activity_path(trip_id: @trip.id, id: activity.id) do %>
@@ -43,6 +48,6 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-    </div>  
+    </div>
   </div>
 </div>

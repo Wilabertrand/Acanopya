@@ -37,6 +37,11 @@ class FlatsController < ApplicationController
 		@markers = [{ lat: @flat.latitude, lng: @flat.longitude }]
 		@duration = @trip.end_date - @trip.start_date
 		@price = @flat.price * @duration
+		authorize(@flat)
+		@flatreservation = BookingFlat.find_by(flat: @flat, trip: @trip)
+		@flat_review = FlatReview.new
+		@flat_reviews = @flat.flat_reviews
+		@average_rating = @flat_reviews.average(:rating)
 	end
 
 	private 
