@@ -7,7 +7,7 @@ class FlatReviewsController < ApplicationController
     @flat_review.user = current_user
     @flat_review.booking_flat = @booking_flat
     if @flat_review.save
-      flash[:success] = "Votre commentaire a bien été créé"
+      flash[:notice] = "Votre commentaire a bien été créé"
       redirect_to trips_path
     else
       flash[:alert] = "une erreur s'est produite, veuillez retenter"

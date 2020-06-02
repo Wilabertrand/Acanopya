@@ -7,7 +7,7 @@ class ActivityReviewsController < ApplicationController
     @activity_review.user = current_user
     @activity_review.booking_activity = @booking_activity
     if @activity_review.save
-      flash[:success] = "Votre commentaire a bien été créé"
+      flash[:notice] = "Votre commentaire a bien été créé"
       redirect_to trips_path
     else
       flash[:alert] = "une erreur s'est produite, veuillez retenter"

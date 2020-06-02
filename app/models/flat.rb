@@ -3,6 +3,7 @@ class Flat < ApplicationRecord
   has_many :booking_flats
   has_many_attached :photos
   has_many :flat_reviews,  through: :booking_flats
+  has_many :booking_flats, dependent: :destroy
 
   validates :name, presence: true
   validates :address, presence: true

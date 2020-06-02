@@ -3,6 +3,7 @@ class Restaurant < ApplicationRecord
   has_many :booking_restaurants
   has_many_attached :photos
   has_many :restaurant_reviews,  through: :booking_restaurants
+  has_many :booking_restaurants, dependent: :destroy
 
   validates :name, presence: true
   validates :address, presence: true

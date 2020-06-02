@@ -7,7 +7,7 @@ class RestaurantReviewsController < ApplicationController
     @restaurant_review.user = current_user
     @restaurant_review.booking_restaurant = @booking_restaurant
     if @restaurant_review.save
-      flash[:success] = "Votre commentaire a bien été créé"
+      flash[:notice] = "Votre commentaire a bien été créé"
       redirect_to trips_path
     else
       flash[:alert] = "une erreur s'est produite, veuillez retenter"

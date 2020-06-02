@@ -3,6 +3,7 @@ class Activity < ApplicationRecord
   has_many :booking_activities
   has_many_attached :photos
   has_many :activity_reviews,  through: :booking_activities
+  has_many :booking_activities, dependent: :destroy
 
   validates :name, presence: true
   validates :address, presence: true
