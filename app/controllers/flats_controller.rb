@@ -1,26 +1,21 @@
 class FlatsController < ApplicationController
 	before_action :set_flat, only: [:show]
+	skip_after_action :verify_policy_scoped, only: :index
 
 	def index
 		@trip = Trip.find(params[:trip_id])
-		@search = params["search"]
-		if @search.present?
-			@price_min = @search["price_min"]
-			@price_max = @search["price_max"]
-			@capacity = @search["capacity"]
-			@flats = policy_scope(Flat).where("price > ? AND price < ?", @price_min, @price_max).geocoded
-			if @flats.empty?
-				flash[:alert] = "Aucun logement ne correspond à votre recherche."
-				@flats = policy_scope(Flat).order(created_at: :desc)
-			end
-			else
-				@flats = policy_scope(Flat).order(created_at: :desc).geocoded
-				@flats = Flat.near(@trip.location, 20).where("capacity >= ?", "#{@trip.number_of_travellers}")
-			if @flats.empty?
-				flash[:alert] = "Tous les critères de recherches ne sont pas remplis."
-				@flats = policy_scope(Flat).order(created_at: :desc)
-			end
+		@flats = Flat.near(@trip.location, 20)
+
+		if params[:search]&.fetch(:price_min).present?
+			@price_min = params[:search]&.fetch(:price_min)
+			@flats = @flats.where("price >= ?", @price_min)
 		end
+
+		if params[:search]&.fetch(:price_max).present?
+			@price_max = params[:search]&.fetch(:price_max)
+			@flats = @flats.where("price <= ?", @price_max)
+		end
+
 		@markers = @flats.map do |flat|
 			{
         lat: flat.latitude,

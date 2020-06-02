@@ -5,8 +5,8 @@
   </div>   %>
   <div class="container pt-4 pb-1">
     <%= simple_form_for :search, url: trip_flats_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
-      <%= f.input :price_min, placeholder: 'prix minimum', label: false, input_html: {value: ''} %>
-      <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: {value: ''} %>
+      <%= f.input :price_min, placeholder: 'prix minimum', label: false, input_html: { value: @price_min } %>
+      <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: { value: @price_max } %>
       <%= f.submit "Search", class: "btn btn-primary" %>
     <% end %>
   <div class="content">
@@ -43,7 +43,6 @@
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
->>>>>>> master
     </div>
   </div>
 </div>

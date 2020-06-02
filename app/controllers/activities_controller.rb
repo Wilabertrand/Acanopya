@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
 	before_action :set_activity, only: [:show]
+  skip_after_action :verify_policy_scoped, only: :index
   
   def index
     @trip = Trip.find(params[:trip_id])
