@@ -34,12 +34,12 @@
       <div id="form_booking">
         <div class="d-flex justify-content-between mt-2">
           <div class="important">
-            <p><%= @activity.price %><span style="font-size: 16px">€/m²</span></p>
+            <p><%= @activity.price %><span style="font-size: 16px">0€ par personne</span></p>
           </div>
         </div>
         <p><%= @activity.category %></p>
         <div>
-          <%= simple_form_for [@activity, @booking_activity], url:  activity_activities_bookings_path(@activity) do |f| %>
+          <%= simple_form_for [@activity, @booking_activity], url: activity_activities_bookings_path(@activity) do |f| %>
               <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
               <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %> 
             <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
@@ -56,4 +56,35 @@
         </div>
       </div>
     </div>
+  </div>
+  <p>Cette activité est notée : 
+  <% @activity.average_rating.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <% (5 - @activity.average_rating).times do %>
+    <i class="far fa-star"></i>
+  <% end %></p>
+    <div class="reviews">
+    <h2>Voir les évaluations</h2>
+      <% @activity_reviews.each do |activity_review| %>
+        <p><%= activity_review.user.first_name %></p>
+        <p><% activity_review.rating.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - activity_review.rating).times do %>
+        <i class="far fa-star"></i>
+        <% end %>
+        <p><%= activity_review.content %></p>
+      <% end %>
+    </div>
+
+  <% if @activityreservation %>
+  <div class="review">
+    <h2>Laissez une évaluation</h2>
+    <%= simple_form_for @activity_review, url: activities_booking_activity_reviews_path(@activityreservation, html: { class: "review_form" }) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
+      <%= f.submit class: "d-none" %>
+    <% end %>
+  <% end %>
   </div>

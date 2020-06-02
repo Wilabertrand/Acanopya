@@ -3,6 +3,13 @@ class TripsController < ApplicationController
 
     def index
         @trips = policy_scope(Trip).order(created_at: :desc)
+        @trip = Trip.new
+        @flats = @trip.flats
+        @booking_flats = @trip.booking_flats
+        @restaurants = @trip.restaurants
+        @booking_restaurants = @trip.booking_restaurants
+        @activities = @trip.activities
+        @booking_activities = @trip.booking_activities
     end
 
     def show
@@ -13,6 +20,9 @@ class TripsController < ApplicationController
         @restaurants = @trip.restaurants
         @booking_activities = @trip.booking_activities
         @activities = @trip.activities
+        @flat_review = FlatReview.new
+        @restaurant_review = RestaurantReview.new
+        @activity_review = ActivityReview.new
     end
 
     def create
