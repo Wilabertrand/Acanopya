@@ -93,7 +93,7 @@
 <p>Moyenne : <%#= @average_rating %></</p>
 
   <div class="reviews"> 
-    <% @flat_reviews.each do |flat_review| %>
+    <% @booking_flats.flat_reviews.each do |flat_review| %>
       <p>
         <%= flat_review.user.first_name %>
         <% flat_review.rating.times do %>

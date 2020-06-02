@@ -39,7 +39,7 @@
         </div>
         <p><%= @activity.category %></p>
         <div>
-          <%= simple_form_for [@activity, @booking_activity], url:  activity_activities_bookings_path(@activity) do |f| %>
+          <%= simple_form_for [@activity, @booking_activity], url: activity_activities_bookings_path(@activity) do |f| %>
               <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
               <%= f.input :start_date, :as => :date, :order => [:day, :month, :year] %> 
             <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
