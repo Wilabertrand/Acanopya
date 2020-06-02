@@ -1,26 +1,25 @@
 <div class="container py-4">
-  <%# <div class="pb-4">
-    <div class="subtitle"><h1>Nos hébergements</h1></div>
-  </div>   %>
-  <div class="content"> 
-    <div class="cards">
-      <% @flats.each do |flat| %>
-      <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
+    <div class="content"> 
+      <div class="cards">
+        <% @flats.each do |flat| %>
+        <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
           <div class="card-trip">  
-            <%= image_tag 'photo.jpg' %>
-            <div class="card-trip-infos">>
-                <div class='card-trip-text'>
-                  <h2><%= flat.name %></h2>
-                  <p><%= flat.description.truncate(30)%>
-                </div>
-                <div class='card-trip-pricing'>
-                  <p><%= flat.price %>0€</p>
-                </div>
-                <img src="https://www.it-services.com.tn/wp-content/uploads/2017/04/avatar-2.png" class="card-trip-user avatar-bordered"/>
-            </div> 
-          </div>
-      <% end %> 
-      <% end %>
+            <div class="card-trip">  
+              <%= cl_image_tag flat.photos.first.key %>
+              <div class="card-trip-infos">
+              <div class='card-trip-text'>
+                <p><%= flat.address %></p>
+                <h2 class="pb-2 mb-2 border-bottom"><%= flat.name %></h2>
+                <p>label : <%= flat.label %></p>
+                <p>pour <%= flat.capacity %> personnes</p>
+              </div>
+              <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+            </div>
+          </div> 
+        <% end %> 
+        <% end %>
+      </div>
     </div>
     <div class="cards">
       <% @restaurants.each do |restaurant| %>
