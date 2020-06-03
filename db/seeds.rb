@@ -390,43 +390,43 @@ BookingFlat.all.each do |booking_flat|
   3.times do
     FlatReview.create!(
     booking_flat: booking_flat,
-    user: booking_flat.user,
+    user: booking_flat.trip.user,
     content: content_flat.sample,
     rating: rand(4..5)
   )
   end
 end
 
-content_restaurant = ["Vos papilles vont adorer! N'hésitez pas à prendre un dessert!", 
-"Top restaurant, super accueil, excellent service. Ils ont même pris le temps de nous expliquer les recettes locales",
-"Jamais découvert un restaurant aussi dingue. Des spécialités locales réalisées par le chef Miguel",
-"Restaurant incroyable!",
-"J'ai adoré leurs spécialités! Mes enfants aussi"
-"Tester le menu entrée, plat, dessert, les produits sont frais et savoureux"]
+# content_restaurant = ["Vos papilles vont adorer! N'hésitez pas à prendre un dessert!", 
+# "Top restaurant, super accueil, excellent service. Ils ont même pris le temps de nous expliquer les recettes locales",
+# "Jamais découvert un restaurant aussi dingue. Des spécialités locales réalisées par le chef Miguel",
+# "Restaurant incroyable!",
+# "J'ai adoré leurs spécialités! Mes enfants aussi",
+# "Tester le menu entrée, plat, dessert, les produits sont frais et savoureux"]
 
-BookingRestaurant.all.each do |booking_restaurant|
-  3.times do
-    RestaurantReview.create!(
-    booking_restaurant: booking_restaurant,
-    user: booking_restaurant.user,
-    content: content_restaurant.sample,
-    rating: rand(4..5)
-  )
-  end
-end
+# BookingRestaurant.all.each do |booking_restaurant|
+#   3.times do
+#     RestaurantReview.create!(
+#     booking_restaurant: booking_restaurant,
+#     user: booking_restaurant.user,
+#     content: content_restaurant.sample,
+#     rating: rand(4..5)
+#   )
+#   end
+# end
 
-content_activity = ["Tellement dépaysant. J'ai eu l'impression de vivre au rythme de la nature!", 
-"Superbe excursion. En couple ou en famille, nous on a tous adoré",
-"Des paysages superbes. C'était fou. Hâte d'y retourner",
-"On nous a montré des petits coins préservés de tout, c'était incroyable!"]
+# content_activity = ["Tellement dépaysant. J'ai eu l'impression de vivre au rythme de la nature!", 
+# "Superbe excursion. En couple ou en famille, nous on a tous adoré",
+# "Des paysages superbes. C'était fou. Hâte d'y retourner",
+# "On nous a montré des petits coins préservés de tout, c'était incroyable!"]
 
-BookingActivity.all.each do |booking_activity|
-  3.times do
-    ActivityReview.create!(
-    booking_review: booking_review,
-    user: booking_activity.user,
-    content: content.sample,
-    rating: rand(4..5)
-  )
-  end
-end
+# BookingActivity.all.each do |booking_activity|
+#   3.times do
+#     ActivityReview.create!(
+#     booking_review: booking_review,
+#     user: booking_activity.user,
+#     content: content.sample,
+#     rating: rand(4..5)
+#   )
+#   end
+# end
