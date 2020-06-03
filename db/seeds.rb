@@ -2,6 +2,9 @@ Trip.destroy_all
 Flat.destroy_all
 Restaurant.destroy_all
 Activity.destroy_all
+RestaurantReview.destroy_all
+FlatReview.destroy_all
+ActivityReview.destroy_all
 puts 'trip destroyed'
 
 User.destroy_all
@@ -42,6 +45,12 @@ User.create!(
   last_name: "admin",
   admin: true
 )
+
+Trip.create!(
+  user: User.all.sample,
+  number_of_travellers: 2
+)
+
   r1 = Restaurant.create!(
   name: "Maman sardine",
   address: "7 quai de Rive Neuve, 13001 Marseille",
@@ -386,3 +395,58 @@ t3 = Trip.create!(
   )
 Trip.last.restaurants << Restaurant.last
 
+Flat.all.each do |flat|
+  BookingFlat.create!(
+    trip: Trip.first,
+    flat: flat
+  )
+end
+
+Restaurant.all.each do |flat|
+  BookingRestaurant.create!(
+    trip: Trip.first,
+    restaurant: restaurant
+  )
+end
+
+Activity.all.each do |flat|
+  BookingActivity.create!(
+    trip: Trip.first,
+    activity: activity
+  )
+end
+
+content = ["super", "top"]
+
+BookingFlat.all.each do |booking_flat|
+  2.times do
+    FlatReview.create!(
+    booking_flat: booking_flat,
+    user: booking_flat.user,
+    content: content.sample,
+    rating: rand(1..5)
+  )
+  end
+end
+
+BookingRestaurant.all.each do |booking_restaurant|
+  2.times do
+    RestaurantReview.create!(
+    booking_restaurant: booking_restaurant,
+    user: booking_restaurant.user,
+    content: content.sample,
+    rating: rand(1..5)
+  )
+  end
+end
+
+BookingFlat.all.each do |booking_flat|
+  2.times do
+    FlatReview.create!(
+    booking_flat: booking_flat,
+    user: booking_flat.user,
+    content: content.sample,
+    rating: rand(1..5)
+  )
+  end
+end

@@ -10,7 +10,7 @@ class Activity < ApplicationRecord
   has_many :activity_reviews,  through: :booking_activities
 
   validates :name, presence: true
-  validates :address, presence: true
+  #validates :address, presence: true
   validates :price, presence: true
   validates :category, presence: true
   validates :description, presence: true, length: { minimum: 10 }
