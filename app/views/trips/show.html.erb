@@ -1,59 +1,80 @@
-<div class="container">
-  <h1>Détail de mon voyage</h1>
-  <div class="container content-cards">
-    <div class="content-cards">
-      <div class='cards'>
-        <% @flats.each do |flat| %>
-          <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
-            <div class="card-trip">
-              <div class='card-img'>
-                <%= image_tag 'photo.jpg', class:"card-img" %>
-              </div>
-              <div class="card-trip-infos">
-                <div class='card-trip-text'>
-                  <h2><%= flat.name %></h2>
-                  <p><%= flat.description.truncate(30)%>
-                </div>
-                <div class='card-trip-pricing'>
-                  <p><%= flat.price %>0€</p>
-                </div>
-                <img src="https://www.it-services.com.tn/wp-content/uploads/2017/04/avatar-2.png" class="card-trip-user avatar-bordered"/>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="potager-grid content-cards">
-    <% @restaurants.each do |restaurant| %>
-      <%= link_to trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) do %>
-      <div class="card-trip">
-          <%= image_tag 'photo.jpg', class:"card-img" %>
-          <div class="card-trip-infos">
-            <h2><%= restaurant.name %></h2>
-            <p><%= restaurant.price %>€</p>
-            <p><%= restaurant.description.truncate(30)%>
-            <img src="https://www.it-services.com.tn/wp-content/uploads/2017/04/avatar-2.png" class="card-trip-user avatar-bordered"/>
-          </div>
-      </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="potager-grid content-cards">
-      <% @activities.each do |activity| %>
-        <%= link_to trip_activity_path(trip_id: @trip.id, id: activity.id) do %>
-        <div class="card-trip">
-            <%= image_tag 'photo.jpg', class:"card-img" %>
-            <div class="card-trip-infos">
-              <h2><%= activity.name %></h2>
-              <p><%= activity.price %>€</p>
-              <p><%= activity.description.truncate(30)%>
-              <img src="https://www.it-services.com.tn/wp-content/uploads/2017/04/avatar-2.png" class="card-trip-user avatar-bordered"/>
-            </div>
-          </div>
+<div class="container py-4">
+  <%= render 'shared/tab' %>
+  <div class="elements">
+    <div class='container card-index-trip'>
+      <div class='blocs'>
+        <h2 class='pb-2 mb-2 border-bottom title'>Vos restaurants<h2>
+        <div class='inline'>
+          <div class="cards">
+            <% @restaurants.each do |restaurant| %>
+              <%= link_to trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) do %>
+                <div class="card-trip">  
+                  <%= cl_image_tag restaurant.photos.first.key %>
+                  <div class="card-trip-infos">
+                    <div>
+                      <p><%= restaurant.address %></p>
+                      <h2 class="pb-2 mb-2 border-bottom"><%= restaurant.name %></h2>
+                      <p><%= restaurant.category %></p>
+                    </div>
+                    <h2 class="card-trip-pricing"><%= restaurant.price %>€</h2>
+                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+                  </div>
+                </div> 
+              <% end %> 
             <% end %>
+          </div>
+        </div>
+        <h2 class='pb-2 mb-2 border-bottom title'>Vos activités<h2>
+        <div class='inline'>
+          <div class="cards">
+            <% @activities.each do |activity| %>
+            <%= link_to trip_activity_path(trip_id: @trip.id, id: activity.id) do %>
+                <div class="card-trip">  
+                  <%= cl_image_tag activity.photos.first.key %>
+                  <div class="card-trip-infos">
+                    <div>
+                      <p><%= activity.address %></p>
+                      <h2 class="pb-2 mb-2 border-bottom">
+                        <%= activity.name %>
+                      </h2>
+                      <p><%= activity.category %></p>
+                    </div>
+                    <h2 class="card-trip-pricing"><%= activity.price %>€</h2>
+                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+                  </div>
+                </div> 
+              <% end %> 
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <h2 class='pb-2 mb-2 border-bottom title'>Votre logement<h2>
+      <div class='inline'>
+        <div class="cards">
+          <% @flats.each do |flat| %>
+          <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
+              <div class="card-trip">  
+                <%= cl_image_tag flat.photos.first.key %>
+                <div class="card-trip-infos">
+                  <div class='card-trip-text'>
+                    <p><%= flat.address %></p>
+                    <h2 class="pb-2 mb-2 border-bottom"><%= flat.name %></h2>
+                    <p>label : <%= flat.label %></p>
+                    <p>pour <%= flat.capacity %> personnes</p>
+                  </div>
+                  <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+                </div>
+              </div> 
+          <% end %> 
           <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+
+
+

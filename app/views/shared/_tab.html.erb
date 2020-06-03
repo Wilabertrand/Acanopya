@@ -4,13 +4,13 @@
       <% if user_signed_in? %>
         <% if @trip&.persisted? %>
           <li>
-            <%= link_to "Hébergements", trip_flats_path(@trip.id), class: "tab-underlined active" %>
+            <%= link_to "Hébergements", trip_flats_path(@trip.id, active: :flats), class: "tab-underlined #{ 'active' if params[:active] == 'flats' || params[:active].nil? }" %>
           </li>
           <li>
-            <%= link_to "Restaurants", trip_restaurants_path(@trip.id), class: "tab-underlined" %>
+            <%= link_to "Restaurants", trip_restaurants_path(@trip.id, active: :restaurants), class: "tab-underlined #{ 'active' if params[:active] == 'restaurants' }" %>
           </li>
           <li>
-            <%= link_to "Activités", trip_activities_path(@trip.id), class: "tab-underlined" %>
+            <%= link_to "Activités", trip_activities_path(@trip.id, active: :activities), class: "tab-underlined #{ 'active' if params[:active] == 'activities' }" %>
           </li>
         <% end %>
       <% end %>

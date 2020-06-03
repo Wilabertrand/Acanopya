@@ -1,26 +1,30 @@
 <div class="container-fluid py-1">
 <%= render 'shared/tab' %>
+  
+  <%= simple_form_for :search, url: trip_flats_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
+    <%= f.input :price_min, placeholder: 'prix minimum', label: false, input_html: { value: @price_min } %>
+    <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: { value: @price_max } %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
+
   <div class="content">
     <div class="cards">
       <% @flats.each do |flat| %>
-        
-          <div class="card-trip">
-            <%= image_tag 'photo.jpg' %>
+       <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
+          <div class="card-trip">  
+            <%= cl_image_tag flat.photos.first.key %>
             <div class="card-trip-infos">
-              <div>
+              <div class='card-trip-text'>
                 <p><%= flat.address %></p>
-                <h2 class="pb-2 mb-2 border-bottom"><%= link_to flat.name, trip_flat_path(trip_id: @trip.id, id: flat.id) %></h2>
-                <p>label : <%= flat.label %></p>                
-              </div>
-              <div>
+                <h2 class="pb-2 mb-2 border-bottom"><%= flat.name %></h2>
+                <p>label : <%= flat.label %></p>
                 <p>pour <%= flat.capacity %> personnes</p>
                 <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
               </div>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
             </div>
-          </div>
-        <% end %>
-
+          </div> 
+       <% end %> 
+      <% end %>
     </div>
     <div id="trip-box" style="width: 300px; height: 100vh;">
       <ul class="list-inline nav nav-tabs" id="myTab" role="tablist">
