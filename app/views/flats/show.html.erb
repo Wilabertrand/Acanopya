@@ -60,8 +60,8 @@
             <div>
               <%= simple_form_for [@flat, @booking_flat], url:  flat_flats_bookings_path(@flat) do |f| %>
                 <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
-                <%= f.input :start_date, as: :date, order: [:day, :month, :year], selected: @trip.start_date %>
-                <%= f.input :end_date, as: :date, order: [:day, :month, :year], selected: @trip.end_date %>
+                <%= f.input :start_date, placeholder: "Date", as: :string, required: false, input_html: { class: "datepicker" }, order: [:day, :month, :year], label: false %>
+                <%= f.input :end_date, placeholder: "Date", as: :string, required: false, input_html: { class: "datepicker" }, order: [:day, :month, :year], label: false %>
                 <%= f.button :submit, "Réserver", class: "btn btn-primary w-100" %>
               <% end %>
             </div>
@@ -84,7 +84,6 @@
       </div>
     </div>
   
-
 
     <div id="trip-box" style="width: 300px; height: 100vh;">
       <ul class="list-inline nav nav-tabs" id="myTab" role="tablist">
