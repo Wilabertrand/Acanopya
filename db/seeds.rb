@@ -251,6 +251,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591096382/2
   f4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591096408/243951280_rlmptj.jpg')
   f4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+
   f5 = Flat.create!( # f5pret
   name: "Hôtel Kyriad Marseille Blancarde Timone",
   address: '4 Rue Emile Duclaux, 13004 Marseille',
@@ -261,15 +262,15 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591096408/2
   availability: true
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674073/photo-1503174971373-b1f69850bded_yqulje.jpg')
-  f5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  f5.photos.attach(io: file, filename: 'f5-3.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591093938/76374880_ruxhmk.jpg')
-  f5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  f5.photos.attach(io: file, filename: 'f5-4.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591093981/76375233_x3ai2u.jpg')
-  f5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  f5.photos.attach(io: file, filename: 'f5-5.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591094008/102973145_fknsvw.jpg')
-  f5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  f5.photos.attach(io: file, filename: 'f5-4.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591094395/76375502_l5kdvy.jpg')
-  f5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  f5.photos.attach(io: file, filename: 'f5-5.png', content_type: 'image/png')
 
   f6 = Flat.create!( # f5pret
   name: "Domaine de l'Esterel",
