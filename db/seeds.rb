@@ -315,7 +315,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101158/9
   a1 = Activity.create!(
   name: "Balade en bateau",
   address: 'quai du port, 13002 Marseille',
-  description: "Balade guidée en mer pour vivre le lever du soleil. Nous partirons en kayak pour un impact zéro carbone",
+  description: "Balade guidée en mer pour vivre le lever du soleil. Nous partirons en voilier pour un impact zéro carbone",
   category: 'Mer',
   price: 80
   )
