@@ -46,6 +46,40 @@
           <div><%= image_tag "https://konsultan.online/wp-content/uploads/avatar-7.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %></div>
           <div class="pl-2"><p>Proposé par <%#= @flat.user.email.split("@").first %></p></div>
           <p><%= @flat.description %></p>
+
+          <div>
+            <p>Cet hébergement est noté : 
+            <% @flat.average_rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - @flat.average_rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            </p>
+              <div class="reviews">
+              <h2>Voir les évaluations</h2>
+                <% @flat_reviews.each do |flat_review| %>
+                  <p><%= flat_review.user.first_name %></p>
+                  <p><% flat_review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                  <% end %>
+                  <% (5 - flat_review.rating).times do %>
+                  <i class="far fa-star"></i>
+                  <% end %>
+                  <p><%= flat_review.content %></p>
+                <% end %>
+              </div>
+              <% if @flatreservation %>
+                <div class="review">
+                  <h2>Laissez une évaluation</h2>
+                  <%= simple_form_for @flat_review, url: flats_booking_flat_reviews_path(@flatreservation, html: { class: "review_form" }) do |f| %>
+                    <%= f.input :content %>
+                    <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
+                    <%= f.submit class: "d-none" %>
+                  <% end %>
+                </div>
+              <% end %>
+          </div>
           <%#= link_to "Retour aux hébergements", flats_path, class:"btn btn-secondary" %>
         </div>
         <div>
@@ -68,7 +102,7 @@
             <div class="important">
               <div class="d-flex justify-content-between mt-3">
                 <p><strong>Total</strong></p>
-                <p><strong>200€</strong></p>
+                <p><strong><%= @price %></strong></p>
               </div>
             </div>
           </div>
@@ -84,7 +118,6 @@
       </div>
     </div>
   
-
     <div id="trip-box" style="width: 300px; height: 100vh;">
       <ul class="list-inline nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
