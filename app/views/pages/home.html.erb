@@ -8,7 +8,7 @@
           </div>
           <h5>
           Le voyage durable consiste à réduire son impact négatif<br>vers une destination donnée.
-          Devenir collectivement<br>plus conscient de ses choix peut avoir un impact<br>cumulatif énorme.🌍
+          Devenir collectivement<br>plus conscient de ses choix peut avoir un impact<br>cumulatif énorme.
           </h5>
         </div>
         <div class="col-md-5 pb-5">
@@ -40,25 +40,31 @@
     Le développement durable est un développement qui répond aux besoins du présent sans compromettre la possibilité, pour les générations à venir, de pouvoir répondre à leurs propres besoins. 
     </p>
   </div>
-  <div class="cards">
-    <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
-          <div class="card-trip">  
-            <%= cl_image_tag flat.photos.first.key %>
-            <div class="card-trip-infos">
-              <div>
-                <p><%= flat.address %></p>
-                <h2 class="pb-2 mb-2 border-bottom"><%= flat.name %></h2>
-                <p>label : <%= flat.label %></p>
-                <p>pour <%= flat.capacity %> personnes</p>
-                <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
-              </div>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
-            </div>
-          </div> 
-       <% end %> 
-      <% end %>
+  <h5 class="bottom-title">WILA VOUS SELECTIONNE LES MEILLEURS SITES ECORESPONSABLES</h5>
+  <br>
+  <br>
+  <div class="cards-bottom">
+    <div class="card-category1">
+  Hébergements
     </div>
-
-  <div class="wrapper row">
+    <div class="card-category2">
+  Restaurants
+    </div>
+    <div class="card-category3">
+  Activités
+    </div>
+    <br>
+    <br>
+  </div>
+</div>
+<div class="container py-3">
+  <div class="bottom-btn">
+    <a class="btn btn-ghost" href="#">Inscrivez-vous</a>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<div class="wrapper row">
 </div>
 
