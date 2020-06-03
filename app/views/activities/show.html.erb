@@ -37,7 +37,7 @@
       <div id="form_booking">
         <div class="d-flex justify-content-between mt-2">
           <div class="important">
-            <p><%= @activity.price %><span style="font-size: 16px">0€ par personne</span></p>
+            <p><%= @activity.price %><span style="font-size: 16px">€/personne</span></p>
           </div>
         </div>
         <p><%= @activity.category %></p>
@@ -54,7 +54,7 @@
         <div class="important">
           <div class="d-flex justify-content-between mt-3">
             <p><strong>Total</strong></p>
-            <p><strong>200€</strong></p>
+            <p><%= @price %></p>
           </div>
         </div>
       </div>

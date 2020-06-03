@@ -44,11 +44,10 @@ User.create!(
 )
   r1 = Restaurant.create!(
   name: "Maman sardine",
-  address: 'Marseille',
+  address: "7 quai de Rive Neuve, 13001 Marseille",
   description: "La délice des Sardines à Marseille. Poissons grillés, fruits de mer, tartares d'algues... de quoi ravir vos papilles avec des produits frais de la pêche du matin.",
   category: 'Poissons',
-  price: 15,
-  address: "7 quai de Rive Neuve, 13001 Marseille"
+  price: 15
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674613/photo-1583144387451-8e17f0411183_wxo3kc.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -333,7 +332,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591113350/p
 
   a2 = Activity.create!(
   name: "L'atelier de la mer",
-  address: 'Port de la Pointe Rouge, 13008 Marseille',
+  address: "Avenue d'Odessa, 13008 Marseille",
   description: "Plonger avec nous c’est plonger dans un centre responsable et impliqué en matière de préservation durable du milieu marin, de son patrimoine naturel, paysager et de sa biodiversité.",
   category: 'Plongée',
   price: 80
