@@ -17,15 +17,27 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11'
     });
-    const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
-        .addTo(map);
+    const markers = JSON.parse(mapElement.dataset.markers);
+    markers.forEach(marker => {
+      let el = document.createElement('div');
+      el.className = 'marker';
+      el.innerHTML = marker.info_price + '€';
+        const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+        new mapboxgl.Marker(el)
+          .setLngLat([marker.lng, marker.lat])
+          .setPopup(popup)
+          .addTo(map);
     });
+
+    // markers.forEach((marker) => {
+    //   const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+
+    //   new mapboxgl.Marker()
+    //     .setLngLat([ marker.lng, marker.lat ])
+    //     .setPopup(popup)
+    //     .addTo(map);
+    // });
     fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl }));
