@@ -314,7 +314,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101158/9
   a1 = Activity.create!(
   name: "Balade en bateau",
   address: 'quai du port, 13002 Marseille',
-  description: "Balade guidée en mer pour vivre le lever du soleil. Nous partirons en kayak pour un impact zéro carbone",
+  description: "Balade guidée en mer pour vivre le lever du soleil. Nous partirons en voilier pour un impact zéro carbone",
   category: 'Mer',
   price: 80
   )
@@ -371,7 +371,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
     address: 'Embarcadère Frioul If, 1 Quai de la Fraternité, 13001 Marseille',
     description: "Le château d'If est une forteresse française édifiée sur les ordres du roi François Iᵉʳ, entre 1527 et 1529 sur l'îlot d'If de l'archipel du Frioul, proche des îles de Ratonneau et Pomègues au centre de la rade de Marseille. C'est une construction carrée de trois étages mesurant 28 mètres sur chaque côté, flanquée de trois tours, percées de larges embrasures. Le reste de l'île, dont la dimension est seulement 3 hectares, est fortement défendu ; de hauts remparts avec des plates-formes d'artillerie surmontent les falaises. Il a essentiellement servi de prison pendant ses 400 ans d'utilisation officielle. Rendu célèbre par le roman d'Alexandre Dumas, Le Comte de Monte-Cristo, il est l'un des sites les plus visités de la ville de Marseille. Il a été classé monument historique le 7 juillet 1926.",
     category: 'Randonée',
-    price: 20
+    price: 23
     )
   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591189796/303spvL_rojz2p.jpg')
     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -389,7 +389,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
     address: '10 Place de la Joliette, 13002 Marseille',
     description: "Ce bâtiment flambant neuf vient d’être élu officiellement lauréat dans la catégorie meilleur centre commercial à l’occasion de la cérémonie des MIPIM Awards 2016 qui s’est déroulée le 17 mars dernier à Cannes. C’est en quelques sortes le championnat du monde de l’immobilier qui se déroule chaque année sur la croisette. Soutenez les Docks pour le Prix du public, en votant ici.",
     category: 'Shopping',
-    price: 20
+    price: 40
     )
   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190556/2MCMfWZ_jha9vs.jpg')
     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')

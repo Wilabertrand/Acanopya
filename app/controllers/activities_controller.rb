@@ -15,7 +15,8 @@ class ActivitiesController < ApplicationController
 			{
         lat: activity.latitude,
         lng: activity.longitude,
-				infoWindow: render_to_string(partial: "info_window", locals: { activity: activity })				
+        infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
+        info_price: activity.price				
       }
     end
   end
@@ -24,15 +25,17 @@ class ActivitiesController < ApplicationController
   def show
     @booking_activity = BookingActivity.new
     @trip = Trip.find(params[:trip_id])
+    @activity = Activity.find(params[:id])
+    @people = @trip.number_of_travellers
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
     authorize(@activity)
     @activityreservation = BookingActivity.find_by(activity: @activity, trip: @trip)
     @activity_review = ActivityReview.new
     @activity_reviews = @activity.activity_reviews
+    @price = @activity.price * @people
     @average_rating = @activity_reviews.average(:rating)
   end
 
-  
   private
 
   def set_activity

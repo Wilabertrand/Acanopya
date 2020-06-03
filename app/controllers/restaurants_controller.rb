@@ -29,9 +29,10 @@ class RestaurantsController < ApplicationController
     @booking_restaurant = BookingRestaurant.new
     @trip = Trip.find(params[:trip_id])
     @flat = Restaurant.find(params[:id])
+    @people = @trip.number_of_travellers
     @markers = [{ lat: @restaurant.latitude, lng: @restaurant.longitude }]
     @duration = @trip.end_date - @trip.start_date
-		@price = @restaurant.price * @duration
+		@price = @restaurant.price * @people
     authorize(@restaurant)
     @restaurantreservation = BookingRestaurant.find_by(restaurant: @restaurant, trip: @trip)
     @restaurant_review = RestaurantReview.new
