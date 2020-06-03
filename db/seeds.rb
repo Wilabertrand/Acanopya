@@ -82,7 +82,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/i
   name: "Boulangerie Boudouard",
   description: "Vincent et Céline vous proposent du pain artisanal fabriqué à partir de farine locale, issue de la région. Outre leur farine, la majorité des produits utilisés sont de provenance locale et bios. Leurs créations en pâtisserie sont également à ne pas manquer, en particulier leurs cupcakes fait maison, dont c'est une des spécialités.",
   category: 'Cuisine française',
-  price: 15,
+  price: 10,
   address: "7 boulevard de la Libération, 13001 Marseille"
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591102967/photo-1536782896453-61d09f3aaf3e_uhq5xm.jpg')
@@ -100,7 +100,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/p
   name: "La Table de L'olivier",
   description: "La meilleure cuisine traditionnelle française, fait avec des produits issus de circuits courts",
   category: 'Cuisine française',
-  price: 15,
+  price: 25,
   address: "56 Rue Mazenod, 13002 Marseille"
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675264/photo-1577219492769-b63a779fac28_idofsv.jpg')
@@ -110,7 +110,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675264/p
   name: "Sushi resto",
   description: "Pour les amoureux du Sushi mais aussi de la nature",
   category: 'Japonais',
-  price: 15,
+  price: 18,
   address: "27 B rue d'Italie, 13006 Marseille"
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591000691/photo-1579584425555-c3ce17fd4351_vpb40k.jpg')
@@ -120,7 +120,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591000691/p
   name: "Mozz Art Pizza",
   description: "Comme en Italie mais 100% bio",
   category: 'Italien',
-  price: 15,
+  price: 13,
   address: "58 rue d'Italie, 13006 Marseille"
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591000775/photo-1520201163981-8cc95007dd2a_ifp8pt.jpg')
@@ -311,6 +311,8 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101145/9
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101158/96901358_e8tssc.jpg')
   f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
+puts 'flats finis'
+
   a1 = Activity.create!(
   name: "Balade en bateau",
   address: 'quai du port, 13002 Marseille',
@@ -348,9 +350,11 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591109237/p
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591109301/photo-1544551763-8dd44758c2dd_ewdlup.jpg')
  a2 .photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
+puts 'activities en cours'
+
   a3 = Activity.create!(
   name: "Découvre Saint-Raphaël",
-  address: 'Saint-Raphaël',
+  address: "45 rue d'Italie, 13006 Marseille",
   description: "Si vous voulez appuyer l'économie locale, je vous propose une balade dans le village et vous accompagne dans la découverte des commerçants locaux",
   category: 'Randonée',
   price: 20
@@ -368,7 +372,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
 
   a4 = Activity.create!(
     name: "Le Château d'If",
-    address: 'Embarcadère Frioul If, 1 Quai de la Fraternité, 13001 Marseille',
+    address: "54 rue d'Italie, 13006 Marseille",
     description: "Le château d'If est une forteresse française édifiée sur les ordres du roi François Iᵉʳ, entre 1527 et 1529 sur l'îlot d'If de l'archipel du Frioul, proche des îles de Ratonneau et Pomègues au centre de la rade de Marseille. C'est une construction carrée de trois étages mesurant 28 mètres sur chaque côté, flanquée de trois tours, percées de larges embrasures. Le reste de l'île, dont la dimension est seulement 3 hectares, est fortement défendu ; de hauts remparts avec des plates-formes d'artillerie surmontent les falaises. Il a essentiellement servi de prison pendant ses 400 ans d'utilisation officielle. Rendu célèbre par le roman d'Alexandre Dumas, Le Comte de Monte-Cristo, il est l'un des sites les plus visités de la ville de Marseille. Il a été classé monument historique le 7 juillet 1926.",
     category: 'Randonée',
     price: 23
@@ -383,7 +387,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190649/caption_qeuzbz.jpg')
     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-  
+    puts 'activities en cours'
     a5 = Activity.create!(
     name: "Les Docks Village",
     address: '10 Place de la Joliette, 13002 Marseille',
@@ -420,7 +424,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
     file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196606/PA1_des-calanques-de-marseille-a-la-cote-bleue_prsery.jpg')
       a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
     
-  
+      puts 'activities fini'
 
   t1 = Trip.create!(
   name: "Mon voyage idyllique",
