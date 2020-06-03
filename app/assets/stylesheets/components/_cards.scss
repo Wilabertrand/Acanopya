@@ -63,3 +63,60 @@
   top: -30px;
   width: 50px;
 }
+
+//voyage index
+
+.cards-sumup {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
+
+.card-booking-infos-sumup h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card-booking-infos-sumup {
+  padding-top: 5px;
+}
+
+.card-booking-infos-sumup p {
+  font-size: 14px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-booking-sumup .card-booking-infos-sumup {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-booking-img-sumup {
+  height: 120px;
+  width: 360px;
+  object-fit: cover;
+  margin-right: 40px;
+}
+
+.voyage {
+  display: flex;
+}
+
+.card-review-sumup p {
+  font-size: 14px;
+  opacity: .7;
+  margin-left: 30px;
+}
+
+// fin voyage index

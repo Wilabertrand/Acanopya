@@ -1,15 +1,14 @@
-<div class="container">
-  <h1>Détail de mon voyage</h1>
-  <div class="container content-cards">
-    <div class="content-cards">
-      <div class='cards'>
-        <% @flats.each do |flat| %>
-          <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
-            <div class="card-trip">
-              <div class='card-img'>
-                <%= image_tag 'photo.jpg', class:"card-img" %>
-              </div>
-              <div class="card-trip-infos">
+<div class="container py-4">
+  <%# <div class="pb-4">
+    <div class="subtitle"><h1>Nos hébergements</h1></div>
+  </div>   %>
+  <div class="content"> 
+    <div class="cards">
+      <% @flats.each do |flat| %>
+      <%= link_to trip_flat_path(trip_id: @trip.id, id: flat.id) do %>
+          <div class="card-trip">  
+            <%= image_tag 'photo.jpg' %>
+            <div class="card-trip-infos">>
                 <div class='card-trip-text'>
                   <h2><%= flat.name %></h2>
                   <p><%= flat.description.truncate(30)%>
@@ -18,42 +17,66 @@
                   <p><%= flat.price %>0€</p>
                 </div>
                 <img src="https://www.it-services.com.tn/wp-content/uploads/2017/04/avatar-2.png" class="card-trip-user avatar-bordered"/>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <div class="potager-grid content-cards">
-    <% @restaurants.each do |restaurant| %>
-      <%= link_to trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) do %>
-      <div class="card-trip">
-          <%= image_tag 'photo.jpg', class:"card-img" %>
-          <div class="card-trip-infos">
-            <h2><%= restaurant.name %></h2>
-            <p><%= restaurant.price %>€</p>
-            <p><%= restaurant.description.truncate(30)%>
-            <img src="https://www.it-services.com.tn/wp-content/uploads/2017/04/avatar-2.png" class="card-trip-user avatar-bordered"/>
+            </div> 
           </div>
-      </div>
+      <% end %> 
       <% end %>
-    <% end %>
-  </div>
-  <div class="potager-grid content-cards">
-      <% @activities.each do |activity| %>
-        <%= link_to trip_activity_path(trip_id: @trip.id, id: activity.id) do %>
-        <div class="card-trip">
-            <%= image_tag 'photo.jpg', class:"card-img" %>
-            <div class="card-trip-infos">
-              <h2><%= activity.name %></h2>
-              <p><%= activity.price %>€</p>
-              <p><%= activity.description.truncate(30)%>
+    </div>
+    <div class="cards">
+      <% @restaurants.each do |restaurant| %>
+      <%= link_to trip_restaurant_path(trip_id: @trip.id, id: restaurant.id) do %>
+        <%#= link_to flat do %>
+          <div class="card-trip">  
+            <%= image_tag 'photo.jpg' %>
+            <div class="card-trip-infos">>
+                <div class='card-trip-text'>
+                  <h2><%= restaurant.name %></h2>
+                  <p><%= restaurant.price %>€</p>
+                  <p><%= restaurant.description.truncate(30)%>
+                </div>
               <img src="https://www.it-services.com.tn/wp-content/uploads/2017/04/avatar-2.png" class="card-trip-user avatar-bordered"/>
             </div>
           </div>
-            <% end %>
-          <% end %>
+      <% end %> 
+      <% end %>
     </div>
+    <div class="cards">
+      <% @activities.each do |activity| %>
+        <%= link_to trip_activity_path(trip_id: @trip.id, id: activity.id) do %>
+        <%#= link_to flat do %>
+          <div class="card-trip">  
+            <%= image_tag 'photo.jpg' %>
+            <div class="card-trip-infos">>
+                <div class='card-trip-text'>
+                  <h2><%= activity.name %></h2>
+              <p><%= activity.price %>€</p>
+              <p><%= activity.description.truncate(30)%>
+              <img src="https://www.it-services.com.tn/wp-content/uploads/2017/04/avatar-2.png" class="card-trip-user avatar-bordered"/>
+              </div>
+            </div>
+          </div>
+        <% end %> 
+      <% end %>
+    </div>
+    <div id="trip-box" style="width: 300px; height: 100vh;">
+      <ul class="list-inline t-tabs-underlined">
+        <li>
+          <%= link_to "Carte", trip_flats_path(@trip.id), class: "t-tab-underlined active" %>
+        </li>
+        <li>
+          <%= link_to "Voyage", trip_restaurants_path(@trip.id), class: "t-tab-underlined" %>
+        </li>
+      </ul>
+      <div id="map"
+        style="width: 300px; height: 100vh;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>  
   </div>
 </div>
+
+          
+         
+
+    
