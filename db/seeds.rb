@@ -61,11 +61,11 @@ Trip.create!(
   category: 'Poissons',
   price: 15
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103549/mr-fr_13_1435_px1ho1.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262131/photo-1567452839976-5d4fdcb08bed_hakkdl.jpg')
+  r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262101/photo-1529059997568-3d847b1154f0_rzyj0f.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103575/icohioh7-epE0YntPetKPGkI1Pg8Ff9S1UxKfl0p1lFri79UBQssc6q-P_AmZVYYPtsis65qByjacgYyZDWHi3mEcPe40SNt1cMkA3HQlq6qCW4rLRFHPv2cQZd2YQOiZR5sKIVW7g3lj-ml1l3RLi0Tvxi7V8ICw5JytmaIq7ob_q6e5px.jpg')
-  r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103549/mr-fr_13_1435_px1ho1.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103549/mr-fr_13_1435_px1ho1.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -80,13 +80,13 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103575/i
   price: 15,
   address: "16 rue Neuve, 13001 Marseille"
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103307/0017cb_db2f8bfbc3004b61b761e572984e1af1_vmufxw.webp')
-  r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262777/photo-1555396273-367ea4eb4db5_wcwg1d.jpg')
   r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103307/0017cb_db2f8bfbc3004b61b761e572984e1af1_vmufxw.webp')
   r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
+  r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262835/photo-1569760142069-bc6838de16c1_bknfnp.jpg')
   r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103307/0017cb_db2f8bfbc3004b61b761e572984e1af1_vmufxw.webp')
   r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -98,13 +98,13 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103307/0
   price: 15,
   address: "7 rue sainte, 13001 Marseille"
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/photo-1589918072595-0546b0a4fd0b_yl8rsp.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262212/photo-1546195643-70f48f9c5b87_dpajdk.jpg')
   r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
-  r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/photo-1589918072595-0546b0a4fd0b_yl8rsp.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262185/photo-1485182708500-e8f1f318ba72_tbwwba.jpg')
   r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/photo-1589918072595-0546b0a4fd0b_yl8rsp.jpg')
+  r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262247/photo-1493770348161-369560ae357d_ohlrtw.jpg')
   r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
   r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -116,26 +116,16 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/p
   price: 15,
   address: "56 Rue Mazenod, 13002 Marseille"
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/photo-1589384114070-84dbfba76b18_ilpsrh.jpg')
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263272/photo-1565394642825-0db68c75b36f_opzb9s.jpg')
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263320/photo-1493147380900-672b878fe69e_jnd4s5.jpg')
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263368/photo-1469533778471-92a68acc3633_vurg4n.jpg')
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/photo-1589384114070-84dbfba76b18_ilpsrh.jpg')
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-
-#   r5 = Restaurant.create!(
-#   name: "Parachita",
-#   description: "Restaurant vénézuélien à Marseille. Venez decouvrir les plats typiques vénézuéliens préparés dans un environnement zéro plastique",
-#   category: 'Monde',
-#   price: 15,
-#   address: "6 rue Lulli, 13001 Marseille"
-#   )
-# file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
-#   r5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
    r6 = Restaurant.create!(
    name: "Mozz Art Pizza",
@@ -144,8 +134,14 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/p
    price: 15,
    address: "58 rue d'Italie, 13006 Marseille"
    )
- file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
-   r6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262972/photo-1554118811-1e0d58224f24_botcrh.jpg')
+    r6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263066/photo-1513104890138-7c749659a591_d7qszi.jpg')
+    r6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263113/photo-1574969903809-3f7a1668ceb0_c7mrhx.jpg')
+    r6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263164/photo-1586040456399-50595fb77ecd_g7h6yh.jpg')
+    r6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r7 = Restaurant.create!(
   name: "Le Saint-Jacques",
@@ -158,9 +154,9 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/p
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101444/233339646_wzjmvn.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/photo-1559339352-11d035aa65de_t4dgsd.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262279/photo-1414235077428-338989a2e8c0_xgynnw.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101444/233339646_wzjmvn.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262312/photo-1543969082-e79e8d52340a_f5l3p2.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/photo-1559339352-11d035aa65de_t4dgsd.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -172,13 +168,13 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/p
   category: 'Cuisine française',
   price: 15
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105962/photo-1533777857889-4be7c70b33f7_tj2ul0.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262873/photo-1517248135467-4c7edcad34c4_rvxqxu.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105784/photo-1428515613728-6b4607e44363_iztlvt.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105962/photo-1533777857889-4be7c70b33f7_tj2ul0.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105962/photo-1533777857889-4be7c70b33f7_tj2ul0.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262909/photo-1481819167214-0427aac02394_noode5.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105784/photo-1428515613728-6b4607e44363_iztlvt.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -190,7 +186,13 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105784/p
   category: 'Cuisine française',
   price: 15
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674920/photo-1572205821737-01dfdaf0b012_xl3fnp.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262443/photo-1551632436-cbf8dd35adfa_lylzbb.jpg')
+  r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262479/photo-1498654896293-37aacf113fd9_nly9qn.jpg')
+  r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262515/photo-1543339318-b43dc53e19b3_yk29y2.jpg')
+  r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262549/photo-1468218620578-e8d78dcda7b1_jyjvqp.jpg')
   r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   f1 = Flat.create!( # f5pret
@@ -302,8 +304,6 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591094395/7
   label: 'ATES',
   availability: true
   )
-# file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591096849/71562910_qbsdku.jpg')
-#  f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591100560/163754846_chnqle.jpg')
   f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591100619/71562904_ulginz.jpg')
@@ -322,8 +322,8 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591100661/7
   label: 'ATES',
   availability: true
   )
-#file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101087/96901385_ncpggr.jpg')
-#  f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591261418/photo-1496417263034-38ec4f0b665a_oxaxhk.jpg')
+  f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101112/145323996_homg4o.jpg')
   f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101131/96901323_mlav3g.jpg')
@@ -361,8 +361,6 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106335/p
   category: 'Plongée',
   price: 80
   )
-#file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104848/photo-1539498508910-091b5e859b1d_cdd7wk.jpg')
-#  a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104865/photo-1544551763-46a013bb70d5_qjobqm.jpg')
   a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104888/photo-1544551763-92ab472cad5d_wnwk0d.jpg')
@@ -373,10 +371,6 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104865/p
   a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104888/photo-1544551763-92ab472cad5d_wnwk0d.jpg')
   a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-#file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591109237/photo-1517627043994-b991abb62fc8_w9hfsj.jpg')
-#  a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-#file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591109301/photo-1544551763-8dd44758c2dd_ewdlup.jpg')
-# a2 .photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   a3 = Activity.create!(
   name: "Découvrez Marseille",
