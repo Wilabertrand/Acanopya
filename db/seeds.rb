@@ -1,3 +1,4 @@
+Geocoder.configure(timeout: 60, lookup: :ban_data_gouv_fr)
 Trip.destroy_all
 Flat.destroy_all
 Restaurant.destroy_all
@@ -42,13 +43,16 @@ User.create!(
   last_name: "admin",
   admin: true
 )
-  r1 = Restaurant.create!(
+  r1 = Restaurant.create(
   name: "Maman sardine",
-  address: "7 quai de Rive Neuve, 13001 Marseille",
+  #address: "7 quai de Rive Neuve, 13001 Marseille",
   description: "La délice des Sardines à Marseille. Poissons grillés, fruits de mer, tartares d'algues... de quoi ravir vos papilles avec des produits frais de la pêche du matin.",
   category: 'Poissons',
   price: 15
   )
+
+  puts 'user created'
+
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674613/photo-1583144387451-8e17f0411183_wxo3kc.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674675/photo-1556814901-18c866c057da_q9ittn.jpg')
@@ -60,6 +64,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103549/m
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103575/icohioh7-epE0YntPetKPGkI1Pg8Ff9S1UxKfl0p1lFri79UBQssc6q-P_AmZVYYPtsis65qByjacgYyZDWHi3mEcPe40SNt1cMkA3HQlq6qCW4rLRFHPv2cQZd2YQOiZR5sKIVW7g3lj-ml1l3RLi0Tvxi7V8ICw5JytmaIq7ob_q6e5px.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
+puts 'ok1'
   r2 = Restaurant.create!(
   name: "Parchita",
   description: "Restaurant vénézuélien à Marseille. Venez decouvrir les plats typiques vénézuéliens préparés dans un environnement zéro plastique",
@@ -164,8 +169,8 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591001439/p
 
   r9 = Restaurant.create!(
   name: "Le Sud",
-  address: '16 Boulevard Darby Route Des Golfs, 83700, Saint-Raphaël',
-  description: "La meilleure cuisine française 100% bio à Saint Raphaël",
+  address: '34 Quai du Port, 13002 Marseille',
+  description: "La meilleure cuisine française 100% bio à Marseille",
   category: 'Cuisine française',
   price: 15
   )
@@ -372,7 +377,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
 
   a4 = Activity.create!(
     name: "Le Château d'If",
-    address: "54 rue d'Italie, 13006 Marseille",
+    address: "45 rue d'Italie, 13006 Marseille",
     description: "Le château d'If est une forteresse française édifiée sur les ordres du roi François Iᵉʳ, entre 1527 et 1529 sur l'îlot d'If de l'archipel du Frioul, proche des îles de Ratonneau et Pomègues au centre de la rade de Marseille. C'est une construction carrée de trois étages mesurant 28 mètres sur chaque côté, flanquée de trois tours, percées de larges embrasures. Le reste de l'île, dont la dimension est seulement 3 hectares, est fortement défendu ; de hauts remparts avec des plates-formes d'artillerie surmontent les falaises. Il a essentiellement servi de prison pendant ses 400 ans d'utilisation officielle. Rendu célèbre par le roman d'Alexandre Dumas, Le Comte de Monte-Cristo, il est l'un des sites les plus visités de la ville de Marseille. Il a été classé monument historique le 7 juillet 1926.",
     category: 'Randonée',
     price: 23
@@ -390,7 +395,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
     puts 'activities en cours'
     a5 = Activity.create!(
     name: "Les Docks Village",
-    address: '10 Place de la Joliette, 13002 Marseille',
+    address: "45 rue d'Italie, 13006 Marseille",
     description: "Ce bâtiment flambant neuf vient d’être élu officiellement lauréat dans la catégorie meilleur centre commercial à l’occasion de la cérémonie des MIPIM Awards 2016 qui s’est déroulée le 17 mars dernier à Cannes. C’est en quelques sortes le championnat du monde de l’immobilier qui se déroule chaque année sur la croisette. Soutenez les Docks pour le Prix du public, en votant ici.",
     category: 'Shopping',
     price: 40
@@ -408,7 +413,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
   
     a6 = Activity.create!(
       name: "Randonnée dans les Calanques",
-      address: 'Calanque de Morgiou, Belvedere de Sugiton',
+      address: "45 rue d'Italie, 13006 Marseille",
       description: "Vous serez accompagné d'un guide accompagnateur local qui vous fera découvrir les richesses de ce patrimoine classé Parc National et Patrimoine Mondial de l'Humanité. Situé aux portes de la ville, on y trouve une zone naturelle préservée de falaises calcaires abruptes, de plages, de forêts et maquis typiques de la méditerranée.",
       category: 'Randonnée',
       price: 20
