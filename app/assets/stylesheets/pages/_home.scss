@@ -16,6 +16,15 @@
     line-height: 80px;
   }
 }
+.title-2 {
+  margin-top: 100px;
+  color: #41E2BA;
+
+  h1 {
+    font-size: 70px;
+    line-height: 80px;
+  }
+}
 
 .subtitle {
   h1 {
@@ -64,7 +73,7 @@ h4  {
   // padding-top: 10px;
   // padding-bottom: 10px;
   position: fixed;
-  top: 50%;
+  top: 55%;
   right: 15px !important;
   transform: translateY(-50%);
   z-index: 1021;
