@@ -37,7 +37,7 @@
                             <p>Pour un montant de : <%= booking_flat.flat.price %>0€ / nuité / personne </p>
                             <p>Statut de votre réservation : <%= booking_flat.status %></p>
                             <p><%# if !booking_flat.flat_review.present? %>
-                                <%= link_to "Noter l'hébergement", trip_flat_path(trip, booking_flat.flat) %></p>
+                                <%= link_to "Noter l'hébergement", trip_flat_path(trip, booking_flat.flat) %> à partir du <%= booking_flat.end_date %></p>
                             <%# end %></p>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <p>Réservé le : <%= booking_restaurant.start_date %>
                             <p>Pour un montant de : <%= booking_restaurant.restaurant.price %>0€ /menu / personne</p>
                             <p>Statut de votre réservation : <%= booking_restaurant.status %></p>
-                            <p><%= link_to "Noter le restaurant", trip_restaurant_path(trip, booking_restaurant.restaurant) %></p>
+                            <p><%= link_to "Noter le restaurant", trip_restaurant_path(trip, booking_restaurant.restaurant) %> à partir du <%= booking_restaurant.start_date %></p>
                         </div>
                     </div>
                 </div>
@@ -68,12 +68,12 @@
                             <p>Réservé le : <%= booking_activity.start_date %></p> 
                             <p>Pour un montant de : <%= booking_activity.activity.price %>0€ / personne</p>
                             <p>Statut de votre réservation : <%= booking_activity.status %></p>
-                            <p><%= link_to "Noter l'activité", trip_activity_path(trip, booking_activity.activity) %></p>
+                            <p><%= link_to "Noter l'activité", trip_activity_path(trip, booking_activity.activity) %> à partir du <%= booking_activity.start_date %></p>
                         </div>
                     </div>
                 </div>
                 <% end %>
-                <p>Calculez votre emprunte carbone</p>
+                <p>Calculez l'empreinte carbone de votre voyage avec notre partenaire https://www.goodplanet.org/fr/calculateurs-carbone/particulier/?calculator=1&action=calcul&type=voyage</p>
             </div>
         </div>
         <% end %>
