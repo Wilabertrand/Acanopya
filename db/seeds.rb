@@ -58,7 +58,7 @@ Trip.create!(
 
   r1 = Restaurant.create!(
   name: "Maman Sardine",
-  #address: "7 quai de Rive Neuve, 13001 Marseille",
+  address: "7 quai de Rive Neuve, 13001 Marseille",
   description: "La délice des Sardines à Marseille. Poissons grillés, fruits de mer, tartares d'algues... de quoi ravir vos papilles avec des produits frais de la pêche du matin.",
   category: 'Poisson',
   price: 25
@@ -438,7 +438,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
   #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
   # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190991/37584_kiktkp.jpg')
   #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-  
+
   #   a6 = Activity.create!(
   #     name: "Randonnée dans les Calanques",
   #     address: "5 rue d'Italie, 13006 Marseille",
@@ -456,9 +456,9 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
   #     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
   #   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196606/PA1_des-calanques-de-marseille-a-la-cote-bleue_prsery.jpg')
   #     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-    
+
       puts 'activities fini'
- 
+
 Flat.all.each do |flat|
   BookingFlat.create!(
     trip: Trip.first,
@@ -498,7 +498,7 @@ BookingFlat.all.each do |booking_flat|
   end
 end
 
-content_restaurant = ["Vos papilles vont adorer! N'hésitez pas à prendre un dessert!", 
+content_restaurant = ["Vos papilles vont adorer! N'hésitez pas à prendre un dessert!",
 "Top restaurant, super accueil, excellent service. Ils ont même pris le temps de nous expliquer les recettes locales",
 "Jamais découvert un restaurant aussi dingue. Des spécialités locales réalisées par le chef Miguel",
 "Restaurant incroyable!",
@@ -516,7 +516,7 @@ BookingRestaurant.all.each do |booking_restaurant|
   end
 end
 
-content_activity = ["Tellement dépaysant. J'ai eu l'impression de vivre au rythme de la nature!", 
+content_activity = ["Tellement dépaysant. J'ai eu l'impression de vivre au rythme de la nature!",
 "Superbe excursion. En couple ou en famille, nous on a tous adoré",
 "Des paysages superbes. C'était fou. Hâte d'y retourner",
 "On nous a montré des petits coins préservés de tout, c'était incroyable!"]
