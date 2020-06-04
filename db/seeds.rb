@@ -400,6 +400,7 @@ Flat.all.each do |flat|
   BookingFlat.create!(
     trip: Trip.first,
     flat: flat
+    
   )
 end
 

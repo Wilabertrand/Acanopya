@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_01_164946) do
+ActiveRecord::Schema.define(version: 2020_06_04_061456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2020_06_01_164946) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "start_date"
     t.date "end_date"
+    t.string "status_reservation"
     t.index ["flat_id"], name: "index_booking_flats_on_flat_id"
     t.index ["trip_id"], name: "index_booking_flats_on_trip_id"
   end
@@ -93,6 +94,25 @@ ActiveRecord::Schema.define(version: 2020_06_01_164946) do
     t.date "end_date"
     t.index ["restaurant_id"], name: "index_booking_restaurants_on_restaurant_id"
     t.index ["trip_id"], name: "index_booking_restaurants_on_trip_id"
+  end
+
+  create_table "carbons", force: :cascade do |t|
+    t.string "départ"
+    t.bigint "trip_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["trip_id"], name: "index_carbons_on_trip_id"
+  end
+
+  create_table "flat_bookings", force: :cascade do |t|
+    t.text "comment"
+    t.integer "rating"
+    t.bigint "user_id", null: false
+    t.bigint "booking_flat_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_flat_id"], name: "index_flat_bookings_on_booking_flat_id"
+    t.index ["user_id"], name: "index_flat_bookings_on_user_id"
   end
 
   create_table "flat_reviews", force: :cascade do |t|
@@ -150,8 +170,8 @@ ActiveRecord::Schema.define(version: 2020_06_01_164946) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "location"
     t.string "name"
+    t.string "location"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
@@ -179,6 +199,9 @@ ActiveRecord::Schema.define(version: 2020_06_01_164946) do
   add_foreign_key "booking_flats", "trips"
   add_foreign_key "booking_restaurants", "restaurants"
   add_foreign_key "booking_restaurants", "trips"
+  add_foreign_key "carbons", "trips"
+  add_foreign_key "flat_bookings", "booking_flats"
+  add_foreign_key "flat_bookings", "users"
   add_foreign_key "flat_reviews", "booking_flats"
   add_foreign_key "flat_reviews", "users"
   add_foreign_key "restaurant_reviews", "booking_restaurants"
