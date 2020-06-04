@@ -8,21 +8,7 @@
             <div class="voyage-box">
                 <div class="voyage">
                     <div>
-                    <span><%= link_to trip.name, trip_path(trip) %></span>
-                    <span>, voyage du <%= trip.start_date %> au <%= trip.end_date %></span>
-                    </div>
-                    <div>
-                    <% if policy(trip).show? %>
-                        <span><%= link_to "Voir", trip_path(trip) %></span>
-                    <% end %>
-                    </div>
-                    <div>
-                    <% if policy(trip).destroy? %>
-                        <span><%= link_to "Supprimer",
-                            trip_path(trip),
-                            method: :delete,
-                            data: { confirm: "Êtes-vous sûr?" } %></span>
-                    <% end %>
+                    <h4>Mon séjour <%= link_to trip.name, trip_path(trip)%>, du <%= trip.start_date %> au <%= trip.end_date %> :</h4>
                     </div>
                 </div>
                 <br>
@@ -73,7 +59,21 @@
                     </div>
                 </div>
                 <% end %>
-                <p>Calculez l'empreinte carbone de votre voyage avec notre partenaire https://www.goodplanet.org/fr/calculateurs-carbone/particulier/?calculator=1&action=calcul&type=voyage</p>
+                <div>
+                <a href="https://www.goodplanet.org/fr/calculateurs-carbone/particulier/?calculator=1&action=calcul&type=voyage" target="_blank">
+                Calculez l'empreinte carbone de votre trajet avec notre partenaire Good Planet
+                </a>
+                </div>
+                <div>
+                    <% if policy(trip).destroy? %>
+                        <span><%= link_to "Supprimer mon voyage",
+                            trip_path(trip),
+                            method: :delete,
+                            data: { confirm: "Êtes-vous sûr?" } %></span>
+                    <% end %>
+                </div>
+                <br>
+                <br>
             </div>
         </div>
         <% end %>
