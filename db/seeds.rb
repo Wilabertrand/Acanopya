@@ -133,7 +133,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591000775/p
 
   r7 = Restaurant.create!(
   name: "Le Saint-Jacques",
-  address: '1, chemin de la Palmeraie, 84700 Saint-Raphaël',
+  address: "58 rue d'Italie, 13006 Marseille",
   description: 'Les délices des Saint-Jacques à Saint-Raphaël, un restarurant engagé envers une pêche sélective de façon à ne pas capturer des espèces non désirées qui seront rejetées à la mer',
   category: 'Poissons',
   price: 15,
@@ -151,7 +151,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101509/2
 
   r8 = Restaurant.create!(
   name: "Le gourmet",
-  address: '2 Place Amiral Ortoli, 83700, Saint-Raphaël',
+  address: "58 rue d'Italie, 13006 Marseille",
   description: "La meilleure cuisine française à Saint Raphaël. Nous travaillons à l'anti-gaspillage alimentaire",
   category: 'Cuisine française',
   price: 15
