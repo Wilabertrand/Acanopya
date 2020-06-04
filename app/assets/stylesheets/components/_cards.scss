@@ -109,10 +109,6 @@
   margin-right: 40px;
 }
 
-.voyage {
-  display: flex;
-}
-
 .card-review-sumup p {
   font-size: 14px;
   opacity: .7;
@@ -129,5 +125,13 @@
 
 .inline {
   display: flex;
+}
+
+.trip-box{
+  border-bottom: 1px solid #dee2e6;
+}
+
+.partner {
+  padding-bottom: 15px;
 }
 // fin voyage index
