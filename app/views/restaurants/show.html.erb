@@ -83,7 +83,7 @@
           <div id="form_booking">
             <div class="d-flex justify-content-between mt-2">
               <div class="important">
-                <p><%= @restaurant.price %>€<span style="font-size: 16px"> / personne</span></p>
+                <p><%= @restaurant.price %>€ / personne<span style="font-size: 16px"></span></p>
               </div>
             </div>
             <p>Cuisine: <%= @restaurant.category %></p>
@@ -129,7 +129,7 @@
                 <div id="trip-card">
                   <div class="left">
                     <p><%= restaurant.name %></p>
-                    <p><span><%= restaurant.price %>€</span></p>
+                    <p><span><%= restaurant.price %>€ / par personne</span></p>
                     <p><%= @trip.start_date %></p>
                   </div>
                   <div class="right">
@@ -144,13 +144,13 @@
               <div class="trip-card-title">
                 <h6>Hébergements</h6>
               </div>
-              <% unless @trip.restaurants.empty? %>
-                <% @trip.restaurants.each do |restaurant| %>
+              <% unless @trip.flats.empty? %>
+                <% @trip.flats.each do |flat| %>
                   <div id="trip-card">
                     <div class="left">
-                      <p><%= restaurant.name %></p>
-                      <p><span><%= restaurant.price %>€</span></p>
-                      <p><%= @trip.start_date %></p>
+                      <p><%= flat.name %></p>
+                      <p><span><%= flat.price %>€ / nuité par personne</span></p>
+                      <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
                     </div>
                     <div class="right">
                       <a data-dismiss="alert" aria-label="Close">
@@ -165,12 +165,12 @@
               <div class="trip-card-title">
                 <h6>Activités</h6>
               </div>
-              <% unless @trip.restaurants.empty? %>
-                <% @trip.restaurants.each do |restaurant| %>
+              <% unless @trip.activities.empty? %>
+                <% @trip.activities.each do |activity| %>
                   <div id="trip-card">
                     <div class="left">
-                      <p><%= restaurant.name %></p>
-                      <p><span><%= restaurant.price %>€</span></p>
+                      <p><%= activity.name %></p>
+                      <p><span><%= activity.price %>€ / personne</span></p>
                       <p><%= @trip.start_date %></p>
                     </div>
                     <div class="right">

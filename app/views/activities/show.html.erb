@@ -132,7 +132,7 @@
                 <div id="trip-card">
                   <div class="left">
                     <p><%= restaurant.name %></p>
-                    <p><span><%= restaurant.price %>€</span></p>
+                    <p><span><%= restaurant.price %>€ / personne</span></p>
                     <p><%= @trip.start_date %></p>
                   </div>
                   <div class="right">
@@ -147,13 +147,13 @@
               <div class="trip-card-title">
                 <h6>Hébergements</h6>
               </div>
-              <% unless @trip.activities.empty? %>
-                <% @trip.activities.each do |activity| %>
+              <% unless @trip.flats.empty? %>
+                <% @trip.flats.each do |flat| %>
                   <div id="trip-card">
                     <div class="left">
-                      <p><%= activity.name %></p>
-                      <p><span><%= activity.price %>€</span></p>
-                      <p><%= @trip.start_date %></p>
+                      <p><%= flat.name %></p>
+                      <p><span><%= flat.price %>€ / nuité par personne</span></p>
+                      <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
                     </div>
                     <div class="right">
                       <a data-dismiss="alert" aria-label="Close">
@@ -173,7 +173,7 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= activity.name %></p>
-                      <p><span><%= activity.price %>€</span></p>
+                      <p><span><%= activity.price %>€ par personne</span></p>
                       <p><%= @trip.start_date %></p>
                     </div>
                     <div class="right">

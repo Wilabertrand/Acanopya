@@ -97,7 +97,7 @@
             <div class="important">
               <div class="d-flex justify-content-between mt-3">
                 <p><strong>Total</strong></p>
-                <p><strong><%= @price %>€</strong></p>
+                <p><strong><%= @price %>€ / nuité</strong></p>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@
                 <div id="trip-card">
                   <div class="left">
                     <p><%= restaurant.name %></p>
-                    <p><span><%= restaurant.price %>€</span></p>
+                    <p><span><%= restaurant.price %>€/ personne</span></p>
                     <p><%= @trip.start_date %></p>
                   </div>
                   <div class="right">
@@ -150,7 +150,7 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= flat.name %></p>
-                      <p><span><%= flat.price %>€</span></p>
+                      <p><span><%= flat.price %>€/ nuité par personne</span></p>
                       <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
                     </div>
                     <div class="right">
@@ -171,7 +171,7 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= activity.name %></p>
-                      <p><span><%= activity.price %>€</span></p>
+                      <p><span><%= activity.price %>€ / personne</span></p>
                       <p><%= @trip.start_date %></p>
                     </div>
                     <div class="right">

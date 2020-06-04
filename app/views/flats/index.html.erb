@@ -18,8 +18,7 @@
                 <p><%= flat.address %></p>
                 <h2 class="pb-2 mb-2 border-bottom"><%= flat.name %></h2>
                 <p>label : <%= flat.label %></p>
-                <p>pour <%= flat.capacity %> personnes</p>
-                <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
+                <h2 class="card-trip-pricing"><%= flat.price %>€/ nuité par personne</h2>
               </div>
             </div>
           </div> 
@@ -46,8 +45,8 @@
                 <div id="trip-card">
                   <div class="left">
                     <p><%= restaurant.name %></p>
-                    <p><span><%= restaurant.price %>€/jour</span></p>
-                    <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
+                    <p><span><%= restaurant.price %>€/ personne</span></p>
+                    <p><%= @trip.start_date %></p>
                   </div>
                   <div class="right">
                     <a data-dismiss="alert" aria-label="Close">
@@ -66,7 +65,7 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= flat.name %></p>
-                      <p><span><%= flat.price %>€/jour</span></p>
+                      <p><span><%= flat.price %>€/ nuité par personne</span></p>
                       <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
                     </div>
                     <div class="right">
@@ -87,8 +86,8 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= activity.name %></p>
-                      <p><span><%= activity.price %>€/jour</span></p>
-                      <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
+                      <p><span><%= activity.price %>€/ personne</span></p>
+                      <p><%= @trip.start_date %></p>
                     </div>
                     <div class="right">
                       <a data-dismiss="alert" aria-label="Close">
