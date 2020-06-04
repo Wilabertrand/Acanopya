@@ -400,7 +400,7 @@ Flat.all.each do |flat|
   BookingFlat.create!(
     trip: Trip.first,
     flat: flat
-    
+    status_reservation: "en attente de confirmation"
   )
 end
 
