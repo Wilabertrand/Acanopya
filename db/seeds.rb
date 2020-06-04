@@ -65,14 +65,22 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103549/m
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103575/icohioh7-epE0YntPetKPGkI1Pg8Ff9S1UxKfl0p1lFri79UBQssc6q-P_AmZVYYPtsis65qByjacgYyZDWHi3mEcPe40SNt1cMkA3HQlq6qCW4rLRFHPv2cQZd2YQOiZR5sKIVW7g3lj-ml1l3RLi0Tvxi7V8ICw5JytmaIq7ob_q6e5px.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103549/mr-fr_13_1435_px1ho1.jpg')
+  r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103575/icohioh7-epE0YntPetKPGkI1Pg8Ff9S1UxKfl0p1lFri79UBQssc6q-P_AmZVYYPtsis65qByjacgYyZDWHi3mEcPe40SNt1cMkA3HQlq6qCW4rLRFHPv2cQZd2YQOiZR5sKIVW7g3lj-ml1l3RLi0Tvxi7V8ICw5JytmaIq7ob_q6e5px.jpg')
+  r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r2 = Restaurant.create!(
   name: "Divine Pita",
   description: "Pour les amoureux de produits frais",
   category: 'Monde',
   price: 15,
-  address: "16 Rue Bernard du Bois, 13001 Marseille"
+  address: "16 rue Neuve, 13001 Marseille"
   )
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103307/0017cb_db2f8bfbc3004b61b761e572984e1af1_vmufxw.webp')
+  r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
+  r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103307/0017cb_db2f8bfbc3004b61b761e572984e1af1_vmufxw.webp')
   r2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
@@ -87,14 +95,24 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/i
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/photo-1589918072595-0546b0a4fd0b_yl8rsp.jpg')
   r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/photo-1589918072595-0546b0a4fd0b_yl8rsp.jpg')
+  r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/photo-1589918072595-0546b0a4fd0b_yl8rsp.jpg')
+  r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/photo-1589918072595-0546b0a4fd0b_yl8rsp.jpg')
+  r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r4 = Restaurant.create!(
-  name: "Les macarons de tante Sally",
+  name: "Les macarons de Sally",
   description: "Les meilleurs macarons de Marseille, fait avec des produits issus de circuits courts",
   category: 'Cuisine française',
   price: 15,
   address: "56 Rue Mazenod, 13002 Marseille"
   )
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+  r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+  r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
@@ -107,26 +125,36 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/p
   price: 15,
   address: "6 rue Lulli, 13001 Marseille"
   )
-  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
+  r5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
+  r5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
+  r5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
   r5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
-  r6 = Restaurant.create!(
-  name: "Mozz Art Pizza",
-  description: "Comme en Italie mais 100% bio",
-  category: 'Italien',
-  price: 15,
-  address: "58 rue d'Italie, 13006 Marseille"
-  )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
-  r6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+#   r6 = Restaurant.create!(
+#   name: "Mozz Art Pizza",
+#   description: "Comme en Italie mais 100% bio",
+#   category: 'Italien',
+#   price: 15,
+#   address: "58 rue d'Italie, 13006 Marseille"
+#   )
+# file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+#   r6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r7 = Restaurant.create!(
   name: "Le Saint-Jacques",
-  address: '40, rue Saint Jacques, 13006 Marseille',
+  address: '40, rue Sainte, 13001 Marseille',
   description: 'Les délices des Saint-Jacques à Maseille, un restarurant engagé envers une pêche sélective de façon à ne pas capturer des espèces non désirées qui seront rejetées à la mer',
   category: 'Poissons',
   price: 15,
   )
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/photo-1559339352-11d035aa65de_t4dgsd.jpg')
+  r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101444/233339646_wzjmvn.jpg')
+  r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/photo-1559339352-11d035aa65de_t4dgsd.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101444/233339646_wzjmvn.jpg')
@@ -143,6 +171,10 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105962/p
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105784/photo-1428515613728-6b4607e44363_iztlvt.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105962/photo-1533777857889-4be7c70b33f7_tj2ul0.jpg')
+  r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105784/photo-1428515613728-6b4607e44363_iztlvt.jpg')
+  r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r9 = Restaurant.create!(
   name: "Le Sud",
@@ -152,6 +184,12 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105784/p
   price: 15
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674920/photo-1572205821737-01dfdaf0b012_xl3fnp.jpg')
+  r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674920/photo-1572205821737-01dfdaf0b012_xl3fnp.jpg')
+  r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674920/photo-1572205821737-01dfdaf0b012_xl3fnp.jpg')
+  r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674920/photo-1572205821737-01dfdaf0b012_xl3fnp.jpg')
   r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   f1 = Flat.create!( # f5pret
@@ -173,6 +211,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591094564/2
   f1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591094591/233339328_oqugex.jpg')
   f1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+
   f2 = Flat.create!(
   name: "Residhotel vert",
   address: '2 quai du port, 13002 Marseille',
@@ -375,7 +414,7 @@ content_flat = ["Superbe lieu très bien situé et très central. L'accueil a é
 "Acceuil, petit-déjeuner, tout est parfait pour un week-end en amoureux!"]
 
 BookingFlat.all.each do |booking_flat|
-  3.times do
+  2.times do
     FlatReview.create!(
     booking_flat: booking_flat,
     user: booking_flat.trip.user,
@@ -385,36 +424,36 @@ BookingFlat.all.each do |booking_flat|
   end
 end
 
-# content_restaurant = ["Vos papilles vont adorer! N'hésitez pas à prendre un dessert!", 
-# "Top restaurant, super accueil, excellent service. Ils ont même pris le temps de nous expliquer les recettes locales",
-# "Jamais découvert un restaurant aussi dingue. Des spécialités locales réalisées par le chef Miguel",
-# "Restaurant incroyable!",
-# "J'ai adoré leurs spécialités! Mes enfants aussi",
-# "Tester le menu entrée, plat, dessert, les produits sont frais et savoureux"]
+content_restaurant = ["Vos papilles vont adorer! N'hésitez pas à prendre un dessert!", 
+"Top restaurant, super accueil, excellent service. Ils ont même pris le temps de nous expliquer les recettes locales",
+"Jamais découvert un restaurant aussi dingue. Des spécialités locales réalisées par le chef Miguel",
+"Restaurant incroyable!",
+"J'ai adoré leurs spécialités! Mes enfants aussi",
+"Testez le menu entrée, plat, dessert, les produits sont frais et savoureux"]
 
-# BookingRestaurant.all.each do |booking_restaurant|
-#   3.times do
-#     RestaurantReview.create!(
-#     booking_restaurant: booking_restaurant,
-#     user: booking_restaurant.user,
-#     content: content_restaurant.sample,
-#     rating: rand(4..5)
-#   )
-#   end
-# end
+BookingRestaurant.all.each do |booking_restaurant|
+3.times do
+  RestaurantReview.create!(
+  booking_restaurant: booking_restaurant,
+  user: booking_restaurant.user,
+  content: content_restaurant.sample,
+  rating: rand(4..5)
+  )
+  end
+end
 
-# content_activity = ["Tellement dépaysant. J'ai eu l'impression de vivre au rythme de la nature!", 
-# "Superbe excursion. En couple ou en famille, nous on a tous adoré",
-# "Des paysages superbes. C'était fou. Hâte d'y retourner",
-# "On nous a montré des petits coins préservés de tout, c'était incroyable!"]
+content_activity = ["Tellement dépaysant. J'ai eu l'impression de vivre au rythme de la nature!", 
+"Superbe excursion. En couple ou en famille, nous on a tous adoré",
+"Des paysages superbes. C'était fou. Hâte d'y retourner",
+"On nous a montré des petits coins préservés de tout, c'était incroyable!"]
 
-# BookingActivity.all.each do |booking_activity|
-#   3.times do
-#     ActivityReview.create!(
-#     booking_review: booking_review,
-#     user: booking_activity.user,
-#     content: content.sample,
-#     rating: rand(4..5)
-#   )
-#   end
-# end
+BookingActivity.all.each do |booking_activity|
+3.times do
+  ActivityReview.create!(
+  booking_review: booking_review,
+  user: booking_activity.user,
+  content: content.sample,
+  rating: rand(4..5)
+  )
+  end
+end
