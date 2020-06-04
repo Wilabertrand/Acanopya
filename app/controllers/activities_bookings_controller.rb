@@ -15,7 +15,7 @@ class ActivitiesBookingsController < ApplicationController
     private
 
     def booking_params
-        params.require(:booking_activity).permit(:trip_id, :start_date)
+        params.require(:booking_activity).permit(:trip_id, :start_date, :status_reservation)
     end
 
     def authorize_booking_activities
