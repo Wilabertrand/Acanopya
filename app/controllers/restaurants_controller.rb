@@ -29,7 +29,9 @@ class RestaurantsController < ApplicationController
   def show
     @booking_restaurant = BookingRestaurant.new
     @trip = Trip.find(params[:trip_id])
-    @flat = Restaurant.find(params[:id])
+    @restaurant = Restaurant.find(params[:id])
+    @markers = [{ lat: @restaurant.latitude, lng: @restaurant.longitude, infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @restaurant }),
+    info_price: @restaurant.price }]
     @people = @trip.number_of_travellers
     @markers = [{ lat: @restaurant.latitude, lng: @restaurant.longitude }]
     @duration = @trip.end_date - @trip.start_date
