@@ -462,7 +462,7 @@ BookingActivity.all.each do |booking_activity|
   ActivityReview.create!(
   booking_activity: booking_activity,
   user: booking_activity.trip.user,
-  content: content.sample,
+  content: content_activity.sample,
   rating: rand(4..5)
   )
   end
