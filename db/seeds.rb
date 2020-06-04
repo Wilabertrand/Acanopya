@@ -67,8 +67,8 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103575/i
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r2 = Restaurant.create!(
-  name: "Parchita",
-  description: "Restaurant vénézuélien à Marseille. Venez decouvrir les plats typiques vénézuéliens préparés dans un environnement zéro plastique",
+  name: "Divine Pita",
+  description: "Pour les amoureux de produits frais",
   category: 'Monde',
   price: 15,
   address: "16 Rue Bernard du Bois, 13001 Marseille"
@@ -83,31 +83,31 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/i
   description: "Vincent et Céline vous proposent du pain artisanal fabriqué à partir de farine locale, issue de la région. Outre leur farine, la majorité des produits utilisés sont de provenance locale et bios. Leurs créations en pâtisserie sont également à ne pas manquer, en particulier leurs cupcakes fait maison, dont c'est une des spécialités.",
   category: 'Cuisine française',
   price: 15,
-  address: "7 boulevard de la Libération, 13001 Marseille"
+  address: "7 rue sainte, 13001 Marseille"
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
-  r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103058/photo-1589918072595-0546b0a4fd0b_yl8rsp.jpg')
   r3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r4 = Restaurant.create!(
-  name: "La Table de L'olivier",
-  description: "La meilleure cuisine traditionnelle française, fait avec des produits issus de circuits courts",
+  name: "Les macarons de tante Sally",
+  description: "Les meilleurs macarons de Marseille, fait avec des produits issus de circuits courts",
   category: 'Cuisine française',
   price: 15,
   address: "56 Rue Mazenod, 13002 Marseille"
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+  r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r5 = Restaurant.create!(
-  name: "Sushi resto",
-  description: "Pour les amoureux du Sushi mais aussi de la nature",
-  category: 'Japonais',
+  name: "Parachita",
+  description: "Restaurant vénézuélien à Marseille. Venez decouvrir les plats typiques vénézuéliens préparés dans un environnement zéro plastique",
+  category: 'Monde',
   price: 15,
-  address: "27 B rue d'Italie, 13006 Marseille"
+  address: "6 rue Lulli, 13001 Marseille"
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/photo-1470192642743-245ea12f0164_hw5sl1.jpg')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103345/images_mjgopw.jpg')
   r5.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r6 = Restaurant.create!(
@@ -122,43 +122,31 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/p
 
   r7 = Restaurant.create!(
   name: "Le Saint-Jacques",
-  address: '1, chemin de la Palmeraie, 84700 Saint-Raphaël',
-  description: 'Les délices des Saint-Jacques à Saint-Raphaël, un restarurant engagé envers une pêche sélective de façon à ne pas capturer des espèces non désirées qui seront rejetées à la mer',
+  address: '40, rue Saint Jacques, 13006 Marseille',
+  description: 'Les délices des Saint-Jacques à Maseille, un restarurant engagé envers une pêche sélective de façon à ne pas capturer des espèces non désirées qui seront rejetées à la mer',
   category: 'Poissons',
   price: 15,
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674964/photo-1547647611-395d6ed8a63d_zldmcl.jpg')
-  r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/photo-1559339352-11d035aa65de_t4dgsd.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101444/233339646_wzjmvn.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101495/233341291_vtnjwo.jpg')
-  r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101509/27048380_hgyata.jpg')
-  r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r8 = Restaurant.create!(
   name: "Le gourmet",
-  address: '2 Place Amiral Ortoli, 83700, Saint-Raphaël',
+  address: '3, rue Aldebert, 13006 Marseille',
   description: "La meilleure cuisine française à Saint Raphaël. Nous travaillons à l'anti-gaspillage alimentaire",
   category: 'Cuisine française',
   price: 15
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674920/photo-1572205821737-01dfdaf0b012_xl3fnp.jpg')
-  r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105962/photo-1533777857889-4be7c70b33f7_tj2ul0.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105784/photo-1428515613728-6b4607e44363_iztlvt.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591105748/photo-1414235077428-338989a2e8c0_vo6fww.jpg')
-  r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591001439/photo-1559964398-f8e5e4ce8241_kjncwf.jpg')
-  r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   r9 = Restaurant.create!(
   name: "Le Sud",
-  address: '16 Boulevard Darby Route Des Golfs, 83700, Saint-Raphaël',
+  address: '20 rue Paradis, 13001 Marseille',
   description: "La meilleure cuisine française 100% bio à Saint Raphaël",
   category: 'Cuisine française',
   price: 15
@@ -168,7 +156,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674920/p
 
   f1 = Flat.create!( # f5pret
   name: "Sea View",
-  address: 'Marseille',
+  address: '5 rue Malmousque, 13007 Marseille',
   description: "Nous vous rassurons l'utilisation de produits ménagers respecteux de l'environnement",
   capacity: 4,
   price: 80,
@@ -267,15 +255,15 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591094395/7
 
   f6 = Flat.create!( # f5pret
   name: "Domaine de l'Esterel",
-  address: '12 avenue des golfs, Saint-Raphaël 83700',
+  address: '12 rue de Ruffi, 13002 Marseille',
   description: "Idéal pour votre voyage en famille, nous mettons à votre disposition un petit déjeuner écolo tous les matins de 7h00 à 11h00",
   capacity: 6,
   price: 120,
   label: 'ATES',
   availability: true
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591096849/71562910_qbsdku.jpg')
-  f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+# file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591096849/71562910_qbsdku.jpg')
+#  f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591100560/163754846_chnqle.jpg')
   f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591100619/71562904_ulginz.jpg')
@@ -287,15 +275,15 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591100661/7
 
   f6 = Flat.create!( # f5pret
   name: "Chez Lili",
-  address: '48 rue Thiers, Saint-Raphaël',
+  address: '18 rue Lulli, 13001 Marseille',
   description: "L'hôtel se situ près de la gare. Idéal pour votre voyage en famille, nous mettons à votre disposition un petit déjeuner écolo tous les matins de 7h00 à 11h00",
   capacity: 6,
   price: 120,
   label: 'ATES',
   availability: true
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101087/96901385_ncpggr.jpg')
-  f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+#file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101087/96901385_ncpggr.jpg')
+#  f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101112/145323996_homg4o.jpg')
   f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101131/96901323_mlav3g.jpg')
@@ -329,21 +317,21 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591113350/p
   category: 'Plongée',
   price: 80
   )
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104848/photo-1539498508910-091b5e859b1d_cdd7wk.jpg')
-  a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+#file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104848/photo-1539498508910-091b5e859b1d_cdd7wk.jpg')
+#  a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104865/photo-1544551763-46a013bb70d5_qjobqm.jpg')
   a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104888/photo-1544551763-92ab472cad5d_wnwk0d.jpg')
   a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591109237/photo-1517627043994-b991abb62fc8_w9hfsj.jpg')
-  a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591109301/photo-1544551763-8dd44758c2dd_ewdlup.jpg')
- a2 .photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+#file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591109237/photo-1517627043994-b991abb62fc8_w9hfsj.jpg')
+#  a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+#file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591109301/photo-1544551763-8dd44758c2dd_ewdlup.jpg')
+# a2 .photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   a3 = Activity.create!(
-  name: "Découvre Saint-Raphaël",
-  address: 'Saint-Raphaël',
-  description: "Si vous voulez appuyer l'économie locale, je vous propose une balade dans le village et vous accompagne dans la découverte des commerçants locaux",
+  name: "Découvrez Marseille",
+  address: '3 rue Haxo, 13001 Marseille',
+  description: "Si vous voulez appuyer l'économie locale, je vous propose une balade et vous accompagne dans la découverte des commerçants locaux",
   category: 'Randonée',
   price: 20
   )
