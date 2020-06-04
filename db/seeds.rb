@@ -1,3 +1,4 @@
+Geocoder.configure(timeout: 60, lookup: :ban_data_gouv_fr)
 Trip.destroy_all
 Flat.destroy_all
 Restaurant.destroy_all
@@ -48,6 +49,7 @@ User.create!(
   last_name: "admin",
   admin: true
 )
+puts 'user created'
 
 Trip.create!(
   user: User.all.sample,
@@ -56,7 +58,7 @@ Trip.create!(
 
   r1 = Restaurant.create!(
   name: "Maman sardine",
-  address: "7 quai de Rive Neuve, 13001 Marseille",
+  #address: "7 quai de Rive Neuve, 13001 Marseille",
   description: "La délice des Sardines à Marseille. Poissons grillés, fruits de mer, tartares d'algues... de quoi ravir vos papilles avec des produits frais de la pêche du matin.",
   category: 'Poissons',
   price: 15
@@ -72,6 +74,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103549/m
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262131/photo-1567452839976-5d4fdcb08bed_hakkdl.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
+puts 'ok1'
 
   r2 = Restaurant.create!(
   name: "Divine Pita",
@@ -113,7 +116,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/p
   name: "Chez Camille",
   description: "La meilleure bouillabaisse de Marseille, fait avec des produits issus de circuits courts",
   category: 'Cuisine française',
-  price: 15,
+  price: 25,
   address: "56 Rue Mazenod, 13002 Marseille"
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/photo-1589384114070-84dbfba76b18_ilpsrh.jpg')
@@ -126,6 +129,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263368/p
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/photo-1589384114070-84dbfba76b18_ilpsrh.jpg')
   r4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+
 
    r6 = Restaurant.create!(
    name: "Mozz Art Pizza",
@@ -148,9 +152,9 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/p
   r7 = Restaurant.create!(
   name: "Le Saint-Jacques",
   address: '40, rue Sainte, 13001 Marseille',
-  description: 'Les délices des Saint-Jacques à Maseille, un restarurant engagé envers une pêche sélective de façon à ne pas capturer des espèces non désirées qui seront rejetées à la mer',
+  description: 'Les délices des Saint-Jacques à Marseille, un restarurant engagé envers une pêche sélective de façon à ne pas capturer des espèces non désirées qui seront rejetées à la mer',
   category: 'Poissons',
-  price: 15,
+  price: 15
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/photo-1559339352-11d035aa65de_t4dgsd.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -165,8 +169,8 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/p
 
   r8 = Restaurant.create!(
   name: "Le gourmet",
-  address: '3, rue Aldebert, 13006 Marseille',
-  description: "La meilleure cuisine française à Saint Raphaël. Nous travaillons à l'anti-gaspillage alimentaire",
+  address: "58 rue d'Italie, 13006 Marseille",
+  description: "La meilleure cuisine française à Marseille. Nous travaillons à l'anti-gaspillage alimentaire",
   category: 'Cuisine française',
   price: 15
   )
@@ -339,6 +343,8 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101158/9
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101112/145323996_homg4o.jpg')
   f6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
+puts 'flats finis'
+
   a1 = Activity.create!(
   name: "Balade en bateau",
   address: 'quai du port, 13002 Marseille',
@@ -362,7 +368,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106335/p
   name: "L'atelier de la mer",
   address: "Avenue d'Odessa, 13008 Marseille",
   description: "Plonger avec nous c’est plonger dans un centre responsable et impliqué en matière de préservation durable du milieu marin, de son patrimoine naturel, paysager et de sa biodiversité.",
-  category: 'Plongée',
+  category: 'Mer',
   price: 80
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104865/photo-1544551763-46a013bb70d5_qjobqm.jpg')
@@ -376,10 +382,12 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104865/p
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104888/photo-1544551763-92ab472cad5d_wnwk0d.jpg')
   a2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
+puts 'activities en cours'
+
   a3 = Activity.create!(
-  name: "Découvrez Marseille",
-  address: '3 rue Haxo, 13001 Marseille',
-  description: "Si vous voulez appuyer l'économie locale, je vous propose une balade et vous accompagne dans la découverte des commerçants locaux",
+  name: "Découvre Marseille",
+  address: "45 rue d'Italie, 13006 Marseille",
+  description: "Si vous voulez appuyer l'économie locale, je vous propose une balade dans le village et vous accompagne dans la découverte des commerçants locaux",
   category: 'Randonée',
   price: 20
   )
@@ -394,6 +402,63 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106180/3
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/DSC07608JPG_5a6074324d969_nhtvip.jpg')
   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
+  # a4 = Activity.create!(
+  #   name: "Le Château d'If",
+  #   address: "45 rue d'Italie, 13006 Marseille",
+  #   description: "Le château d'If est une forteresse française édifiée sur les ordres du roi François Iᵉʳ, entre 1527 et 1529 sur l'îlot d'If de l'archipel du Frioul, proche des îles de Ratonneau et Pomègues au centre de la rade de Marseille. C'est une construction carrée de trois étages mesurant 28 mètres sur chaque côté, flanquée de trois tours, percées de larges embrasures. Le reste de l'île, dont la dimension est seulement 3 hectares, est fortement défendu ; de hauts remparts avec des plates-formes d'artillerie surmontent les falaises. Il a essentiellement servi de prison pendant ses 400 ans d'utilisation officielle. Rendu célèbre par le roman d'Alexandre Dumas, Le Comte de Monte-Cristo, il est l'un des sites les plus visités de la ville de Marseille. Il a été classé monument historique le 7 juillet 1926.",
+  #   category: 'Randonée',
+  #   price: 23
+  #   )
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591189796/303spvL_rojz2p.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591189832/2UmmQFh_jvfxvb.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591189883/3eMiDCl_rgqscu.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591189906/36TQczN_y5exdi.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190649/caption_qeuzbz.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  #   puts 'activities en cours'
+
+    a5 = Activity.create!(
+    name: "Les Docks Village",
+    address: "15 rue d'Italie, 13006 Marseille",
+    description: "Ce bâtiment flambant neuf vient d’être élu officiellement lauréat dans la catégorie meilleur centre commercial à l’occasion de la cérémonie des MIPIM Awards 2016 qui s’est déroulée le 17 mars dernier à Cannes. C’est en quelques sortes le championnat du monde de l’immobilier qui se déroule chaque année sur la croisette. Soutenez les Docks pour le Prix du public, en votant ici.",
+    category: 'Shopping',
+    price: 40
+    )
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190556/2MCMfWZ_jha9vs.jpg')
+    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196242/Christian-Bizzari-Photographie-2_gpqitw.jpg')
+    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196317/marseille-les-docks-village-france-mars-fa_C3_A7ade-de-construction-moderne-_E2_80_9Cde-_E2_80_9C-un-centre-commercial-en-provence-143548365_wi8hzm.jpg')
+    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196403/20151010_180620_HDR_swieba.jpg')
+    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190991/37584_kiktkp.jpg')
+    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  
+    a6 = Activity.create!(
+      name: "Randonnée dans les Calanques",
+      address: "5 rue d'Italie, 13006 Marseille",
+      description: "Vous serez accompagné d'un guide accompagnateur local qui vous fera découvrir les richesses de ce patrimoine classé Parc National et Patrimoine Mondial de l'Humanité. Situé aux portes de la ville, on y trouve une zone naturelle préservée de falaises calcaires abruptes, de plages, de forêts et maquis typiques de la méditerranée.",
+      category: 'Randonnée',
+      price: 20
+      )
+    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190556/2MCMfWZ_jha9vs.jpg')
+      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196444/830x532_parc-national-calanques-marseille_wp41bu.jpg')
+      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196479/calanques1_ymtfa1.jpg')
+      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196572/calanches-piana_poicve.jpg')
+      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196606/PA1_des-calanques-de-marseille-a-la-cote-bleue_prsery.jpg')
+      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+    
+      puts 'activities fini'
+ 
 Flat.all.each do |flat|
   BookingFlat.create!(
     trip: Trip.first,
@@ -412,7 +477,7 @@ Activity.all.each do |activity|
   BookingActivity.create!(
     trip: Trip.first,
     activity: activity
-  )
+)
 end
 
 content_flat = ["Superbe lieu très bien situé et très central. L'accueil a été sur-mesure pour accueillir nos enfants très jeunes. J'ai adoré le petit déjeuner à base de produits locaux, faits maison.",
@@ -466,3 +531,6 @@ BookingActivity.all.each do |booking_activity|
   )
   end
 end
+
+puts 'fini'
+

@@ -1,5 +1,5 @@
 <div class="container py-4">
-  <%= render 'shared/tab' %>
+  <%= render 'shared/tab', page: 'trip-show' %>
   <div class="elements">
     <div class='container card-index-trip'>
       <div class='blocs'>
@@ -17,7 +17,6 @@
                       <p><%= restaurant.category %></p>
                     </div>
                     <h2 class="card-trip-pricing"><%= restaurant.price %>€</h2>
-                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
                   </div>
                 </div> 
               <% end %> 
@@ -40,7 +39,6 @@
                       <p><%= activity.category %></p>
                     </div>
                     <h2 class="card-trip-pricing"><%= activity.price %>€</h2>
-                    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
                   </div>
                 </div> 
               <% end %> 
@@ -63,7 +61,6 @@
                     <p>pour <%= flat.capacity %> personnes</p>
                   </div>
                   <h2 class="card-trip-pricing"><%= flat.price %>€</h2>
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
                 </div>
               </div> 
           <% end %> 
