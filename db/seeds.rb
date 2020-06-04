@@ -432,10 +432,10 @@ content_restaurant = ["Vos papilles vont adorer! N'hésitez pas à prendre un de
 "Testez le menu entrée, plat, dessert, les produits sont frais et savoureux"]
 
 BookingRestaurant.all.each do |booking_restaurant|
-3.times do
+2.times do
   RestaurantReview.create!(
   booking_restaurant: booking_restaurant,
-  user: booking_restaurant.user,
+  user: booking_restaurant.trip.user,
   content: content_restaurant.sample,
   rating: rand(4..5)
   )
@@ -448,10 +448,10 @@ content_activity = ["Tellement dépaysant. J'ai eu l'impression de vivre au ryth
 "On nous a montré des petits coins préservés de tout, c'était incroyable!"]
 
 BookingActivity.all.each do |booking_activity|
-3.times do
+2.times do
   ActivityReview.create!(
   booking_review: booking_review,
-  user: booking_activity.user,
+  user: booking_activity.trip.user,
   content: content.sample,
   rating: rand(4..5)
   )
