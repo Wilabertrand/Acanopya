@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_061456) do
+ActiveRecord::Schema.define(version: 2020_06_04_070114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_061456) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "start_date"
     t.date "end_date"
+    t.string "status_reservation", default: "en attente de confirmation"
     t.index ["activity_id"], name: "index_booking_activities_on_activity_id"
     t.index ["trip_id"], name: "index_booking_activities_on_trip_id"
   end
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_061456) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "start_date"
     t.date "end_date"
+    t.string "status_reservation", default: "en attente de confirmation"
     t.index ["restaurant_id"], name: "index_booking_restaurants_on_restaurant_id"
     t.index ["trip_id"], name: "index_booking_restaurants_on_trip_id"
   end
