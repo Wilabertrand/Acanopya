@@ -61,7 +61,7 @@ Trip.create!(
   #address: "7 quai de Rive Neuve, 13001 Marseille",
   description: "La délice des Sardines à Marseille. Poissons grillés, fruits de mer, tartares d'algues... de quoi ravir vos papilles avec des produits frais de la pêche du matin.",
   category: 'Poissons',
-  price: 15
+  price: 25
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262131/photo-1567452839976-5d4fdcb08bed_hakkdl.jpg')
   r1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -98,7 +98,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262777/p
   name: "Boulangerie Boudouard",
   description: "Vincent et Céline vous proposent du pain artisanal fabriqué à partir de farine locale, issue de la région. Outre leur farine, la majorité des produits utilisés sont de provenance locale et bios. Leurs créations en pâtisserie sont également à ne pas manquer, en particulier leurs cupcakes fait maison, dont c'est une des spécialités.",
   category: 'Cuisine française',
-  price: 15,
+  price: 12,
   address: "7 rue sainte, 13001 Marseille"
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262212/photo-1546195643-70f48f9c5b87_dpajdk.jpg')
@@ -136,7 +136,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/p
    description: "Comme en Italie mais 100% bio",
    category: 'Italien',
    price: 15,
-   address: "58 rue d'Italie, 13006 Marseille"
+   address: "18 rue d'Italie, 13006 Marseille"
    )
   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262972/photo-1554118811-1e0d58224f24_botcrh.jpg')
     r6.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -154,7 +154,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/p
   address: '40, rue Sainte, 13001 Marseille',
   description: 'Les délices des Saint-Jacques à Marseille, un restarurant engagé envers une pêche sélective de façon à ne pas capturer des espèces non désirées qui seront rejetées à la mer',
   category: 'Poissons',
-  price: 15
+  price: 25
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/photo-1559339352-11d035aa65de_t4dgsd.jpg')
   r7.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -172,7 +172,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101444/2
   address: "58 rue d'Italie, 13006 Marseille",
   description: "La meilleure cuisine française à Marseille. Nous travaillons à l'anti-gaspillage alimentaire",
   category: 'Cuisine française',
-  price: 15
+  price: 35
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262873/photo-1517248135467-4c7edcad34c4_rvxqxu.jpg')
   r8.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -190,7 +190,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262873/p
   address: '20 rue Paradis, 13001 Marseille',
   description: "La meilleure cuisine française 100% bio à Saint Raphaël",
   category: 'Cuisine française',
-  price: 15
+  price: 25
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262443/photo-1551632436-cbf8dd35adfa_lylzbb.jpg')
   r9.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -208,7 +208,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262443/p
   address: '5 rue Malmousque, 13007 Marseille',
   description: "Nous vous assurons l'utilisation de produits ménagers respecteux de l'environnement",
   capacity: 4,
-  price: 80,
+  price: 100,
   label: 'ATR',
   availability: true
   )
@@ -248,7 +248,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674450/p
   address: '17 Place Louis Bonnefon, 13008 Marseille',
   description: "Car la beauté et la durabilité peuvent être ensemble, venez decouvrir toutes nos actions pour protéger l'environnement",
   capacity: 30,
-  price: 45,
+  price: 75,
   label: 'ATR',
   availability: true
   )
@@ -268,7 +268,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591095702/2
   address: '7 Square des Frères Ambrogiani, 13008 Marseille',
   description: "En plus des comoditée des chambres, l'hôtel vous propose dans chaque chambre des gels douches et des shampoings certifiés écocert",
   capacity: 12,
-  price: 45,
+  price: 75,
   label: 'ATES',
   availability: true
   )
@@ -288,7 +288,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591096408/2
   address: '4 Rue Emile Duclaux, 13004 Marseille',
   description: "Pour nous il est important de réduire les émissions de gaz à effets de serre. C’est la raison pour laquelle, les livraisons de blanchisserie pour l’Hôtel et le bar-restaurant sont regroupées le même jour à la même heure.",
   capacity: 12,
-  price: 45,
+  price: 65,
   label: 'ATES',
   availability: true
   )
@@ -324,9 +324,9 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591100661/7
   f6 = Flat.create!( # f5pret
   name: "Chez Lili",
   address: '18 rue Lulli, 13001 Marseille',
-  description: "L'hôtel se situ près de la gare. Idéal pour votre voyage en famille, nous mettons à votre disposition un petit déjeuner écolo tous les matins de 7h00 à 11h00",
+  description: "L'hôtel se situe près de la gare. Idéal pour votre voyage en famille, nous mettons à votre disposition un petit déjeuner écolo tous les matins de 7h00 à 11h00",
   capacity: 6,
-  price: 120,
+  price: 70,
   label: 'ATES',
   availability: true
   )
@@ -350,7 +350,7 @@ puts 'flats finis'
   address: 'quai du port, 13002 Marseille',
   description: "Balade guidée en mer pour vivre le lever du soleil. Nous partirons en voilier pour un impact zéro carbone",
   category: 'Mer',
-  price: 80
+  price: 40
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106335/photo-1474917518260-23f84bd71c75_hwurwa.jpg')
   a1.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -385,11 +385,11 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591104888/p
 puts 'activities en cours'
 
   a3 = Activity.create!(
-  name: "Découvre Marseille",
+  name: "Découvrez Marseille",
   address: "45 rue d'Italie, 13006 Marseille",
   description: "Si vous voulez appuyer l'économie locale, je vous propose une balade dans le village et vous accompagne dans la découverte des commerçants locaux",
   category: 'Randonée',
-  price: 20
+  price: 12
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590669571/photo-1535106356142-e3169a8b17d2_jjafj0.jpg')
   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
@@ -421,41 +421,41 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591106204/D
   #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
   #   puts 'activities en cours'
 
-    a5 = Activity.create!(
-    name: "Les Docks Village",
-    address: "15 rue d'Italie, 13006 Marseille",
-    description: "Ce bâtiment flambant neuf vient d’être élu officiellement lauréat dans la catégorie meilleur centre commercial à l’occasion de la cérémonie des MIPIM Awards 2016 qui s’est déroulée le 17 mars dernier à Cannes. C’est en quelques sortes le championnat du monde de l’immobilier qui se déroule chaque année sur la croisette. Soutenez les Docks pour le Prix du public, en votant ici.",
-    category: 'Shopping',
-    price: 40
-    )
-  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190556/2MCMfWZ_jha9vs.jpg')
-    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196242/Christian-Bizzari-Photographie-2_gpqitw.jpg')
-    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196317/marseille-les-docks-village-france-mars-fa_C3_A7ade-de-construction-moderne-_E2_80_9Cde-_E2_80_9C-un-centre-commercial-en-provence-143548365_wi8hzm.jpg')
-    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196403/20151010_180620_HDR_swieba.jpg')
-    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-  file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190991/37584_kiktkp.jpg')
-    a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  #   a5 = Activity.create!(
+  #   name: "Les Docks Village",
+  #   address: "15 rue d'Italie, 13006 Marseille",
+  #   description: "Ce bâtiment flambant neuf vient d’être élu officiellement lauréat dans la catégorie meilleur centre commercial à l’occasion de la cérémonie des MIPIM Awards 2016 qui s’est déroulée le 17 mars dernier à Cannes. C’est en quelques sortes le championnat du monde de l’immobilier qui se déroule chaque année sur la croisette. Soutenez les Docks pour le Prix du public, en votant ici.",
+  #   category: 'Shopping',
+  #   price: 40
+  #   )
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190556/2MCMfWZ_jha9vs.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196242/Christian-Bizzari-Photographie-2_gpqitw.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196317/marseille-les-docks-village-france-mars-fa_C3_A7ade-de-construction-moderne-_E2_80_9Cde-_E2_80_9C-un-centre-commercial-en-provence-143548365_wi8hzm.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196403/20151010_180620_HDR_swieba.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  # file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190991/37584_kiktkp.jpg')
+  #   a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
   
-    a6 = Activity.create!(
-      name: "Randonnée dans les Calanques",
-      address: "5 rue d'Italie, 13006 Marseille",
-      description: "Vous serez accompagné d'un guide accompagnateur local qui vous fera découvrir les richesses de ce patrimoine classé Parc National et Patrimoine Mondial de l'Humanité. Situé aux portes de la ville, on y trouve une zone naturelle préservée de falaises calcaires abruptes, de plages, de forêts et maquis typiques de la méditerranée.",
-      category: 'Randonnée',
-      price: 20
-      )
-    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190556/2MCMfWZ_jha9vs.jpg')
-      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196444/830x532_parc-national-calanques-marseille_wp41bu.jpg')
-      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196479/calanques1_ymtfa1.jpg')
-      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196572/calanches-piana_poicve.jpg')
-      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
-    file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196606/PA1_des-calanques-de-marseille-a-la-cote-bleue_prsery.jpg')
-      a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  #   a6 = Activity.create!(
+  #     name: "Randonnée dans les Calanques",
+  #     address: "5 rue d'Italie, 13006 Marseille",
+  #     description: "Vous serez accompagné d'un guide accompagnateur local qui vous fera découvrir les richesses de ce patrimoine classé Parc National et Patrimoine Mondial de l'Humanité. Situé aux portes de la ville, on y trouve une zone naturelle préservée de falaises calcaires abruptes, de plages, de forêts et maquis typiques de la méditerranée.",
+  #     category: 'Randonnée',
+  #     price: 20
+  #     )
+  #   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591190556/2MCMfWZ_jha9vs.jpg')
+  #     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  #   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196444/830x532_parc-national-calanques-marseille_wp41bu.jpg')
+  #     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  #   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196479/calanques1_ymtfa1.jpg')
+  #     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  #   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196572/calanches-piana_poicve.jpg')
+  #     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
+  #   file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591196606/PA1_des-calanques-de-marseille-a-la-cote-bleue_prsery.jpg')
+  #     a3.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
     
       puts 'activities fini'
  
