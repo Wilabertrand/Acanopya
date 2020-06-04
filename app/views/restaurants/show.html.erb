@@ -70,7 +70,6 @@
     <div class="reviews">
     <h2>Voir les évaluations</h2>
       <% @restaurant_reviews.each do |restaurant_review| %>
-        <p><%= restaurant_review.user.first_name %></p>
         <p><% restaurant_review.rating.times do %>
         <i class="fas fa-star"></i>
         <% end %>

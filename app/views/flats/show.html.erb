@@ -59,7 +59,6 @@
               <div class="reviews">
               <h2>Voir les évaluations</h2>
                 <% @flat_reviews.each do |flat_review| %>
-                  <p><%= flat_review.user.first_name %></p>
                   <p><% flat_review.rating.times do %>
                   <i class="fas fa-star"></i>
                   <% end %>
