@@ -57,10 +57,10 @@ Trip.create!(
 )
 
   r1 = Restaurant.create!(
-  name: "Maman sardine",
+  name: "Maman Sardine",
   #address: "7 quai de Rive Neuve, 13001 Marseille",
   description: "La délice des Sardines à Marseille. Poissons grillés, fruits de mer, tartares d'algues... de quoi ravir vos papilles avec des produits frais de la pêche du matin.",
-  category: 'Poissons',
+  category: 'Poisson',
   price: 25
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262131/photo-1567452839976-5d4fdcb08bed_hakkdl.jpg')
@@ -79,7 +79,7 @@ puts 'ok1'
   r2 = Restaurant.create!(
   name: "Divine Pita",
   description: "Pour les amoureux de produits frais",
-  category: 'Monde',
+  category: 'Du monde',
   price: 15,
   address: "16 rue Neuve, 13001 Marseille"
   )
@@ -97,7 +97,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262777/p
   r3 = Restaurant.create!(
   name: "Boulangerie Boudouard",
   description: "Vincent et Céline vous proposent du pain artisanal fabriqué à partir de farine locale, issue de la région. Outre leur farine, la majorité des produits utilisés sont de provenance locale et bios. Leurs créations en pâtisserie sont également à ne pas manquer, en particulier leurs cupcakes fait maison, dont c'est une des spécialités.",
-  category: 'Cuisine française',
+  category: 'Française',
   price: 12,
   address: "7 rue sainte, 13001 Marseille"
   )
@@ -115,7 +115,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591103014/p
   r4 = Restaurant.create!(
   name: "Chez Camille",
   description: "La meilleure bouillabaisse de Marseille, fait avec des produits issus de circuits courts",
-  category: 'Cuisine française',
+  category: 'Poisson',
   price: 25,
   address: "56 Rue Mazenod, 13002 Marseille"
   )
@@ -134,7 +134,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/p
    r6 = Restaurant.create!(
    name: "Mozz Art Pizza",
    description: "Comme en Italie mais 100% bio",
-   category: 'Italien',
+   category: 'Italienne',
    price: 15,
    address: "18 rue d'Italie, 13006 Marseille"
    )
@@ -153,7 +153,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591263210/p
   name: "Le Saint-Jacques",
   address: '40, rue Sainte, 13001 Marseille',
   description: 'Les délices des Saint-Jacques à Marseille, un restarurant engagé envers une pêche sélective de façon à ne pas capturer des espèces non désirées qui seront rejetées à la mer',
-  category: 'Poissons',
+  category: 'Poisson',
   price: 25
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590675294/photo-1559339352-11d035aa65de_t4dgsd.jpg')
@@ -171,7 +171,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591101444/2
   name: "Le gourmet",
   address: "58 rue d'Italie, 13006 Marseille",
   description: "La meilleure cuisine française à Marseille. Nous travaillons à l'anti-gaspillage alimentaire",
-  category: 'Cuisine française',
+  category: 'Française',
   price: 35
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262873/photo-1517248135467-4c7edcad34c4_rvxqxu.jpg')
@@ -189,7 +189,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262873/p
   name: "Le Sud",
   address: '20 rue Paradis, 13001 Marseille',
   description: "La meilleure cuisine française 100% bio à Saint Raphaël",
-  category: 'Cuisine française',
+  category: 'Française',
   price: 25
   )
 file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262443/photo-1551632436-cbf8dd35adfa_lylzbb.jpg')
@@ -206,7 +206,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591262443/p
   f1 = Flat.create!( # f5pret
   name: "Sea View",
   address: '5 rue Malmousque, 13007 Marseille',
-  description: "Nous vous assurons l'utilisation de produits ménagers respecteux de l'environnement",
+  description: "Sublimes chambres avec vue sur mer. Nous vous assurons l'utilisation de produits ménagers respecteux de l'environnement",
   capacity: 4,
   price: 100,
   label: 'ATR',
