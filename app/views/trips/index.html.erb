@@ -38,7 +38,7 @@
                             <p><%= link_to booking_restaurant.restaurant.name, trip_restaurant_path(trip, booking_restaurant.restaurant) %></p>
                             <p>Réservé le : <%= booking_restaurant.start_date %>
                             <p>Pour un montant de : <%= booking_restaurant.restaurant.price %>0€ /menu / personne</p>
-                            <p>Statut de votre réservation : <%= booking_restaurant.status %></p>
+                            <p>Statut de votre réservation : <%= booking_restaurant.status_reservation %></p>
                             <p><%= link_to "Noter le restaurant", trip_restaurant_path(trip, booking_restaurant.restaurant) %> à partir du <%= booking_restaurant.start_date %></p>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             <p><%= link_to booking_activity.activity.name, trip_activity_path(trip, booking_activity.activity) %></p>
                             <p>Réservé le : <%= booking_activity.start_date %></p> 
                             <p>Pour un montant de : <%= booking_activity.activity.price %>0€ / personne</p>
-                            <p>Statut de votre réservation : <%= booking_activity.status %></p>
+                            <p>Statut de votre réservation : <%= booking_activity.status_reservation %></p>
                             <p><%= link_to "Noter l'activité", trip_activity_path(trip, booking_activity.activity) %> à partir du <%= booking_activity.start_date %></p>
                         </div>
                     </div>
