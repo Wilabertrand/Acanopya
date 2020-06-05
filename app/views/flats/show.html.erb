@@ -3,7 +3,7 @@
     <div style='width: 100%'>
       <div>
         <div class='show-title'>
-          <%= link_to ('<i class="far fa-angle-left"></i>').html_safe, trip_flats_path(@trip) %>
+          <%= link_to ('<i class="far return-fa fa-angle-left"></i>').html_safe, trip_flats_path(@trip) %>
           <div>
             <h4><%= @flat.address %></h4>
             <h1><%= @flat.name %></h1>
@@ -67,6 +67,7 @@
               <% (5 - flat_review.rating).times do %>
                 <i class="far fa-star"></i>
               <% end %>
+              </p>
               <p><%= flat_review.content %></p>
             <% end %>
           </div>
@@ -87,10 +88,9 @@
           <div id="form_booking">
             <div class="d-flex justify-content-between mt-2">
               <div class="important">
-                <p><%= @flat.price %><span style="font-size: 16px">€ / nuité par pers.</span></p>
+                <p><%= @flat.price %>€<span style="font-size: 16px">/ nuité par pers.</span></p>
               </div>
             </div>
-            <p><%#= @flat.capacity %></p>
             <div>
               <%= simple_form_for [@flat, @booking_flat], url:  flat_flats_bookings_path(@flat) do |f| %>
                 <%= f.input :trip_id, as: :hidden, input_html:{value:@trip.id} %>
@@ -136,8 +136,8 @@
                 <div id="trip-card">
                   <div class="left">
                     <p><%= restaurant.name %></p>
-                    <p><span><%= restaurant.price %>€ / nuité par pers.</span></p>
-                    <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
+                    <p><span><%= restaurant.price %>€/ personne</span></p>
+                    <p><%= @trip.start_date %></p>
                   </div>
                   <div class="right">
                     <a data-dismiss="alert" aria-label="Close">
@@ -177,8 +177,8 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= activity.name %></p>
-                      <p><span><%= activity.price %>€ / nuité par pers.</span></p>
-                      <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
+                      <p><span><%= activity.price %>€ / personne</span></p>
+                      <p><%= @trip.start_date %></p>
                     </div>
                     <div class="right">
                       <a data-dismiss="alert" aria-label="Close">

@@ -1,6 +1,4 @@
 class RestaurantsBookingsController < ApplicationController
-
-  
     def create
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@booking_restaurant = BookingRestaurant.new(booking_params)
@@ -10,7 +8,7 @@ class RestaurantsBookingsController < ApplicationController
         @trip = @booking_restaurant.trip
 	    @booking_restaurant.save
         flash[:success] = "Votre réservation a bien été effectuée"
-        redirect_to trip_restaurants_path(@trip)
+        redirect_to trip_restaurants_path(@trip, active: 'restaurants' )
 	end
 
     private

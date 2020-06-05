@@ -21,7 +21,7 @@ class FlatsController < ApplicationController
 				lat: flat.latitude,
 				lng: flat.longitude,
 				infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
-				info_price: flat.price				
+				info_price: "#{flat.price.round}€"				
 			}
 		end
 	end
@@ -30,7 +30,8 @@ class FlatsController < ApplicationController
 		@booking_flat = BookingFlat.new
 		@flat = Flat.find(params[:id])
 		@trip = Trip.find(params[:trip_id])
-		@markers = [{ lat: @flat.latitude, lng: @flat.longitude }]
+		@markers = [{ lat: @flat.latitude, lng: @flat.longitude, infoWindow: render_to_string(partial: "info_window", locals: { flat: @flat }),
+		info_price: @flat.price }]
 		@duration = @trip.end_date - @trip.start_date
 		@price = @flat.price * @duration
 		authorize(@flat)

@@ -1,11 +1,15 @@
 <div class="container-fluid py-1">
 <%= render 'shared/tab' %>
-  
+  <div class='margin_filtres'>
   <%= simple_form_for :search, url: trip_activities_path, method: 'GET', html: { class: 'form-inline' } do |f| %>
-    <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: { value: @price_max } %>
-    <%= f.input :category, label: false, collection: Activity::CATEGORIES, prompt: 'catégorie', selected: @category, include_blank: 'Toutes' %> 
-    <%= f.submit "Search", class: "btn btn-primary" %>
+    <%= f.input :price_max, placeholder: 'prix maximum', label: false, input_html: { value: @price_max} %>
+    <%= f.input :category, label: false, collection: Activity::CATEGORIES, prompt: 'catégorie', selected: @category, include_blank: 'Toutes' %>
+    <div>
+    <%= f.submit "Rechercher", class: "btn btn-primary hover_btn_search no_border background_color_grey border_light_grey border-right padding-12-px text_color_green" %>
+    </div>
   <% end %>
+  </div>
+  </div>
 
   <div class="content">
     <div class="cards">
@@ -19,8 +23,8 @@
               <div class='card-trip-text'>
                 <p><%= activity.address %></p>
                 <h2 class="pb-2 mb-2 border-bottom"><%= activity.name %></h2>
-                <p>pour <%= activity.category %> personnes</p>
-                <h2 class="card-trip-pricing"><%= activity.price %>€</h2>
+                <p><%= activity.category %></p>
+                <h2 class="card-trip-pricing"><%= activity.price %>€/ personne</h2>
               </div>
             </div>
           </div> 
@@ -47,8 +51,8 @@
                 <div id="trip-card">
                   <div class="left">
                     <p><%= restaurant.name %></p>
-                    <p><span><%= restaurant.price %>€/jour</span></p>
-                    <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
+                    <p><span><%= restaurant.price %>€/ personne</span></p>
+                    <p><%= @trip.start_date %></p>
                   </div>
                   <div class="right">
                     <a data-dismiss="alert" aria-label="Close">
@@ -67,7 +71,7 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= flat.name %></p>
-                      <p><span><%= flat.price %>€/jour</span></p>
+                      <p><span><%= flat.price %>€/ nuité par personne</span></p>
                       <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
                     </div>
                     <div class="right">
@@ -88,8 +92,8 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= activity.name %></p>
-                      <p><span><%= activity.price %>€/jour</span></p>
-                      <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
+                      <p><span><%= activity.price %>€/ personne</span></p>
+                      <p><%= @trip.start_date %></p>
                     </div>
                     <div class="right">
                       <a data-dismiss="alert" aria-label="Close">
