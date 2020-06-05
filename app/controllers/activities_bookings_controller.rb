@@ -9,7 +9,7 @@ class ActivitiesBookingsController < ApplicationController
         @trip = @booking_activity.trip
 		@booking_activity.save
         flash[:success] = "Votre activité est maintenant réservée"
-        redirect_to trip_activities_path(@trip)
+        redirect_to trip_activities_path(@trip, active: 'activities')
 	end
 
     private
