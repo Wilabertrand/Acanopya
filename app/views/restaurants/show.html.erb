@@ -1,11 +1,15 @@
 <div class="container-fluid py-4">
   <div class="content">
-    <div>
+    <div style='width: 100%'>
       <div>
-        <%= link_to "retour", trip_restaurants_path(@trip) %>
-        <h1><%= @restaurant.name %></h1>
-        <p><%= @restaurant.address %></p>
-        <div class="rounded">
+        <div class='show-title'>
+          <%= link_to ('<i class="far return-fa fa-angle-left"></i>').html_safe, trip_flats_path(@trip) %>
+          <div>
+            <h4><%= @restaurant.address %></h4>
+            <h1><%= @restaurant.name %></h1>
+          </div>
+        </div>
+        <div class="rounded px-3">
           <div class="gallery">
             <div class="img-principale">
               <%= cl_image_tag @restaurant.photos.first.key, height: 385, crop: :fill, class:"w-100 h-100" %>
@@ -45,16 +49,16 @@
         <div>
           <p><%= @restaurant.description %></p>
           <div>
-            <h4>Ce restaurant est noté :
+            <p>Ce restaurant est noté :
             <% @restaurant.average_rating.times do %>
               <i class="fas fa-star"></i>
             <% end %>
             <% (5 - @restaurant.average_rating).times do %>
               <i class="far fa-star"></i>
             <% end %>
-            </h4>
+          </p>
               <div class="reviews">
-              <h4>Détail des évaluations</h4>
+              <h2>Détail des évaluations</h2>
                 <% @restaurant_reviews.each do |restaurant_review| %>
                   <p><% restaurant_review.rating.times do %>
                   <i class="fas fa-star"></i>
