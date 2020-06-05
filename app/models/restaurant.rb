@@ -1,6 +1,6 @@
 class Restaurant < ApplicationRecord
 
-  CATEGORIES = ['Poissons', 'Monde', 'Italien', 'Japonais', 'Cuisine française']
+  CATEGORIES = ['Poisson', 'Monde', 'Italienne', 'Japonaise', 'Française']
 
   has_many :trips, through: :booking_restaurants
   has_many :booking_restaurants

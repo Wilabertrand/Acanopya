@@ -15,7 +15,7 @@ class FlatsBookingsController < ApplicationController
     private
 
     def booking_params
-        params.require(:booking_flat).permit(:trip_id, :start_date, :end_date)
+        params.require(:booking_flat).permit(:trip_id, :start_date, :end_date, :status_reservation)
     end
 
     def authorize_booking_flats
