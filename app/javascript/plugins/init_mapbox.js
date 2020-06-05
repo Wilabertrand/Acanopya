@@ -22,7 +22,7 @@ const initMapbox = () => {
     markers.forEach(marker => {
       let el = document.createElement('div');
       el.className = 'marker';
-      el.innerHTML = marker.info_price + '€';
+      el.innerHTML = marker.info_price;
         const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
         new mapboxgl.Marker(el)
           .setLngLat([marker.lng, marker.lat])

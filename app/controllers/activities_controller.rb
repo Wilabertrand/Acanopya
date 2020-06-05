@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
         lat: activity.latitude,
         lng: activity.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { activity: activity }),
-        info_price: activity.price				
+        info_price: "#{activity.price.round}€"				
       }
     end
   end
