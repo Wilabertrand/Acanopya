@@ -244,7 +244,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1590674450/p
   f2.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   f3 = Flat.create!(  # f5pret
-  name: "Golden Tulip Villa Massalia",
+  name: "Golden Tulip Villa Massallia",
   address: '17 Place Louis Bonnefon, 13008 Marseille',
   description: "Car la beauté et la durabilité peuvent être ensemble, venez decouvrir toutes nos actions pour protéger l'environnement",
   capacity: 30,

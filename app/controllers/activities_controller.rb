@@ -26,6 +26,8 @@ class ActivitiesController < ApplicationController
     @booking_activity = BookingActivity.new
     @trip = Trip.find(params[:trip_id])
     @activity = Activity.find(params[:id])
+    @markers = [{ lat: @activity.latitude, lng: @activity.longitude, infoWindow: render_to_string(partial: "info_window", locals: { activity: @activity }),
+    info_price: @activity.price }]
     @people = @trip.number_of_travellers
     @markers = [{ lat: @activity.latitude, lng: @activity.longitude }]
     authorize(@activity)
