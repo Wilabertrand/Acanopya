@@ -1,12 +1,16 @@
 
 <div class="container-fluid py-4">
   <div class="content">
-    <div>
+    <div style='width: 100%'>
       <div>
-        <%= link_to "retour", trip_activities_path(@trip) %>
-        <h1><%= @activity.name %></h1>
-        <p><%= @activity.address %></p>
-        <div class="rounded">
+        <div class='show-title'>
+          <%= link_to ('<i class="far return-fa fa-angle-left"></i>').html_safe, trip_flats_path(@trip) %>
+          <div>
+            <h4><%= @activity.address %></h4>
+            <h1><%= @activity.name %></h1>
+          </div>
+        </div>
+        <div class="rounded px-3">
           <div class="gallery">
             <div class="img-principale">
               <%= cl_image_tag @activity.photos.first.key, height: 385, crop: :fill, class:"w-100 h-100" %>
@@ -47,16 +51,16 @@
           <p><%= @activity.description %></p>
 
           <div>
-            <h4>Cet hébergement est noté :
+            <p>Cette activitée est noté :
             <% @activity.average_rating.times do %>
               <i class="fas fa-star"></i>
             <% end %>
             <% (5 - @activity.average_rating).times do %>
               <i class="far fa-star"></i>
             <% end %>
-            </h4>
+          </p>
               <div class="reviews">
-              <h4>Détail des évaluations</h4>
+              <h2>Détail des évaluations</h2>
                 <% @activity_reviews.each do |activity_review| %>
                   <p><%= activity_review.user.first_name %></p>
                   <p><% activity_review.rating.times do %>

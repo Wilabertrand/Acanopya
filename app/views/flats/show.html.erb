@@ -1,11 +1,15 @@
-<div class="container-fluid py-4">
+<div class="container-fluid p-4">
   <div class="content">
-    <div>
+    <div style='width: 100%'>
       <div>
-        <%= link_to "retour", trip_flats_path(@trip) %>
-        <h1><%= @flat.name %></h1>
-        <p><%= @flat.address %></p>
-        <div class="rounded">
+        <div class='show-title'>
+          <%= link_to ('<i class="far return-fa fa-angle-left"></i>').html_safe, trip_flats_path(@trip) %>
+          <div>
+            <h4><%= @flat.address %></h4>
+            <h1><%= @flat.name %></h1>
+          </div>
+        </div>
+        <div class="rounded px-3">
           <div class="gallery">
             <div class="img-principale">
               <%= cl_image_tag @flat.photos.first.key, height: 385, crop: :fill, class:"w-100 h-100" %>
@@ -41,44 +45,45 @@
         </div>
       </div>
       <!-- Flat card -->
-      <div class="element">
-        <div>
+      <div class="row p-4">
+        <div class="col-md-8">
+        
           <p><%= @flat.description %></p>
-          <div>
-            <h4>Cet hébergement est noté :
+          <p>Cet hébergement est noté :
             <% @flat.average_rating.times do %>
               <i class="fas fa-star"></i>
             <% end %>
             <% (5 - @flat.average_rating).times do %>
               <i class="far fa-star"></i>
             <% end %>
-            </h4>
-              <div class="reviews">
-              <h4>Détail des évaluations</h4>
-                <% @flat_reviews.each do |flat_review| %>
-                  <p><% flat_review.rating.times do %>
-                  <i class="fas fa-star"></i>
-                  <% end %>
-                  <% (5 - flat_review.rating).times do %>
-                  <i class="far fa-star"></i>
-                  <% end %>
-                  <p><%= flat_review.content %></p>
-                <% end %>
-              </div>
-              <% if @flatreservation %>
-                <div class="review">
-                  <h4>Laissez une évaluation</h4>
-                  <%= simple_form_for @flat_review, url: flats_booking_flat_reviews_path(@flatreservation, html: { class: "review_form" }) do |f| %>
-                    <%= f.input :content %>
-                    <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
-                    <%= f.submit class: "d-none" %>
-                  <% end %>
-                </div>
+          </p>
+          <div class="reviews">
+          <h2><%= @flat_reviews.count %> commentaires</h2>
+            <% @flat_reviews.each do |flat_review| %>
+              <p><%= flat_review.user.first_name %></p>
+              <p><% flat_review.rating.times do %>
+                <i class="fas fa-star"></i>
               <% end %>
+              <% (5 - flat_review.rating).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+              </p>
+              <p><%= flat_review.content %></p>
+            <% end %>
           </div>
+          <% if @flatreservation %>
+            <div class="review">
+              <h3>Laissez une évaluation</h3>
+              <%= simple_form_for @flat_review, url: flats_booking_flat_reviews_path(@flatreservation, html: { class: "review_form" }) do |f| %>
+                <%= f.input :content, label: false %>
+                <%= f.input :rating, collection: (1..5).to_a, label: "notez votre expérience" %>
+                <%= f.submit class: "d-none" %>
+              <% end %>
+            </div>
+          <% end %>
           <%#= link_to "Retour aux hébergements", flats_path, class:"btn btn-secondary" %>
         </div>
-        <div>
+        <div class="col-md-4">
           <!-- Booking card -->
           <div id="form_booking">
             <div class="d-flex justify-content-between mt-2">
@@ -96,17 +101,18 @@
             </div>
             <div class="important">
               <div class="d-flex justify-content-between mt-3">
-                <p><strong>Total </strong></p>
-                <p><strong><%= @price %>€ </strong></p>
+                <p><strong>Total</strong></p>
+                <p><strong><%= @price %>€</strong></p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="pb-2"><h4>Emplacement</h4>
+      <div class="p-4">
+        <h2>Emplacement</h2>
         <div id="map"
-          style="width: 100%; height: 600px; border-radius: 10px;"
+          style="width: 100%; height: 300px; border-radius: 10px;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
@@ -150,7 +156,7 @@
                   <div id="trip-card">
                     <div class="left">
                       <p><%= flat.name %></p>
-                      <p><span><%= flat.price %>€/ nuité par personne</span></p>
+                      <p><span><%= flat.price %>€ / nuité par pers.</span></p>
                       <p><%= @trip.start_date %> - <%= @trip.end_date %></p>
                     </div>
                     <div class="right">

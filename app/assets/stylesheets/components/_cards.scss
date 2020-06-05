@@ -7,6 +7,7 @@
 }
 
 .card-trip {
+  //display: flex;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
@@ -26,23 +27,26 @@
   object-fit: cover;
 }
 
-.card-trip h2 {
-  font-size: 20px;
-  margin: 0;
-  padding-top: 4px;
-  padding-bottom: 10px;
-}
-
 .card-trip-pricing {
-  font-size: 25px;
+  color: #495057 !important;
+  font-size: 22px !important;
   font-family: Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   margin: 0;
   padding-top: 4px;
   justify-content: right;
 }
 
+.card-trip .card-trip-infos h2 {
+  color: #14b8b9;
+  font-size: 26px;
+  margin: 0;
+  padding-top: 4px;
+  padding-bottom: 10px;
+}
+
 .card-trip p {
+  color: #495057;
   font-size: 14px;
   opacity: .7;
   margin: 0;
@@ -50,11 +54,19 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 20px 35px 30px 35px;
+  padding: 20px 35px 10px 35px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .card-trip-infos .card-trip-user {

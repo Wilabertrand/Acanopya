@@ -284,7 +284,7 @@ file = URI.open('https://res.cloudinary.com/doprhpcd8/image/upload/v1591096408/2
   f4.photos.attach(io: file, filename: 'nes1.png', content_type: 'image/png')
 
   f5 = Flat.create!( # f5pret
-  name: "Hôtel Kyriad Marseille Blancarde Timone",
+  name: "Hôtel Kyriad Marseille",
   address: '4 Rue Emile Duclaux, 13004 Marseille',
   description: "Pour nous il est important de réduire les émissions de gaz à effets de serre. C’est la raison pour laquelle, les livraisons de blanchisserie pour l’Hôtel et le bar-restaurant sont regroupées le même jour à la même heure.",
   capacity: 12,
