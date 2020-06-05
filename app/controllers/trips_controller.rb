@@ -24,6 +24,31 @@ class TripsController < ApplicationController
         @flat_review = FlatReview.new
         @restaurant_review = RestaurantReview.new
         @activity_review = ActivityReview.new
+        restaurant_markers = @trip.restaurants.map do |restaurant|
+          {
+            lat: restaurant.latitude,
+            lng: restaurant.longitude,
+            infoWindow: render_to_string(partial: "restaurants/info_window", locals: { restaurant: restaurant }),
+            info_price: "R"                
+          }
+        end
+        activity_markers = @trip.activities.map do |activity|
+          {
+            lat: activity.latitude,
+            lng: activity.longitude,
+            infoWindow: render_to_string(partial: "activities/info_window", locals: { activity: activity }),
+            info_price: "A"                
+          }
+        end
+        flat_markers = @trip.flats.map do |flat|
+          {
+            lat: flat.latitude,
+            lng: flat.longitude,
+            infoWindow: render_to_string(partial: "flats/info_window", locals: { flat: flat }),
+            info_price: "H"                
+          }
+        end
+        @markers = [restaurant_markers, activity_markers, flat_markers].flatten
     end
 
     def create

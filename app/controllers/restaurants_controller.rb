@@ -21,7 +21,7 @@ class RestaurantsController < ApplicationController
         lat: restaurant.latitude,
         lng: restaurant.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant }),
-        info_price: restaurant.price				
+        info_price: "#{restaurant.price.round}€"				
       }
     end
   end
