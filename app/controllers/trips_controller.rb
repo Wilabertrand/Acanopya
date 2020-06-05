@@ -24,6 +24,7 @@ class TripsController < ApplicationController
         @flat_review = FlatReview.new
         @restaurant_review = RestaurantReview.new
         @activity_review = ActivityReview.new
+        
     end
 
     def create

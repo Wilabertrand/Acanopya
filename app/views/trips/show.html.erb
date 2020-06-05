@@ -71,6 +71,8 @@
     <div class="pb-2"><h4></h4>
       <div class="contain-map">
         <div id="map"
+          role="tabpanel"
+          aria-labelledby="map-tab"
           style="width: 450px; height: 100vh; border-radius: 10px;"
           data-markers="<%= @markers.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
